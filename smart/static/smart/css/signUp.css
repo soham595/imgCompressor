@@ -1,0 +1,31 @@
+.signin-container {
+    margin-top: 8%;
+
+}
+
+.signin-card {
+    background: rgb(0, 0, 0); /* The Fallback */
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+
+.signin-form {
+    max-width: 350px;
+    margin: auto;
+}
+
+.btn-custom {
+    color: white;
+    background: #dc3545;
+    /*background-color: #009688;*/
+    width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+.create-account {
+    font-size: 1.5rem;
+    display: block;
+    margin-top: 15px;
+}

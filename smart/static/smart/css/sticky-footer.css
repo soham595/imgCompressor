@@ -1,0 +1,18 @@
+.Site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.Site-content {
+    flex: 1 0 auto;
+    padding: 1em 0 1em 0;
+    width: 100%;
+}
+
+.Site-content:after {
+    display: block;
+    margin-top: 1em;
+    height: 0;
+    visibility: hidden;
+}
