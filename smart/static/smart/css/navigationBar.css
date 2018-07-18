@@ -154,14 +154,15 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 }
 
 .content {
-    margin-top: 60px;
+    margin-top: 1.5rem;
     position: relative;
-    z-index: -1;
+    z-index: 1;
+    color: whitesmoke;
 }
 
-.sticky + .content {
-    padding-top: 60px;
-}
+/*.sticky + .content {
+    padding-top: 20rem;
+}*/
 
 .container {
     text-align: center;
@@ -169,4 +170,5 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 
 h1 {
     color: #c5bfbb;
+    padding-bottom: 5rem;
 }
