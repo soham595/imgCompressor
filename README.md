@@ -5,4 +5,4 @@ Better prediction to help doctors by using Machine Learning in various fields of
 
 > python manage.py runserver  -> to start the server
 
-Upload file feature
+Upload file feature not added yet.
