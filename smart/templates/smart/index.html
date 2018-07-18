@@ -56,6 +56,11 @@
         <div class="content container">
             <h1>Online Image resizer and optimizer</h1>
             {% if image %}
+                <div class="row">
+                    <div class="col-md-3">
+                        <button type="button"><a href="/smart/imageView{{ image.id }}/">View Image</a></button>
+                    </div>
+                </div>
                 <a href="{{ image.image.url }}"><img src="{{ image.image.url }}" alt="/media/images/jug5.jpg" width="30px"/></a>
             {% else %}
                 <form action="/smart/imageUpload/" method="post" enctype="multipart/form-data">
@@ -83,13 +88,6 @@
                         </div>
                     </div>
                 </form>
-                {% if  foo in image %}
-                    <div class="row">
-                        <div class="col-md-3">
-                            <button type="button"><a href="/smart/imageView{{ foo.id }}/">View Image</a></button>
-                        </div>
-                    </div>
-                {% endif %}
             {% endif %}
         </div>
     </div>
