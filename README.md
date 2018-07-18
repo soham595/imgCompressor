@@ -4,3 +4,5 @@ Better prediction to help doctors by using Machine Learning in various fields of
 > python manage.py livereload  -> hot reloading
 
 > python manage.py runserver  -> to start the server
+
+Upload file feature
