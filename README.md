@@ -1,6 +1,8 @@
-# imgCompressor
-Final project not decided yet. Single page Parallax web app. Upload file Django feature not added in this project yet.
+# smartDiag
+Better prediction to help doctors by using Machine Learning in various fields of Medical Science.
 
 > python manage.py livereload  -> hot reloading
 
 > python manage.py runserver  -> to start the server
+
+Upload file feature not added yet.
