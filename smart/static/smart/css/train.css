@@ -1,0 +1,18 @@
+.container {
+    background: rgba(0,0,0,0);
+    margin-top: 15rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.btn-danger {
+    cursor: pointer;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+body {
+    background-image: url("../images/bghome6.jpg");
+    background-size: cover;
+    background-position: r;
+}
