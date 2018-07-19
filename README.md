@@ -4,7 +4,7 @@ Better prediction to help doctors by using Machine Learning in various fields of
 
 Install package:
 
-$ pip install django-livereload-server
+> pip install django-livereload-server
 
 Add 'livereload' to the INSTALLED_APPS, before 'django.contrib.staticfiles' if this is used:
 
