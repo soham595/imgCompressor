@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Image
 
 def home(request):
-    return render(request, '../templates/smart/index.html')
+    return render(request, 'smart/index.html')
 
 def imageUpload(request):
     image = Image()

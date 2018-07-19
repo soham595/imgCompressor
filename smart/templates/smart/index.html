@@ -40,16 +40,16 @@
                     <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
                         <ul class="nav navbar-nav mr-auto py-0">
                             <li><a href="#main">HOME</a></li>
-                            <li><a href="#ara">ARTICLES</a></li>
-                            <li><a href="#asa">ABOUT</a></li>
-                            <li><a href="#ada">CONTACT US</a></li>
+                            <li><a href="#input">INPUT</a></li>
+                            <li><a href="#about" id="about-button">ABOUT</a></li>
+                            <li><a href="#contact">CONTACT US</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
-    <div class="parallax-container" id="ada">
+    <div class="parallax-container" id="input">
         <div class="parallax">
             <img src="{% static 'smart/images/bghome2.jpg' %}"/>
         </div>
@@ -99,23 +99,30 @@
             {% endif %}
         </div>
     </div>
-    <div class="parallax-container" id="ara">
+    <div class="parallax-container" id="about">
         <div class="parallax">
             <img src="{% static 'smart/images/bghome7.jpg' %}"/>
         </div>
         <div class="content container">
-            <h1>ARTICLES</h1>
+            <h1>ABOUT</h1>
+
+            <button id="hide">Try it</button>
+
+            <div id="myDIV">
+                This is my DIV element.
+            </div>
         </div>
     </div>
-    <div class="parallax-container" id="asa">
+    <div class="parallax-container" id="contact">
         <div class="parallax">
             <img src="{% static 'smart/images/bghome6.jpg' %}"/>
         </div>
         <div class="content container">
-            <h1>ABOUT</h1>
+            <h1>CONTACT US</h1>
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/stickynav.js' %}"></script>
 </body>
 </html>
