@@ -1,60 +1,108 @@
-{% load staticfiles %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <link rel="shortcut icon" href="../../static/smart/images/favicon2.ico">
-
-    <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'smart/css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'smart/css/navigationBar.css' %}">
-    <link rel="stylesheet" href="{% static 'smart/css/parallax.css' %}">
-
-    <script type="text/javascript" src="{% static 'smart/js/jquery-3.2.1.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'smart/js/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'smart/js/tether.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'smart/js/parallax.js' %}"></script>
-    <script type="text/javascript" src="{% static 'smart/js/materialize.min.js' %}"></script>
-
-    <title>Smart Medical Diagnosis</title>
-</head>
-<body>
-<div>
-    <div class="parallax-container" id="main">
-        <div class="parallax">
-            <img src="{% static 'smart/images/bghome.jpg' %}"/>
-        </div>
-        <div id="nav-bar">
-            <nav class="navbar navbar-expand-sm navbar-dark navcust navmar">
-                <div>
-                    <div class="navbar-brand link-font py-0">
-                        <a href="/">SmartDiag</a>
-                    </div>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#ntopnav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="mid">
-                    <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
-                        <ul class="nav navbar-nav mr-auto py-0">
-                            <li><a href="#main">HOME</a></li>
-                            <li><a href="#input">INPUT</a></li>
-                            <li><a href="#about" id="about-button">ABOUT</a></li>
-                            <li><a href="#contact">CONTACT US</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
+{% extends 'smart/base.html' %}
+{% block body %}
+    {% load staticfiles %}
     <div class="parallax-container" id="input">
         <div class="parallax">
             <img src="{% static 'smart/images/bghome2.jpg' %}"/>
         </div>
         <div class="content container">
             <h1>INPUT</h1>
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Name:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="name" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Age:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="age" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Gender(M/F):</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="gender" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Total Bilirubin:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="tb" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Direct Bilirubin:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="db" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Alkaline Phosphotase:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="ap" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Alamine Aminotransferase:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="aa" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4> Aspartate Aminotransferase:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="apa" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Total Proteins:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="tp" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Albumin:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="alb" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Albumin Globulin Ratio:</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" name="abratio" class=""/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     <div class="parallax-container" id="img">
@@ -121,8 +169,4 @@
             <h1>CONTACT US</h1>
         </div>
     </div>
-</div>
-<script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
-<script type="text/javascript" src="{% static 'smart/js/stickynav.js' %}"></script>
-</body>
-</html>
+{% endblock %}
