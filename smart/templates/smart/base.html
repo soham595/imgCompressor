@@ -1,0 +1,55 @@
+{%  load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="shortcut icon" href="../../static/smart/images/favicon2.ico">
+
+    <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'smart/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'smart/css/navigationBar.css' %}">
+    <link rel="stylesheet" href="{% static 'smart/css/parallax.css' %}">
+
+    <script type="text/javascript" src="{% static 'smart/js/jquery-3.2.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart/js/tether.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart/js/parallax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart/js/materialize.min.js' %}"></script>
+
+    <title>Smart Medical Diagnosis</title>
+</head>
+<body>
+    <div class="parallax-container" id="main">
+        <div class="parallax">
+            <img src="{% static 'smart/images/bghome.jpg' %}"/>
+        </div>
+        <div id="nav-bar">
+            <nav class="navbar navbar-expand-sm navbar-dark navcust navmar">
+                <div>
+                    <div class="navbar-brand link-font py-0">
+                        <a href="/">SmartDiag</a>
+                    </div>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#ntopnav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="mid">
+                    <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
+                        <ul class="nav navbar-nav mr-auto py-0">
+                            <li><a href="#main">HOME</a></li>
+                            <li><a href="#input">INPUT</a></li>
+                            <li><a href="#about" id="about-button">ABOUT</a></li>
+                            <li><a href="#contact">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+{% block body %}
+{% endblock %}
+</body>
+<script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/stickynav.js' %}"></script>
+</html>
