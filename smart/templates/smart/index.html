@@ -7,102 +7,77 @@
         </div>
         <div class="content container">
             <h1>INPUT</h1>
-            <form action="#" method="post">
-                {% csrf_token %}
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Name:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" name="name" class=""/>
-                    </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-6">
+                    <form action="#" method="post" class="">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="name" class="col-form-label col-md-6">Name:</label>
+                            <input type="text" id="name" name="name" class="form-control col-md-6"
+                                   placeholder="Full Name" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="age" class="col-form-label col-md-6">Age:</label>
+                            <input type="number" id="age" name="age" class="form-control col-md-6"
+                                   placeholder="Enter your age" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
+                            <input type="text" id="gender" name="gender" class="form-control col-md-6"
+                                   placeholder="Gender(M/F)" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
+                            <input type="number" id="tb" name="tb" class="form-control col-md-6"
+                                   placeholder="Total Bilirubin" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
+                            <input type="number" id="db" name="db" class="form-control col-md-6"
+                                   placeholder="Direct Bilirubin" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="ap" class="col-form-label col-md-6">Alkaline Phosphotase:</label>
+                            <input type="number" id="ap" name="ap" class="form-control col-md-6"
+                                   placeholder="Alkaline Phosphotase levels" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="aa" class="col-form-label col-md-6">Alamine Aminotransferase:</label>
+                            <input type="number" id="aa" name="aa" class="form-control col-md-6"
+                                   placeholder="Alamine Aminotransferase levels" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="apa" class="col-form-label col-md-6">Aspartate Aminotransferase:</label>
+                            <input type="number" id="apa" name="apa" class="form-control col-md-6"
+                                   placeholder="Aspartate Aminotransferase levels" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="tp" class="col-form-label col-md-6">Total Proteins:</label>
+                            <input type="number" id="tp" name="tp" class="form-control col-md-6"
+                                   placeholder="Total Proteins" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="alb" class="col-form-label col-md-6">Albumin:</label>
+                            <input type="number" id="alb" name="alb" class="form-control col-md-6"
+                                   placeholder="Albumin levels" required/>
+                        </div>
+                        <div class="form-group row">
+                            <label for="abratio" class="col-form-label col-md-6">Albumin Globulin Ratio:</label>
+                            <input type="number" id="abratio" name="abratio" class="form-control col-md-6"
+                                   placeholder="Albumin Globulin Ratio" required/>
+                        </div>
+
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-outline-danger btn-cust">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Age:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="age" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Gender(M/F):</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" name="gender" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Total Bilirubin:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="tb" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Direct Bilirubin:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="db" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Alkaline Phosphotase:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="ap" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Alamine Aminotransferase:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="aa" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4> Aspartate Aminotransferase:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="apa" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Total Proteins:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="tp" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Albumin:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="alb" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h4>Albumin Globulin Ratio:</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="number" name="abratio" class=""/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </form>
+                <div class="col"></div>
+            </div>
         </div>
     </div>
     <div class="parallax-container" id="img">
