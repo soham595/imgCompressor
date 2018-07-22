@@ -2,9 +2,9 @@
 Better prediction to help doctors by using Machine Learning in various fields of Medical Science.
 
 Front-end libraries used:
-Bootstrap 4
-Materialize
-Vanilla JS
+Bootstrap 4,
+Materialize,
+Vanilla JS,
 jQuery
 
 Back-end:
