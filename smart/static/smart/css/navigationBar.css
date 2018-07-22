@@ -62,7 +62,7 @@ a:hover {
 }
 
 a  {
-    color: #a5a5a5;
+    color: #ffffff;
     text-decoration: none;
     font: 2rem Raleway;
     margin: 0px 10px;
@@ -170,15 +170,13 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 
 h1 {
     color: #c5bfbb;
-    padding-bottom: 2rem;
 }
 
 .btn-cust {
-    margin-bottom: 2rem;
     padding-left: 3rem;
-    padding-right: 3rem
+    padding-right: 3rem;
+    margin-right: 10%;
 }
-
 .btn-outline-danger {
     border-color: #BA0F00;
 }
@@ -187,10 +185,17 @@ h1 {
     background-color: #BA0F00;
 }
 
-.col-form-label {
-    text-align: right;
+.form-group {
+    padding-right: 10%;
 }
 
-.cust {
-    font-size: 2rem !important;
+.card {
+    margin-bottom: 10%;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 1px 2px 10px rgba(186, 15, 0, 0.6);
+}
+
+.card-header {
+    box-shadow: 0px 1px 1px rgba(186, 15, 0, 0.5);
+    color: #a5a5a5;
 }
