@@ -78,6 +78,7 @@ a  {
     font: 1.3rem Raleway;
     padding: 12px 35px;
     position: relative;
+
 }
 
 .navcust
@@ -89,17 +90,19 @@ a  {
 .navbar {
     position: relative;
     z-index: 30;
+    transform-style: preserve-3d;
 }
 
 .navmar {
-    margin-top: 8em;
+    margin-top: 8rem;
 }
 
 #ntopnav a:hover
 {
     /*background: #009688;*/
-    color: #ba0f00;
+    margin-left: -2rem;
     font-size: 1.7rem;
+    color: #ba0f00;
 }
 
 div.borderYtoX a:before, div.borderYtoX a:after
@@ -186,13 +189,19 @@ h1 {
 }
 
 .form-group {
-    padding-right: 10%;
+    padding-right: 20%;
+    padding-left: 10%;
+}
+
+.form-group:hover {
+    transform: translateZ(20px)
 }
 
 .card {
     margin-bottom: 10%;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 1px 2px 10px rgba(186, 15, 0, 0.6);
+    transform-style: preserve-3d;
 }
 
 .card-header {
