@@ -180,6 +180,11 @@ h1 {
     padding-right: 3rem;
     margin-right: 10%;
 }
+
+.btn-cust:hover {
+    transform: translateZ(20px);
+}
+
 .btn-outline-danger {
     border-color: #BA0F00;
 }
@@ -207,4 +212,8 @@ h1 {
 .card-header {
     box-shadow: 0px 1px 1px rgba(186, 15, 0, 0.5);
     color: #a5a5a5;
+}
+
+.card-header h4:hover {
+    transform: translateZ(20px)
 }
