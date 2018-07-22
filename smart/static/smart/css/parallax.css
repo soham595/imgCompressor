@@ -1,7 +1,7 @@
 .parallax-container {
   position: relative;
   overflow: hidden;
-  height: 700px !important;
+    min-height: 500px;
 }
 
 .parallax-container .parallax {
@@ -24,8 +24,4 @@
           transform: translate3d(0, 0, 0);
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-}
-
-.parallax-container {
-    height: 35rem;
 }
