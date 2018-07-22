@@ -189,7 +189,8 @@ h1 {
 }
 
 .form-group {
-    padding-right: 10%;
+    padding-right: 20%;
+    padding-left: 10%;
 }
 
 .form-group:hover {
