@@ -1,7 +1,7 @@
 # smartDiag
 Better prediction to help doctors by using Machine Learning in various fields of Medical Science.
 
-Front-end libraries used:
+Front-end:
 Bootstrap 4,
 Materialize,
 Vanilla JS,
