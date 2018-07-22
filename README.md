@@ -1,6 +1,22 @@
 # smartDiag
 Better prediction to help doctors by using Machine Learning in various fields of Medical Science.
 
+Front-end libraries used:
+Bootstrap 4
+Materialize
+Vanilla JS
+jQuery
+
+Back-end:
+Django
+
+Database:
+SQLite3
+
+
+
+
+SETUP The Project ->
 
 Install package:
 
@@ -25,4 +41,4 @@ MIDDLEWARE_CLASSES = (
 
 > python manage.py runserver  -> to start the server
 
-Upload file feature not added yet.
+Upload file feature added.
