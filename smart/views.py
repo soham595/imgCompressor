@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Image
+import numpy as np
+from MLDjango import new_net_classif
+
 
 def home(request):
     return render(request, 'smart/index.html')
@@ -20,3 +23,16 @@ def imageView(request, foo):
 def trainView(request):
     #Insert functionality here
     return render(request, 'smart/train.html')
+
+def saveWeight(request):
+    new_net_classif.train_model()
+    return render(request, 'smart/train.html')
+
+
+def checkForLiver(request):
+    x = np.array([[2], [3], [4], [5], [6], [20]])
+    xyz=new_net_classif.check(x)
+    if xyz==True:
+        print("whoops")
+    else:
+        print("Hooray")
