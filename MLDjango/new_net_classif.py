@@ -16,7 +16,7 @@ from sklearn import preprocessing
 
 
 def load_dataset():
-    dataset = pd.read_csv('../smartDiag/MLDjango/indian_liver_patient.csv')
+    dataset = pd.read_csv('MLDjango/indian_liver_patient.csv')
     X = dataset.iloc[:, [1, 2, 3, 4, 5, 8]].values
     y = dataset.iloc[:, 10].values
 
@@ -214,11 +214,11 @@ def train_model():
         (np.dot(test_set_y, predictions.T) + np.dot(1 - test_set_y, 1 - predictions.T)) / float(
             test_set_y.size) * 100) + '%')
 
-    np.save('../smartDiag/MLDjango/myfile.npy', parameters)
+    np.save('MLDjango/myfile.npy', parameters)
 
 
 def check(X1):
-    read_dictionary = np.load('../smartDiag/MLDjango/myfile.npy').item()
+    read_dictionary = np.load('MLDjango/myfile.npy').item()
     prediction = predict(read_dictionary, X1)
     return np.squeeze(prediction)
 
