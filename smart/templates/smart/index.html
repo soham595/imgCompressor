@@ -17,10 +17,10 @@
                     <div class="card" id="inp1" data-tilt data-tilt-max="2" data-tilt-speed="100"
                          data-tilt-perspective="500">
                         <div class="card-header">
-                            <h4>Enter Cat. 1 Report Details</h4>
+                            <h4>Liver Function Test Report Details</h4>
                         </div>
                         <div class="card-body">
-                            <form action="#" method="post" class="custom-form">
+                            <form action="/smart/check-for-liver" method="post" class="custom-form">
                                 {% csrf_token %}
                                 <div class="form-group row">
                                     <label for="name" class="col-form-label col-md-6">Name:</label>
@@ -76,12 +76,12 @@
                             <form action="#" method="post" class="custom-form">
                                 {% csrf_token %}
                                 <div class="form-group row">
-                                    <label for="name" class="col-form-label col-md-6">WHAT:</label>
+                                    <label for="name" class="col-form-label col-md-6">Name</label>
                                     <input type="text" id="name" name="name" class="form-control col-md-6"
                                            placeholder="Enter Why" required/>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="age" class="col-form-label col-md-6">HOW:</label>
+                                    <label for="age" class="col-form-label col-md-6">Age</label>
                                     <input type="number" id="age" name="age" class="form-control col-md-6"
                                            placeholder="Enter Now" required/>
                                 </div>
