@@ -1,7 +1,7 @@
 .parallax-container {
   position: relative;
   overflow: hidden;
-    min-height: 500px;
+  min-height: 500px;
 }
 
 .parallax-container .parallax {

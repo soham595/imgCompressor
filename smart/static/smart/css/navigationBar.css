@@ -52,10 +52,6 @@
     text-decoration: none;
 }*/
 
-#main{
-    height:500px;
-}
-
 a:hover {
     text-decoration: none;
     color: #ba0f00;
@@ -156,6 +152,10 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     font: 1.2rem Raleway;
 }
 
+.sticky + .container {
+  margin-top: 16rem;
+}
+
 .content {
     margin-top: 1.5rem;
     position: relative;
@@ -163,11 +163,9 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     color: whitesmoke;
 }
 
-/*.sticky + .content {
-    padding-top: 20rem;
-}*/
-
 .container {
+    margin-top: 5%;
+    padding-top: 2%;
     text-align: center;
 }
 
@@ -193,11 +191,6 @@ h1 {
     background-color: #BA0F00;
 }
 
-.form-group {
-    padding-right: 20%;
-    padding-left: 10%;
-}
-
 .form-group:hover {
     transform: translateZ(20px)
 }
@@ -216,4 +209,12 @@ h1 {
 
 .card-header h4:hover {
     transform: translateZ(20px)
+}
+
+.container-custom {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 20%;
 }

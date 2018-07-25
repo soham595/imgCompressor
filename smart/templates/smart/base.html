@@ -24,28 +24,32 @@
     <div class="parallax">
         <img src="{% static 'smart/images/bghome.jpg' %}"/>
     </div>
-    <div id="nav-bar">
-        <nav class="navbar navbar-expand-sm navbar-dark navcust navmar">
-            <div>
-                <div class="navbar-brand link-font py-0">
-                    <a href="/">SmartDiag</a>
+    <div>
+        <div id="nav-bar">
+            <nav class="navbar navbar-expand-sm navbar-dark navcust navmar">
+                <div>
+                    <div class="navbar-brand link-font py-0">
+                        <a href="/">SmartDiag</a>
+                    </div>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#ntopnav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#ntopnav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="mid" id="mid">
-                <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
-                    <ul class="nav navbar-nav mr-auto py-0">
-                        <li><a href="#main">HOME</a></li>
-                        <li><a href="#input" id="inp1-button">INPUT 1</a></li>
-                        <li><a href="#input" id="inp2-button">INPUT 2</a></li>
-                        <li><a href="#about" id="about-button">ABOUT</a></li>
-                        <li><a href="#contact" id="cont-button">CONTACT US</a></li>
-                    </ul>
+                <div class="mid" id="mid">
+                    <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
+                        <ul class="nav navbar-nav mr-auto py-0">
+                            <li><a href="#main">HOME</a></li>
+                            <li><a href="#input" id="inp1-button">INPUT 1</a></li>
+                            <li><a href="#input" id="inp2-button">INPUT 2</a></li>
+                            <li><a href="#about" id="about-button">ABOUT</a></li>
+                            <li><a href="#contact" id="cont-button">CONTACT US</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+            {% block out %}
+            {% endblock %}
     </div>
 </div>
 {% block body %}

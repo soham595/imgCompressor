@@ -22,40 +22,66 @@
                         <div class="card-body">
                             <form action="/smart/check-for-liver" method="post" class="custom-form">
                                 {% csrf_token %}
-                                <div class="form-group row">
-                                    <label for="name" class="col-form-label col-md-6">Name:</label>
-                                    <input type="text" id="name" name="name" class="form-control col-md-6"
-                                           placeholder="Full Name" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
-                                    <input type="text" id="gender" name="gender" class="form-control col-md-6"
-                                           placeholder="Gender(M/F)" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
-                                    <input type="number" id="tb" name="tb" class="form-control col-md-6"
-                                           placeholder="Total Bilirubin" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
-                                    <input type="number" id="db" name="db" class="form-control col-md-6"
-                                           placeholder="Direct Bilirubin" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="ap" class="col-form-label col-md-6">Alkaline Phosphotase:</label>
-                                    <input type="number" id="ap" name="ap" class="form-control col-md-6"
-                                           placeholder="Alkaline Phosphotase level" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="aa" class="col-form-label col-md-6">Alamine Aminotransferase:</label>
-                                    <input type="number" id="aa" name="aa" class="form-control col-md-6"
-                                           placeholder="Alamine Aminotransferase level" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="alb" class="col-form-label col-md-6">Albumin:</label>
-                                    <input type="number" id="alb" name="alb" class="form-control col-md-6"
-                                           placeholder="Albumin level" required/>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="name" class="col-form-label col-md-6">Name:</label>
+                                            <input type="text" id="name" name="name" class="form-control col-md-6"
+                                                   placeholder="Full Name" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="age" class="col-form-label col-md-6">Age:</label>
+                                            <input type="text" id="age" name="age" class="form-control col-md-6"
+                                                   placeholder="Enter your age" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
+                                            <input type="text" id="gender" name="gender" class="form-control col-md-6"
+                                                   placeholder="Gender(M/F)" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
+                                            <input type="number" id="tb" name="tb" class="form-control col-md-6"
+                                                   placeholder="Total Bilirubin" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
+                                            <input type="number" id="db" name="db" class="form-control col-md-6"
+                                                   placeholder="Direct Bilirubin" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="ap" class="col-form-label col-md-6">Alkaline Phosphotase:</label>
+                                            <input type="number" id="ap" name="ap" class="form-control col-md-6"
+                                                   placeholder="Alkaline Phosphotase level" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-right">
+                                        <div class="form-group row">
+                                            <label for="aa" class="col-form-label col-md-6">Alamine Aminotransferase:</label>
+                                            <input type="number" id="aa" name="aa" class="form-control col-md-6"
+                                                   placeholder="Alamine Aminotransferase level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="apa" class="col-form-label col-md-6">Aspartate Aminotransferase:</label>
+                                            <input type="number" id="apa" name="apa" class="form-control col-md-6"
+                                                   placeholder="Aspartate Aminotransferase level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tp" class="col-form-label col-md-6">Total Proteins:</label>
+                                            <input type="number" id="tp" name="tp" class="form-control col-md-6"
+                                                   placeholder="Total Proteins" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="alb" class="col-form-label col-md-6">Albumin:</label>
+                                            <input type="number" id="alb" name="alb" class="form-control col-md-6"
+                                                   placeholder="Albumin level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="abratio" class="col-form-label col-md-6">Albumin Globulin Ratio:</label>
+                                            <input type="number" id="abratio" name="abratio" class="form-control col-md-6"
+                                                   placeholder="Albumin Globulin Ratio" required/>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4"></div>
@@ -70,67 +96,87 @@
                     <div class="card" id="inp2" data-tilt data-tilt-max="2" data-tilt-speed="100"
                          data-tilt-perspective="500">
                         <div class="card-header">
-                            <h4>Enter Cat. 2 Report Details</h4>
+                            <h4>Cat. 2 Test Report Details</h4>
                         </div>
                         <div class="card-body">
-                            <form action="#" method="post" class="custom-form">
+                            <form action="/smart/sdf" method="post" class="custom-form">
                                 {% csrf_token %}
-                                <div class="form-group row">
-                                    <label for="name" class="col-form-label col-md-6">Name</label>
-                                    <input type="text" id="name" name="name" class="form-control col-md-6"
-                                           placeholder="Enter Why" required/>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            <label for="ame" class="col-form-label col-md-6">Name:</label>
+                                            <input type="text" id="ame" name="ame" class="form-control col-md-6"
+                                                   placeholder="Full Name" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
+                                            <input type="text" id="gender" name="gender" class="form-control col-md-6"
+                                                   placeholder="Gender(M/F)" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
+                                            <input type="number" id="tb" name="tb" class="form-control col-md-6"
+                                                   placeholder="Total Bilirubin" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
+                                            <input type="number" id="db" name="db" class="form-control col-md-6"
+                                                   placeholder="Direct Bilirubin" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="ap" class="col-form-label col-md-6">Alkaline Phosphotase:</label>
+                                            <input type="number" id="ap" name="ap" class="form-control col-md-6"
+                                                   placeholder="Alkaline Phosphotase level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="aa" class="col-form-label col-md-6">Alamine Aminotransferase:</label>
+                                            <input type="number" id="aa" name="aa" class="form-control col-md-6"
+                                                   placeholder="Alamine Aminotransferase level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="alb" class="col-form-label col-md-6">Albumin:</label>
+                                            <input type="number" id="alb" name="alb" class="form-control col-md-6"
+                                                   placeholder="Albumin level" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-right">
+                                        <div class="form-group row">
+                                            <label for="ame" class="col-form-label col-md-6">Name:</label>
+                                            <input type="text" id="ame" name="ame" class="form-control col-md-6"
+                                                   placeholder="Full Name" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
+                                            <input type="text" id="gender" name="gender" class="form-control col-md-6"
+                                                   placeholder="Gender(M/F)" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
+                                            <input type="number" id="tb" name="tb" class="form-control col-md-6"
+                                                   placeholder="Total Bilirubin" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
+                                            <input type="number" id="db" name="db" class="form-control col-md-6"
+                                                   placeholder="Direct Bilirubin" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="ap" class="col-form-label col-md-6">Alkaline Phosphotase:</label>
+                                            <input type="number" id="ap" name="ap" class="form-control col-md-6"
+                                                   placeholder="Alkaline Phosphotase level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="aa" class="col-form-label col-md-6">Alamine Aminotransferase:</label>
+                                            <input type="number" id="aa" name="aa" class="form-control col-md-6"
+                                                   placeholder="Alamine Aminotransferase level" required/>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="alb" class="col-form-label col-md-6">Albumin:</label>
+                                            <input type="number" id="alb" name="alb" class="form-control col-md-6"
+                                                   placeholder="Albumin level" required/>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="age" class="col-form-label col-md-6">Age</label>
-                                    <input type="number" id="age" name="age" class="form-control col-md-6"
-                                           placeholder="Enter Now" required/>
-                                </div>
-                                <!--<div class="form-group row">
-                                    <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
-                                    <input type="text" id="gender" name="gender" class="form-control col-md-6"
-                                           placeholder="Gender(M/F)" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
-                                    <input type="number" id="tb" name="tb" class="form-control col-md-6"
-                                           placeholder="Total Bilirubin" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
-                                    <input type="number" id="db" name="db" class="form-control col-md-6"
-                                           placeholder="Direct Bilirubin" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="ap" class="col-form-label col-md-6">Alkaline Phosphotase:</label>
-                                    <input type="number" id="ap" name="ap" class="form-control col-md-6"
-                                           placeholder="Alkaline Phosphotase level" required/>
-                                </div>-->
-                                <div class="form-group row">
-                                    <label for="aa" class="col-form-label col-md-6">Alamine Aminotransferase:</label>
-                                    <input type="number" id="aa" name="aa" class="form-control col-md-6"
-                                           placeholder="Alamine Aminotransferase level" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="apa" class="col-form-label col-md-6">Aspartate Aminotransferase:</label>
-                                    <input type="number" id="apa" name="apa" class="form-control col-md-6"
-                                           placeholder="Aspartate Aminotransferase level" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="tp" class="col-form-label col-md-6">Total Proteins:</label>
-                                    <input type="number" id="tp" name="tp" class="form-control col-md-6"
-                                           placeholder="Total Proteins" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="alb" class="col-form-label col-md-6">Albumin:</label>
-                                    <input type="number" id="alb" name="alb" class="form-control col-md-6"
-                                           placeholder="Albumin level" required/>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="abratio" class="col-form-label col-md-6">Albumin Globulin Ratio:</label>
-                                    <input type="number" id="abratio" name="abratio" class="form-control col-md-6"
-                                           placeholder="Albumin Globulin Ratio" required/>
-                                </div>
-
                                 <div class="row">
                                     <div class="col-md-4"></div>
                                     <div class="col-md-4">

@@ -34,6 +34,9 @@ def saveWeight(request):
 
 
 def checkForLiver(request):
+    return render(request, 'smart/output.html')
+
+    '''
     inp = LiverPatientInfo()
     inp.name = request.POST["name"]
     inp.gender = request.POST["gender"]
@@ -59,4 +62,5 @@ def checkForLiver(request):
     else:
         dic = {"res":0}
 
-    return render(request, 'smart/predictionLiver.html', dic)
+    return render(request, 'smart/output.html', dic)
+    '''
