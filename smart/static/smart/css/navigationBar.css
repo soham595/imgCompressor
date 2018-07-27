@@ -199,7 +199,7 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     width: 100%;
     margin-top: -8em;
     z-index: 30;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .sticky .mid {
