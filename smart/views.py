@@ -30,12 +30,12 @@ def trainView(request):
 
 def saveWeight(request):
     new_net_classif.train_model()
-    return render(request, 'smart/saveWeight.html')
+    return render(request, 'smart/train.html')
 
 
 def checkForLiver(request):
 
-    inp = LiverPatientInfo()
+  ''' inp = LiverPatientInfo()
     inp.name = request.POST["name"]
     inp.age = request.POST["age"]
     inp.gender = request.POST["gender"]
@@ -70,3 +70,5 @@ def checkForLiver(request):
 
     return render(request, 'smart/output.html', {"result": inp})
 
+'''
+  return render(request, 'smart/output.html')

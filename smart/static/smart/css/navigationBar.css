@@ -62,7 +62,7 @@
 
 .dropbtn {
     background-color: rgba(76, 175, 80, 0);
-    color: white;
+    color: #ba0f00;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -77,8 +77,9 @@
 /* Dropdown Content (Hidden by Default) */
 .dropdown-menu {
     display: none;
+    margin-top: 10px;
     position: absolute;
-    background-color: rgba(241, 241, 241, 0);
+    background-color: rgba(0, 0, 0, 0.8);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
     z-index: 1;
@@ -226,7 +227,7 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     text-align: center;
 }
 
-h1 {
+h1, h3 {
     color: #c5bfbb;
 }
 
@@ -274,4 +275,8 @@ h1 {
     margin-top: 5%;
     padding-bottom: 5%;
     margin-bottom: 20%;
+}
+
+.fluid-custom {
+    margin-top: 2rem;
 }

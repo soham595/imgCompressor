@@ -1,5 +1,7 @@
-{% load staticfiles %}
-<!DOCTYPE html>
+{% extends 'smart/base.html' %}
+{% block out %}
+    {% load staticfiles %}
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -59,105 +61,104 @@
             </div>
         </div>
     </nav>
-</div>
+</div>-->
 
 
-{% if result.hasDisease == 1 %}
-    <h3>Patient has liver disease</h3>
-    <h3>sdfsdfsdf</h3>
-    <h3>sdfsdfsdf</h3>
-    <h3>sdfsdfsdf</h3>
-    <h3>sdfsdfsdf</h3>
-    <h3>sdfsdfsdf</h3>
-{% else %}
-    <div class="content container container-custom">
-        <h2>Smart Diagonosis Report</h2>
-        <hr>
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-md-10">
-                <table class="table table-borderless table-hover">
-                    <tr>
-                        <th>Patient Name:</th>
-                        <td>{{ result.name }}</td>
-                        <th>Patient Age:</th>
-                        <td>{{ result.age }}</td>
-                    </tr>
-                    <tr>
-                        <th>Patient ID:</th>
-                        <td>gfd</td>
-                        <th>Patient Gender:</th>
-                        <td>{{ result.gender }}</td>
-                    </tr>
-                </table>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6">
-                        <table class="table table-borderless table-hover">
-                            <tr>
-                                <td></td>
-                                <th>Expected</th>
-                                <th>Actual</th>
-                            </tr>
-                            <tr>
-                                <th>Total Bilirubin:</th>
-                                <td></td>
-                                <td>{{ result.total_bilirubin }}</td>
-                            </tr>
-                            <tr>
-                                <th>Direct Bilirubin:</th>
-                                <td></td>
-                                <td>{{ result.direct_bilirubin }}</td>
-                            </tr>
-                            <tr>
-                                <th>Alkaline Phosphotase:</th>
-                                <td></td>
-                                <td>{{ result.alkaline_phosphotase }}</td>
-                            </tr>
-                            <tr>
-                                <th>Alamine Aminotransferase:</th>
-                                <td></td>
-                                <td>{{ result.alamine_aminotransferase }}</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-                        <table class="table table-borderless table-hover">
-                            <tr>
-                                <td>
-                                <th>Expected</th>
-                                <th>Actual</th>
-                            </tr>
-                            <tr>
-                                <th>Aspartate Aminotransferase:</th>
-                                <td></td>
-                                <td>{{ result.aspartate_aminotransferase }}</td>
-                            </tr>
-                            <tr>
-                                <th>Total Proteins:</th>
-                                <td></td>
-                                <td>{{ result.total_proteins }}</td>
-                            </tr>
-                            <tr>
-                                <th>Albumin:</th>
-                                <td></td>
-                                <td>{{ result.albumin }}</td>
-                            </tr>
-                            <tr>
-                                <th>Albumin Globulin Ratio:</th>
-                                <td></td>
-                                <td>{{ result.albuminGlobulin_ratio }}</td>
-                            </tr>
-                        </table>
-                    </div>
+<div class="content container container-custom">
+    <h2>Smart Diagonosis Report</h2>
+    <hr>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-10">
+            <table class="table table-borderless table-hover">
+                <tr>
+                    <th>Patient Name:</th>
+                    <td>{{ result.name }}</td>
+                    <th>Patient Age:</th>
+                    <td>{{ result.age }}</td>
+                </tr>
+                <tr>
+                    <th>Patient ID:</th>
+                    <td>{{ result.id }}</td>
+                    <th>Patient Gender:</th>
+                    <td>{{ result.gender }}</td>
+                </tr>
+            </table>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-borderless table-hover">
+                        <tr>
+                            <td></td>
+                            <th>Expected</th>
+                            <th>Actual</th>
+                        </tr>
+                        <tr>
+                            <th>Total Bilirubin:</th>
+                            <td></td>
+                            <td>{{ result.total_bilirubin }}</td>
+                        </tr>
+                        <tr>
+                            <th>Direct Bilirubin:</th>
+                            <td></td>
+                            <td>{{ result.direct_bilirubin }}</td>
+                        </tr>
+                        <tr>
+                            <th>Alkaline Phosphotase:</th>
+                            <td></td>
+                            <td>{{ result.alkaline_phosphotase }}</td>
+                        </tr>
+                        <tr>
+                            <th>Alamine Aminotransferase:</th>
+                            <td></td>
+                            <td>{{ result.alamine_aminotransferase }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-borderless table-hover">
+                        <tr>
+                            <td>
+                            <th>Expected</th>
+                            <th>Actual</th>
+                        </tr>
+                        <tr>
+                            <th>Aspartate Aminotransferase:</th>
+                            <td></td>
+                            <td>{{ result.aspartate_aminotransferase }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Proteins:</th>
+                            <td></td>
+                            <td>{{ result.total_proteins }}</td>
+                        </tr>
+                        <tr>
+                            <th>Albumin:</th>
+                            <td></td>
+                            <td>{{ result.albumin }}</td>
+                        </tr>
+                        <tr>
+                            <th>Albumin Globulin Ratio:</th>
+                            <td></td>
+                            <td>{{ result.albuminGlobulin_ratio }}</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div class="col"></div>
         </div>
-        <hr>
-        <h3>Patient has no liver disease</h3>
+        <div class="col"></div>
     </div>
-{% endif %}
-</body>
+    <hr>
+    {% if result.hasDisease == 1 %}
+        <h3>Patient has liver disease</h3>
+    {% else %}
+        <h3>Patient has no liver disease</h3>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+<!--</body>
 </html>
 
+-->
