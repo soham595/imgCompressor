@@ -6,16 +6,17 @@
 
     <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/train.css' %}">
+    <link rel="stylesheet" href="{% static 'smart/css/particles.css' %}">
 
     <script type="text/javascript" src="{% static 'smart/js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/bootstrap.min.js' %}"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>-->
 
     <title>Training Model</title>
 
-    <style>
+    <!--<style>
         .no-js #loader {
             display: none;
         }
@@ -41,10 +42,10 @@
         $(window).load(function () {
             $(".se-pre-con").fadeOut("slow");
         });
-    </script>
+    </script>-->
 </head>
 <body>
-<div class="se-pre-con"></div>
+<!--<div class="se-pre-con"></div>-->
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -54,11 +55,16 @@
         <div class="col-md-4">
             <form action="/smart/save-weights" method="post">
                 {% csrf_token %}
-                <h1>This is the Slam</h1>
-                <button type="submit" class="btn-danger">Train Model</button>
+                <p id="trainp">Your model is being trained, please wait...</p>
+                <h1 id="trainh">Click the Button</h1>
+                <button type="submit" class="btn btn-danger" id="train">Train Model</button>
             </form>
         </div>
     </div>
 </div>
 </body>
+<script type="text/javascript" src="{% static 'smart/js/anime.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/particles.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/demo.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
 </html>

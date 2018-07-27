@@ -38,29 +38,28 @@
                 <div class="mid" id="mid">
                     <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
                         <ul class="nav navbar-nav mr-auto py-0">
-                            <li><a href="#main">HOME</a></li>
+                            <li><a href="/#main">HOME</a></li>
                             <li class="dropdown">
-                                <a class="dropbtn" data-toggle="dropdown">DROP</a>
+                                <a class="dropbtn" data-toggle="dropdown">Category</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#input" id="inp1-button">Liver Disease</a>
+                                    <a class="dropdown-item inp1-button" href="/#input">Liver</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#input" id="inp2-button">Breast Cancer</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Link 3</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Another link</a>
+                                    <a class="dropdown-item inp2-button" href="/#input">Breast Cancer</a>
                                 </div>
                             </li>
-                            <li><a href="#about" id="about-button">ABOUT</a></li>
-                            <li><a href="#contact" id="cont-button">CONTACT US</a></li>
+                            <li><a href="/#about" id="about-button">ABOUT</a></li>
+                            <li><a href="/#contact" id="cont-button">CONTACT US</a></li>
 
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-        {% block out %}
-        {% endblock %}
+        <div class="content container">
+            {% block out %}
+            {% endblock %}
+        </div>
+
     </div>
 </div>
 {% block body %}

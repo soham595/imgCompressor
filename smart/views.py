@@ -30,7 +30,7 @@ def trainView(request):
 
 def saveWeight(request):
     new_net_classif.train_model()
-    return render(request, 'smart/saveWeight.html')
+    return render(request, 'smart/train.html')
 
 
 def checkForLiver(request):
@@ -69,4 +69,3 @@ def checkForLiver(request):
     print(inp.hasDisease == 1)
 
     return render(request, 'smart/output.html', {"result": inp})
-
