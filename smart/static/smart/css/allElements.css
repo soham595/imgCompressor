@@ -221,15 +221,9 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     color: whitesmoke;
 }
 
-.container {
-    margin-top: 5%;
-    padding-top: 2%;
-    text-align: center;
-}
-
-h1, h3 {
+/*h1, h3 {
     color: #c5bfbb;
-}
+}*/
 
 .btn-cust {
     padding-left: 3rem;
@@ -279,4 +273,79 @@ h1, h3 {
 
 .fluid-custom {
     margin-top: 2rem;
+}
+
+.container {
+    padding-top: 2%;
+    text-align: center;
+}
+
+/*.container-fluid {
+    text-align: center;
+}*/
+
+#contact {
+    padding-top: 2%;
+    text-align: center;
+    background-color: #212221;
+    color: #88513d;
+}
+
+/* Style the input fields */
+/*input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}*/
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+#nextBtn {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#nextBtn:hover {
+    transform: translateZ(20px);
+}
+
+#prevBtn {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+#prevBtn:hover {
+    transform: translateZ(20px);
 }
