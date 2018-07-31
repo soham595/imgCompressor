@@ -6,6 +6,7 @@
 
     <link rel="shortcut icon" href="../../static/smart/images/favicon2.ico">
 
+    <link rel="stylesheet" href="{% static 'smart/css/mdb.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/allElements.css' %}">
@@ -13,9 +14,11 @@
 
     <script type="text/javascript" src="{% static 'smart/js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart/js/mdb.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/tether.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/parallax.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/materialize.min.js' %}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 
     <title>Smart Medical Diagnosis</title>
 </head>
@@ -40,15 +43,15 @@
                         <ul class="nav navbar-nav mr-auto py-0">
                             <li><a href="/#main">HOME</a></li>
                             <li class="dropdown">
-                                <a class="dropbtn" data-toggle="dropdown">Category</a>
+                                <a class="dropbtn" href="" data-toggle="dropdown">CATEGORY</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item inp1-button" href="/#input">Liver</a>
+                                    <a class="dropdown-item inp1-button" href="/#input" id="inp1-button">Liver</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item inp2-button" href="/#input">Breast Cancer</a>
+                                    <a class="dropdown-item inp2-button" href="/#input" id="inp2-button">Breast Cancer</a>
                                 </div>
                             </li>
                             <li><a href="/#about" id="about-button">ABOUT</a></li>
-                            <li><a href="/#contact" id="cont-button">CONTACT US</a></li>
+                            <li><a data-toggle="modal" href="" data-target="#modalContactForm" id="cont-button">CONTACT US</a></li>
 
                         </ul>
                     </div>
