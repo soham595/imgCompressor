@@ -346,10 +346,14 @@ footer {
 .container-fluid {
     margin-top: 0;
     margin-bottom: 0;
-    padding-right: 0;
-    padding-left: 0;
     text-align: center;
 }
+
+.about-container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 
 .fluid-custom {
     margin-top: 4rem;
@@ -379,4 +383,18 @@ h1 {
     border-radius: 100%;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
+}
+
+#contact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.carousel-container {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.entry-container {
+    min-height: 35rem;
 }
