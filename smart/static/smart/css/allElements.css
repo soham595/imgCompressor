@@ -335,14 +335,22 @@ footer {
 
 #about {
     text-align: center;
+    /*background-color: rgba(0, 0, 0, 0.9);*/
     background-color: rgba(0, 0, 0, 0.9);
     color: #884530;
-    margin-top:0;
-    margin-bottom:0;
-    min-height: 30rem;
+    min-height: 32rem;
     padding-top: 2%;
+}
+
+.container-fluid {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h1 {
     color: #6e706e;
+}
+
+.content {
+    margin-bottom: 0;
 }

@@ -25,3 +25,8 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
+
+.parallax-container {
+  padding-bottom: 0;
+  padding: 0;
+}
