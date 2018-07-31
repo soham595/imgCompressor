@@ -267,10 +267,6 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     margin-bottom: 20%;
 }
 
-.fluid-custom {
-    margin-top: 2rem;
-}
-
 .container {
     padding-top: 2%;
     text-align: center;
@@ -333,18 +329,30 @@ footer {
     color: #884530;
 }
 
+.about-container {
+    background-image: url("../images/bghome6.jpg");
+    background-position: left;
+    background-attachment: fixed;
+}
+
 #about {
     text-align: center;
-    /*background-color: rgba(0, 0, 0, 0.9);*/
     background-color: rgba(0, 0, 0, 0.9);
     color: #884530;
-    min-height: 32rem;
+    min-height: 25rem;
     padding-top: 2%;
 }
 
 .container-fluid {
     margin-top: 0;
     margin-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+}
+
+.fluid-custom {
+    margin-top: 4rem;
 }
 
 h1 {
@@ -353,4 +361,22 @@ h1 {
 
 .content {
     margin-bottom: 0;
+}
+
+.main-content {
+    background-color: rgba(0, 0, 0, 0);
+    min-height: 32rem;
+    padding-top: 2%;
+}
+
+.top-margin {
+    margin-top: 2rem;
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
 }
