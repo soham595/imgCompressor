@@ -52,18 +52,30 @@
                             </li>
                             <li><a href="/#about" id="about-button">ABOUT</a></li>
                             <li><a data-toggle="modal" href="" data-target="#modalContactForm" id="cont-button">CONTACT US</a></li>
-
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-        <div class="content container">
-            {% block out %}
-            {% endblock %}
+        <div class="container top-margin">
+            <div class="row">
+                <div class="col-md-6 contentMain">
+                    <h1 style="font-size: 4.5rem; font-weight: lighter; color: lightgray">SmartDiag</h1>
+                    <h1 style="font-size: 2rem; margin-left: 2rem; margin-top: -0.5rem; font-weight: lighter; color: #9C9C9C"><span style="color: #BA0F00!important;">-</span> Better Prediction</h1>
+                </div>
+            </div>
+            <div class="row btnBottom">
+                <div class="col-md-12">
+                    <ul class="nav navbar-nav mr-auto py-0">
+                        <li><a href="/#entry" class="btn bounce"><img src="{% static 'smart/images/arrow-down.png' %}" width="100px" height="70px"/></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+{% block out %}
+{% endblock %}
 {% block body %}
 {% endblock %}
 </body>

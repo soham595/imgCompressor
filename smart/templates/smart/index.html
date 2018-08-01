@@ -38,15 +38,47 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid entry-container">
-        <div class="content container-fluid" id="entry">
-            <h1>Site Entry</h1>
-            <div class="row top-margin">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+    <div class="container entry-container">
+        <div class="content"  id="entry">
+            <div class="row">
+                <div class="col-md-7 carousel-container">
+                    <h1 style="font-size: 3rem;font-weight: lighter; color: lightgray">Smart Medical Diagnosis</h1>
+                    <br>
+                    <br>
+                    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <p style="min-height: 10rem; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">SmartDiag believes it is possible to put an accessible and affordable health service in the hands of every person on earth.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p style="min-height: 10rem; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">How? By combining the ever-growing computing power of machines with the best medical expertise of humans to create a comprehensive, immediate
+                                    and personalised health service and making it universally available.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p style="min-height: 10rem; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">Prototypes embodying such reasoning can explain their conclusions in medical terms that can be reviewed by the user.</p>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="{% static 'smart/images/bghome.jpg' %}" width="500px"/>
                 </div>
             </div>
+            <br>
+            <br>
         </div>
     </div>
     <div class="parallax-container" id="input">
@@ -66,7 +98,14 @@
                                          data-tilt-perspective="100">
                                         <div class="card-header"><a class="inp1-button" href="#input" style="font-size: 1.5rem;">Liver</a></div>
                                         <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p style="font-size: 0.9rem">Liver disease can be inherited (genetic) or caused by a variety of factors that damage the liver, such as viruses and alcohol use. Obesity is also associated with liver damage.</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img src="{% static 'smart/images/imgLiver.jpg' %}" width="100%"/>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +114,14 @@
                                          data-tilt-perspective="100">
                                         <div class="card-header"><a class="inp2-button" href="#input" style="font-size: 1.5rem;">Breast Cancer</a></div>
                                         <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p style="font-size: 0.9rem">Breast cancer is cancer that develops from breast tissue. In those with distant spread of the disease, there may be bone pain, swollen lymph nodes, shortness of breath, or yellow skin.</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img src="{% static 'smart/images/imgBC.png' %}" width="100%"/>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -84,20 +130,13 @@
                                 <div class="col-md-6">
                                     <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
                                          data-tilt-perspective="100">
-                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">Cat. 3</a></div>
+                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">More Categories coming soon.</a></div>
                                         <div class="card-body">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="card" data-tilt data-tilt-max="5" data-tilt-speed="100"
-                                         data-tilt-perspective="100">
-                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">Cat. 4</a></div>
-                                        <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +219,7 @@
                                 <div class="row">
                                     <div class="col-md-4"></div>
                                     <div class="col-md-4">
-                                        <button type="submit" class="btn btn-outline-danger btn-cust">Submit</button>
+                                        <button type="submit" class="btn btn-outline-mdb-color btn-cust">Submit</button>
                                     </div>
                                     <div class="col-md-4"></div>
                                 </div>
@@ -190,38 +229,38 @@
                     <div class="card" id="inp2" data-tilt data-tilt-max="2" data-tilt-speed="100"
                          data-tilt-perspective="500">
                         <div class="card-header">
-                            <h4>Breast Cancer Test Report Details</h4>
+                            <h4>Breast Cancer Test Report</h4>
                         </div>
                         <div class="card-body">
                             <form action="/smart/asd" method="post" class="custom-form" id="regForm">
                                 {% csrf_token %}
                                 <div class="tab">
-                                    <h3>Enter Patient Details &ensp<i class="fa fa-user prefix grey-text"></i></h3>
+                                    <h4>Enter Patient Details &ensp<i class="fa fa-user prefix grey-text"></i></h4>
                                     <div class="row">
                                         <div class="col-md-2"></div>
                                         <div class="col-md-8">
                                             <div class="modal-body">
                                                 <div class="md-form form-group mb-5">
                                                     <label for="bcname" class="col-form-label">Name:</label>
-                                                     <input type="text" id="bcname" name="bcname" class="form-control"
-                                                            oninput="this.className = 'form-control'" required/>
+                                                    <input type="text" id="bcname" name="bcname" class="form-control"
+                                                           oninput="this.className = 'form-control'" required/>
                                                 </div>
                                                 <div class="md-form form-group mb-5">
                                                     <label for="bcage" class="col-form-label">Age:</label>
-                                                     <input type="text" id="bcage" name="bcage" class="form-control"
-                                                            oninput="this.className = 'form-control'" required/>
+                                                    <input type="text" id="bcage" name="bcage" class="form-control"
+                                                           oninput="this.className = 'form-control'" required/>
                                                 </div>
                                                 <div class="md-form form-group mb-5">
                                                     <label for="bcgender" class="col-form-label">Gender(M/F):</label>
-                                                     <input type="text" id="bcgender" name="bcgender" class="form-control"
-                                                            oninput="this.className = 'form-control'" required/>
+                                                    <input type="text" id="bcgender" name="bcgender" class="form-control"
+                                                           oninput="this.className = 'form-control'" required/>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab">
-                                    <h3>Enter the Mean values</h3>
+                                    <h4>Enter the Mean values</h4>
                                     <br>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -321,7 +360,7 @@
                                     </div>
                                 </div>
                                 <div class="tab">
-                                    <h3>Enter the Standard Error values</h3>
+                                    <h4>Enter the Standard Error values</h4>
                                     <br>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -421,7 +460,7 @@
                                     </div>
                                 </div>
                                 <div class="tab">
-                                    <h3>Enter the Worst or Largest Mean values</h3>
+                                    <h4>Enter the Worst or Largest Mean values</h4>
                                     <br>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -522,8 +561,8 @@
                                 </div>
                                 <div  id="stepBtn">
                                     <div style="float:right;">
-                                        <button type="button" class="btn btn-outline-danger btn-cust" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                        <button type="button" class="btn btn-outline-danger btn-cust" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                        <button type="button" class="btn btn-outline-mdb-color btn-cust" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                        <button type="button" class="btn btn-outline-mdb-color btn-cust" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                     </div>
                                 </div>
                                 <div style="text-align:center;margin-top:6rem;">
@@ -588,11 +627,14 @@
         </div>-->
     <div class="container-fluid about-container">
         <div class="content container-fluid" id="about">
-            <h1>ABOUT</h1>
+            <h1 style="font-weight: lighter; color: lightgray;">ABOUT</h1>
             <div class="row top-margin">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</span>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <p style="font-size: 1.2rem; line-height: 2.5rem">SmartDiag is the diagnosis you can rely on. It is a trusted website that takes in input from the users regarding the chemical levels
+                        in our body and predicts whether he/she is suffering from liver disease and breast cancer accordingly.It is an attempt to overcome limitations
+                        inherent in conventional computer-aided diagnosis. Strategies have been developed to limit the number of hypothesis that a program must consider.
+                    </p>
                 </div>
             </div>
         </div>
@@ -644,7 +686,7 @@
     <footer id="contact" class="container-fluid">
         <div class="row">
             <div class="left-footer col-md-8">
-                <span>Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>
+                <span class="footer-text">Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>
             </div>
             <div class="right-footer col-md-4">
                 <span class="linkto" onclick="location='https://github.com/soham595/smartDiag'"><i class="fab fa-github-square prefix mr-1"></i>GitHub</span>&ensp

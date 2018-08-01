@@ -323,7 +323,7 @@ footer {
     border-top: 1px solid;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.68);
-    color: #884530;
+    color: lightgray;
 }
 
 .about-container {
@@ -335,7 +335,8 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-    color: #884530;
+    //color: #884530;
+    color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
 }
@@ -393,7 +394,7 @@ h1 {
 }
 
 .entry-container {
-    min-height: 35rem;
+    min-height: 25rem;
 }
 
 .linkto:hover {
@@ -403,4 +404,35 @@ h1 {
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.9);
     opacity: 0.9!important;
+}
+
+#main {
+    min-height: 41rem;
+    padding-bottom: 0;
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    background: transparent;
+    border: 0!important;
+    box-shadow: 0px 0px 0px 0px!important;
+}
+
+.btnBottom {
+    margin-top: 10rem;
+    color: lightgray;
+}
+
+p {
+    color: navajowhite!important;
+}
+
+.footer-text {
+    color: lightgray;
+}
+
+span {
+    color: navajowhite;
 }
