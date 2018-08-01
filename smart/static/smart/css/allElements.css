@@ -225,7 +225,6 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 .btn-cust {
     padding-left: 3rem;
     padding-right: 3rem;
-    margin-right: 10%;
     border-color: #BA0F00!important;
     color: #BA0F00!important;
 }
@@ -235,10 +234,6 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     border-color: #BA0F00!important;
     color: navajowhite!important;
     background-color: #BA0F00!important;
-}
-
-.btn-outline-danger:hover {
-    background-color: #BA0F00;
 }
 
 .form-group:hover {
