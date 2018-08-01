@@ -128,6 +128,7 @@ a  {
     text-decoration: none;
     font: 1.3rem Raleway;
     padding: 12px 35px;
+    margin-right: 52px;
     position: relative;
 
 }
@@ -175,11 +176,23 @@ div.borderYtoX a:before
 
 div.borderYtoX a:after
 {
-    right: 15px;
+    right: 0px;
     bottom:6px;
 }
 
+div.borderYtoX .dropdown-menu a:after
+{
+    right: 15px;
+}
+
 div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
+{
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+
+div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:hover:after
 {
     opacity: 1;
     height: 2px;
@@ -422,11 +435,11 @@ h1 {
 
 .btnBottom {
     margin-top: 10rem;
-    color: lightgray;
 }
 
 p {
     color: navajowhite!important;
+    font-weight: lighter;
 }
 
 .footer-text {
