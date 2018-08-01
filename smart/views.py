@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .models import Image, LiverPatientInfo
 import numpy as np
-from MLDjango import new_net_classif
+import MLDjango.disease_liver as liver
+import MLDjango.disease_bc as cancer
+
 
 
 def home(request):
@@ -28,8 +30,12 @@ def trainView(request):
     return render(request, 'smart/train.html')
 
 
-def saveWeight(request):
-    new_net_classif.train_model()
+def saveWeightLiver(request):
+    liver.train_model()
+    return render(request, 'smart/train.html')
+
+def saveWeightBc(request):
+    cancer.train_model()
     return render(request, 'smart/train.html')
 
 
@@ -54,7 +60,7 @@ def checkForLiver(request):
 
 
     x = np.array([[sex], [int(inp.total_bilirubin)], [int(inp.direct_bilirubin)], [int(inp.alkaline_phosphotase)], [int(inp.alamine_aminotransferase)], [int(inp.albumin)]])
-    xyz = new_net_classif.check(x)
+    xyz = liver.check(x)
 
     if xyz==True:
         dic = {"res": 1}
@@ -69,3 +75,19 @@ def checkForLiver(request):
     print(inp.hasDisease == 1)
 
     return render(request, 'smart/output.html', {"result": inp})
+
+def checkforbcancer(request):
+
+
+
+
+    x1=np.array([[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],
+                 [11],[12],[13],[14],[15],[16],[17],[18],[19],[20],
+                 [21],[22],[23],[24],[25],[26],[27],[28],[29],[30]])
+    xyz1=cancer.check(x1)
+
+    if xyz1==True:
+        dic = {"res": 1}
+    else:
+        dic = {"res": 0}
+
