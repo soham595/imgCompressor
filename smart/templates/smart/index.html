@@ -38,6 +38,71 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modalLoginForm" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                        <label for="defaultForm-email">Your email</label>
+                    </div>
+                    <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate">
+                        <label for="defaultForm-pass">Your password</label>
+                    </div>
+                    <button class="btn btn-default float-right">Login</button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <a href="#modalRegisterForm" data-toggle="modal" data-dismiss="modal" style="color: black!important; font-size: 1.2rem" data-target="#modalRegisterForm">Don't have an account? Signup</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Register</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fa fa-user prefix grey-text"></i>
+                        <input type="text" id="orangeForm-name" class="form-control validate">
+                        <label for="orangeForm-name">Your name</label>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="orangeForm-email" class="form-control validate">
+                        <label for="orangeForm-email">Your email</label>
+                    </div>
+                    <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="orangeForm-pass" class="form-control validate">
+                        <label for="orangeForm-pass">Your password</label>
+                    </div>
+                    <button class="float-right btn btn-deep-orange">Sign up</button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <a href="#modalLoginForm" data-toggle="modal" data-dismiss="modal" style="color: black!important; font-size: 1.2rem" data-target="#modalLoginForm">Already have an account? Signin</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container entry-container">
         <div class="content"  id="entry">
             <div class="row">
@@ -82,11 +147,25 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <img src="{% static 'smart/images/bghome.jpg' %}" width="500px"/>
+                    <img src="{% static 'smart/images/imgEntry.jpg' %}" width="500px"/>
                 </div>
             </div>
             <br>
             <br>
+        </div>
+    </div>
+    <div class="container-fluid site-info">
+        <hr color="lightgray">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'smart/images/site-info.png' %}" width="250px"/>
+            </div>
+            <div class="col-md-8">
+                <h1 style="font-weight: normal; font-style: oblique; color: lightgray">Find out the outcome of the malady by filling out the required details.</h1>
+                <br>
+                <h5 style="font-weight: normal; font-size: 1.5rem; color: lightgray;">Can be used by both doctors and patients if they have the report.</h5>
+                <br>
+            </div>
         </div>
     </div>
     <div class="parallax-container" id="input">
@@ -95,7 +174,7 @@
         </div>
         <div class="content container" id="input-container">
             <div class="initial">
-                <h3 style="font-weight: lighter">Select your category to enter details</h3>
+                <h3 style="font-weight: normal">Select your category to enter details</h3>
                 <div class="container-fluid fluid-custom">
                     <div class="row">
                         <div class="col-md-1"></div>
@@ -108,7 +187,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <p style="font-size: 0.9rem">Liver disease can be inherited (genetic) or caused by a variety of factors that damage the liver, such as viruses and alcohol use. Obesity is also associated with liver damage.</p>
+                                                    <p style="font-size: 1rem">Liver disease can be inherited (genetic) or caused by a variety of factors that damage the liver, such as viruses and alcohol use. Obesity is also associated with liver damage.</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <img src="{% static 'smart/images/imgLiver.jpg' %}" width="100%"/>
@@ -124,7 +203,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <p style="font-size: 0.9rem">Breast cancer is cancer that develops from breast tissue. In those with distant spread of the disease, there may be bone pain, swollen lymph nodes, shortness of breath, or yellow skin.</p>
+                                                    <p style="font-size: 1rem">Breast cancer develops from breast tissue. In those with distant spread of the disease, there may be bone pain, swollen lymph nodes, shortness of breath, or yellow skin.</p>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <img src="{% static 'smart/images/imgBC.png' %}" width="100%"/>

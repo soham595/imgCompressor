@@ -128,9 +128,7 @@ a  {
     text-decoration: none;
     font: 1.3rem Raleway;
     padding: 12px 35px;
-    margin-right: 52px;
     position: relative;
-
 }
 
 .navcust
@@ -177,7 +175,7 @@ div.borderYtoX a:before
 div.borderYtoX a:after
 {
     right: 0px;
-    bottom:6px;
+    bottom: 8px;
 }
 
 div.borderYtoX .dropdown-menu a:after
@@ -370,10 +368,6 @@ footer {
     margin-top: 4rem;
 }
 
-h1 {
-    color: #6e706e;
-}
-
 .content {
     margin-bottom: 0;
 }
@@ -448,4 +442,12 @@ p {
 
 span {
     color: navajowhite;
+}
+
+h1 {
+    color: #6e706e;
+}
+
+.site-info {
+    background-color: #000000;
 }
