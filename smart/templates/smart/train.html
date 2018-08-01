@@ -53,7 +53,14 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <form action="/smart/save-weights" method="post">
+            <form action="/smart/save-weights-liver" method="post">
+                {% csrf_token %}
+                <p id="trainp">Your model is being trained, please wait...</p>
+                <h1 id="trainh">Click the Button</h1>
+                <button type="submit" class="btn btn-danger" id="train">Train Model</button>
+            </form>
+
+            <form action="/smart/save-weights-bc" method="post">
                 {% csrf_token %}
                 <p id="trainp">Your model is being trained, please wait...</p>
                 <h1 id="trainh">Click the Button</h1>
