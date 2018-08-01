@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^smart/', include('smart.urls')),
+    url(r'^smart/', include('smart.urls', namespace='smart')),
     url(r'^$', views.home, name='index'),
 ]
 
