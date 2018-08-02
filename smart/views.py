@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
@@ -86,7 +87,7 @@ def checkForLiver(request):
     print(inp.hasDisease)
     print(inp.hasDisease == 1)
 
-    return render(request, 'smart/output.html', {"result": inp})
+    return render(request, 'smart/output.html', {"LiverResult": inp})
     #return render(request, 'smart/output.html')
 
 
@@ -139,15 +140,15 @@ def checkForBreastCancer(request):
     gender = request.POST["gender"]
     bc.username = request.user.username
 
-    x1 = np.array([[bc.radius_mean], [bc.texture_mean], [bc.perimeter_mean], [bc.area_mean], [bc.smoothness_mean],
-                   [bc.compactness_mean], [bc.concavity_mean], [bc.concave_points_mean], [bc.symmetry_mean],
-                   [bc.fractal_dimension_mean],
-                   [bc.radius_se], [bc.texture_se], [bc.perimeter_se], [bc.area_se], [bc.smoothness_se],
-                   [bc.compactness_se], [bc.concavity_se], [bc.concave_points_se], [bc.symmetry_se],
-                   [bc.fractal_dimension_se],
-                   [bc.radius_worst], [bc.texture_worst], [bc.perimeter_worst], [bc.area_worst], [bc.smoothness_worst],
-                   [bc.compactness_worst], [bc.concavity_worst], [bc.concave_points_worst], [bc.symmetry_worst],
-                   [bc.fractal_dimension_worst]])
+    x1 = np.array([[int(bc.radius_mean)], [int(bc.texture_mean)], [int(bc.perimeter_mean)], [int(bc.area_mean)], [int(bc.smoothness_mean)],
+                   [int(bc.compactness_mean)], [int(bc.concavity_mean)], [int(bc.concave_points_mean)], [int(bc.symmetry_mean)],
+                   [int(bc.fractal_dimension_mean)],
+                   [int(bc.radius_se)], [int(bc.texture_se)], [int(bc.perimeter_se)], [int(bc.area_se)], [int(bc.smoothness_se)],
+                   [int(bc.compactness_se)], [int(bc.concavity_se)], [int(bc.concave_points_se)], [int(bc.symmetry_se)],
+                   [int(bc.fractal_dimension_se)],
+                   [int(bc.radius_worst)], [int(bc.texture_worst)], [int(bc.perimeter_worst)], [int(bc.area_worst)], [int(bc.smoothness_worst)],
+                   [int(bc.compactness_worst)], [int(bc.concavity_worst)], [int(bc.concave_points_worst)], [int(bc.symmetry_worst)],
+                   [int(bc.fractal_dimension_worst)]])
 
     xyz1 = cancer.check(x1)
 
@@ -159,7 +160,7 @@ def checkForBreastCancer(request):
     bc.hasDisease = dic["res"]
     bc.save()
 
-    return render(request, 'smart/output2.html', {"result": bc, "name": name, "age": age, "gender": gender})
+    return render(request, 'smart/output.html', {"result": bc, "name": name, "age": age, "gender": gender})
 
 
 class UserFormView(View):
