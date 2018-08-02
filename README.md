@@ -18,10 +18,10 @@ SQLite3
 
 SETUP The Project ->
 
-virtualenv djangoenv
-cd djangoenv
-cd Scripts
-activate
+virtualenv djangoenv,
+cd djangoenv,
+cd Scripts,
+activate,
 pip install -r requirements.txt
 
 
