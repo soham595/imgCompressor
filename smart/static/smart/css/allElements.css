@@ -342,7 +342,7 @@ footer {
 }
 
 #input-container {
-    background-color: rgba(52, 52, 52, 0.36);
+    background-color: rgba(38, 38, 38, 0.48);
     padding-top: 2%;
 }
 
@@ -355,7 +355,7 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-//color: #884530;
+    //color: #884530;
     color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
@@ -485,4 +485,18 @@ div.borderYtoX .nav-login a:after
 
 #output-nav .dropdown-menu {
     background: rgba(0, 0, 0, 0.8);
+}
+
+.btn-none {
+    background: transparent;
+    border: 0!important;
+    box-shadow: 0px 0px 0px 0px!important;
+}
+
+.accordion td {
+    color: lightgray;
+}
+
+.accordion th {
+    font-weight: normal!important;
 }

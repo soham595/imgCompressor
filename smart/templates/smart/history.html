@@ -1,49 +1,209 @@
-
 {% extends 'smart/output.html' %}
 {% load staticfiles %}
-
-{% block script %}
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#accordion").accordion();
-        });
-    </script>
-{% endblock %}
-
-
 {% block history %}
     {% for liver in liverDiseases %}
-        <!--<div class="container">
-        <p>{{ liver.name }}</p>
-        </div> -->
-        <div class="container" id="accordion">
-            <h3>Section 1</h3>
-            <div>
-                <p>
-                    Insert Liver Disease report here
-                </p>
+        <div class="container top-margin">
+            <br><h2 style="color: lightgrey">Liver Diagnosis</h2><br><br>
+            <div class="accordion" id="accordionExample1">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5>
+                            <button class="btn btn-none collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <a style="font-size: 1.5rem">Report #1</a>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                        <div class="card-body" style="color: navajowhite;">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-md-10">
+                                    <table class="table table-borderless table-hover">
+                                        <tr>
+                                            <th>Patient Name:</th>
+                                            <td>{{ LiverResult.name }}</td>
+                                            <th>Patient Age:</th>
+                                            <td>{{ LiverResult.age }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Patient ID:</th>
+                                            <td>{{ LiverResult.id }}</td>
+                                            <th>Patient Gender:</th>
+                                            <td>{{ LiverResult.gender }}</td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <table class="table table-borderless table-hover">
+                                                <tr>
+                                                    <td></td>
+                                                    <th>Actual</th>
+                                                    <th>Expected</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Total Bilirubin:</th>
+                                                    <td>{{ LiverResult.total_bilirubin }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Direct Bilirubin:</th>
+                                                    <td>{{ LiverResult.direct_bilirubin }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Alkaline Phosphotase:</th>
+                                                    <td>{{ LiverResult.alkaline_phosphotase }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Alamine Aminotransferase:</th>
+                                                    <td>{{ LiverResult.alamine_aminotransferase }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table class="table table-borderless table-hover">
+                                                <tr>
+                                                    <td></td>
+                                                    <th>Actual</th>
+                                                    <th>Expected</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Aspartate Aminotransferase:</th>
+                                                    <td>{{ LiverResult.aspartate_aminotransferase }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Total Proteins:</th>
+                                                    <td>{{ LiverResult.total_proteins }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Albumin:</th>
+                                                    <td>{{ LiverResult.albumin }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Albumin Globulin Ratio:</th>
+                                                    <td>{{ LiverResult.albuminGlobulin_ratio }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     {% endfor %}
-
 
     {% for bc in bcDiseases %}
-
-        <div class="container" id="accordion">
-            <h3>Section 1</h3>
-            <div>
-                <p>
-                    Insert Breast Cancer report here
-                </p>
+        <div class="container top-margin">
+            <br><h2 style="color: lightgrey">Breast Cancer Diagnosis</h2><br><br>
+            <div class="accordion" id="accordionExample2">
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5>
+                            <button class="btn btn-none collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <a style="font-size: 1.5rem">Report #2</a>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample2">
+                        <div class="card-body" style="color: navajowhite;">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-md-10">
+                                    <table class="table table-borderless table-hover">
+                                        <tr>
+                                            <th>Patient Name:</th>
+                                            <td>{{ LiverResult.name }}</td>
+                                            <th>Patient Age:</th>
+                                            <td>{{ LiverResult.age }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Patient ID:</th>
+                                            <td>{{ LiverResult.id }}</td>
+                                            <th>Patient Gender:</th>
+                                            <td>{{ LiverResult.gender }}</td>
+                                        </tr>
+                                    </table>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <table class="table table-borderless table-hover">
+                                                <tr>
+                                                    <td></td>
+                                                    <th>Actual</th>
+                                                    <th>Expected</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Total Bilirubin:</th>
+                                                    <td>{{ LiverResult.total_bilirubin }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Direct Bilirubin:</th>
+                                                    <td>{{ LiverResult.direct_bilirubin }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Alkaline Phosphotase:</th>
+                                                    <td>{{ LiverResult.alkaline_phosphotase }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Alamine Aminotransferase:</th>
+                                                    <td>{{ LiverResult.alamine_aminotransferase }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <table class="table table-borderless table-hover">
+                                                <tr>
+                                                    <td></td>
+                                                    <th>Actual</th>
+                                                    <th>Expected</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Aspartate Aminotransferase:</th>
+                                                    <td>{{ LiverResult.aspartate_aminotransferase }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Total Proteins:</th>
+                                                    <td>{{ LiverResult.total_proteins }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Albumin:</th>
+                                                    <td>{{ LiverResult.albumin }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Albumin Globulin Ratio:</th>
+                                                    <td>{{ LiverResult.albuminGlobulin_ratio }}</td>
+                                                    <td>(&emsp)</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     {% endfor %}
 {% endblock %}
-
-
 {% block predict %}
 {% endblock %}
