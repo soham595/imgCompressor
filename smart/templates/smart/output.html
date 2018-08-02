@@ -1,46 +1,31 @@
-{% extends 'smart/base.html' %}
-{% block out %}
-    {% load staticfiles %}
-<!--<!DOCTYPE html>
+{% load staticfiles %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
     <link rel="shortcut icon" href="../../static/smart/images/favicon2.ico">
 
+    <link rel="stylesheet" href="{% static 'smart/css/mdb.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/allElements.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/parallax.css' %}">
+    <link rel="stylesheet" href="{% static 'smart/css/output.css' %}">
 
     <script type="text/javascript" src="{% static 'smart/js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'smart/js/mdb.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/tether.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/parallax.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/materialize.min.js' %}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 
     <title>Smart Medical Diagnosis</title>
-
-    <style>
-        body, html {
-            height: 100%;
-
-            /* The image used */
-            background-image: url("../../static/smart/images/bghome6.jpg");
-            background-color: black;
-
-            /* Full height */
-            height: 100% !important;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 <body class="bg">
 <div id="nav-bar">
-    <nav class="navbar navbar-expand-sm navbar-dark navcust navmar">
+    <nav class="navbar navbar-expand-sm navbar-dark navcust navmar fixed-top" id="output-nav">
         <div>
             <div class="navbar-brand link-font py-0">
                 <a href="/">SmartDiag</a>
@@ -49,21 +34,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <div class="mid" id="mid">
+        <div class="mid">
             <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
                 <ul class="nav navbar-nav mr-auto py-0">
-                    <li><a href="/smart/">HOME</a></li>
-                    <li><a href="/smart/" id="inp1-button">LIVER DISEASE</a></li>
-                    <li><a href="/smart/" id="inp2-button">BREAST CANCER</a></li>
-                    <li><a href="/smart/" id="about-button">ABOUT</a></li>
-                    <li><a href="/smart/" id="cont-button">CONTACT US</a></li>
+                    <li><a href="/#main">HOME</a></li>
+                    <li class="dropdown">
+                        <a class="dropbtn" href="" data-toggle="dropdown">CATEGORY</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item inp1-button" href="/#input" id="inp1-button">Liver</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item inp2-button" href="/#input" id="inp2-button">Breast Cancer</a>
+                        </div>
+                    </li>
+                    <li><a href="/#about" id="about-button">ABOUT</a></li>
+                    <li><a data-toggle="modal" data-target="#modalContactForm" id="cont-button">CONTACT US</a></li>
                 </ul>
             </div>
         </div>
+        <div class="borderYtoX">
+            <ul class="nav-login float-right nav navbar-nav py-0">
+                <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" data-toggle="modal" data-target="#modalLoginForm" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
+            </ul>
+        </div>
     </nav>
-</div>-->
-
-
+</div>
 <div class="content container container-custom">
     <h2>Smart Diagonosis Report</h2>
     <hr>
@@ -90,57 +84,57 @@
                     <table class="table table-borderless table-hover">
                         <tr>
                             <td></td>
-                            <th>Expected</th>
                             <th>Actual</th>
+                            <th>Expected</th>
                         </tr>
                         <tr>
                             <th>Total Bilirubin:</th>
-                            <td></td>
                             <td>{{ result.total_bilirubin }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Direct Bilirubin:</th>
-                            <td></td>
                             <td>{{ result.direct_bilirubin }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Alkaline Phosphotase:</th>
-                            <td></td>
                             <td>{{ result.alkaline_phosphotase }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Alamine Aminotransferase:</th>
-                            <td></td>
                             <td>{{ result.alamine_aminotransferase }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-md-6">
                     <table class="table table-borderless table-hover">
                         <tr>
-                            <td>
-                            <th>Expected</th>
+                            <td></td>
                             <th>Actual</th>
+                            <th>Expected</th>
                         </tr>
                         <tr>
                             <th>Aspartate Aminotransferase:</th>
-                            <td></td>
                             <td>{{ result.aspartate_aminotransferase }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Total Proteins:</th>
-                            <td></td>
                             <td>{{ result.total_proteins }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Albumin:</th>
-                            <td></td>
                             <td>{{ result.albumin }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Albumin Globulin Ratio:</th>
-                            <td></td>
                             <td>{{ result.albuminGlobulin_ratio }}</td>
+                            <td>(&emsp)</td>
                         </tr>
                     </table>
                 </div>
@@ -155,10 +149,19 @@
         <h4>Patient has no liver disease</h4>
     {% endif %}
 </div>
-{% endblock %}
-
-
-<!--</body>
+<footer id="contact" class="container-fluid" style="margin-top: 2rem">
+    <div class="row">
+        <div class="left-footer col-md-8">
+            <span class="footer-text">Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>
+        </div>
+        <div class="right-footer col-md-4">
+            <span class="linkto" onclick="location='https://github.com/soham595/smartDiag'"><i class="fab fa-github-square prefix mr-1"></i>GitHub</span>&ensp
+            <span>-</span>&ensp
+            <span class="linkto" data-toggle="modal" data-target="#modalContactForm"><i class="fa fa-envelope prefix mr-1"></i>Contact Us</span>&ensp
+            <span>-</span>&ensp
+            <span class="linkto"><i class="fas fa-sign-in-alt prefix mr-1"></i>Login</span>
+        </div>
+    </div>
+</footer>
+</body>
 </html>
-
--->
