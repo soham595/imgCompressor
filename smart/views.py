@@ -231,7 +231,7 @@ def historyView(request):
         return render(request, 'smart/login.html')
 
     username = request.user.username
-    lvr = LiverPatientInfo.objects.get(username=username)
-    bc = BreastCancerPatientInfo.objects.get(username=username)
+    lvr = LiverPatientInfo.objects.filter(username=username)
+    bc = BreastCancerPatientInfo.objects.filter(username=username)
     context = {"liverDiseases": lvr, "bcDiseases": bc}
     return render(request, 'smart/history.html', context)

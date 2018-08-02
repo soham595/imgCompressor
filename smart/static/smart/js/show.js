@@ -61,6 +61,5 @@ $(function() {
 });
 
 $(document).ready(function(){
-    $("#modalLoginForm").modal();
-
+    $("#modalLoginForm").modal("show");
 });
