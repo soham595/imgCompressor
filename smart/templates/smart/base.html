@@ -27,7 +27,7 @@
 <body style="background-color:black">
 <div class="parallax-container" id="main">
     <div class="parallax">
-        <img src="{% static 'smart/images/bghome.jpg' %}"/>
+        <img src="{% static 'smart/images/bghome10.jpg' %}"/>
     </div>
     <div class="main-content">
         <div id="nav-bar">
@@ -40,7 +40,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div class="mid" id="mid">
+                <div class="mid">
                     <div class="borderYtoX collapse navbar-collapse" id="ntopnav">
                         <ul class="nav navbar-nav mr-auto py-0">
                             <li><a href="/#main">HOME</a></li>
@@ -54,23 +54,35 @@
                                 </div>
                             </li>
                             <li><a href="/#about" id="about-button">ABOUT</a></li>
-                            <li><a data-toggle="modal" href="" data-target="#modalContactForm" id="cont-button">CONTACT
-                                US</a></li>
-                            <li>
-                                <a href="{% url 'smart:logout_user' %}">
-                                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
-                                </a>
-                            </li>
+                            <li><a data-toggle="modal" data-target="#modalContactForm" id="cont-button">CONTACT US</a></li>
+                            <li><a href="{% url 'smart:logout_user' %}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout</a></li>
                             <li class="{% block login_active %}{% endblock %}"><a href="{% url 'smart:login_user' %}">Log In</a></li>
-
-                        </ul>
+                         </ul>
                     </div>
+                </div>
+                <div class="borderYtoX">
+                    <ul class="nav-login float-right nav navbar-nav py-0">
+                        <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" data-toggle="modal" data-target="#modalLoginForm" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
+                    </ul>
                 </div>
             </nav>
         </div>
-        <div class="content container">
-            {% block out %}
-            {% endblock %}
+        {% block out %}
+        {% endblock %}
+        <div class="container top-margin">
+            <div class="row">
+                <div class="col-md-6 contentMain">
+                    <h1 style="font-size: 4.5rem; font-weight: lighter; color: lightgray">SmartDiag</h1>
+                    <h1 style="font-size: 2rem; margin-left: 2rem; margin-top: -0.5rem; font-weight: lighter; color: #9C9C9C"><span style="color: #BA0F00!important;">-</span> Better Prediction</h1>
+                </div>
+            </div>
+            <div class="row btnBottom">
+                <div class="col-md-12">
+                    <ul class="nav navbar-nav mr-auto py-0">
+                        <li><a href="/#entry" class="btn bounce"><img src="{% static 'smart/images/arrow-down.png' %}" width="100px" height="70px"/></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

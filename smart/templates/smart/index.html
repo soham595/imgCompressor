@@ -38,14 +38,133 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid entry-container">
-        <div class="content container-fluid" id="entry">
-            <h1>Site Entry</h1>
-            <div class="row top-margin">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+    <div class="modal fade" id="modalLoginForm" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
                 </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="defaultForm-email" class="form-control validate">
+                        <label for="defaultForm-email">Your email</label>
+                    </div>
+                    <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate">
+                        <label for="defaultForm-pass">Your password</label>
+                    </div>
+                    <button class="btn btn-default float-right">Login</button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <a href="#modalRegisterForm" data-toggle="modal" data-dismiss="modal" style="color: black!important; font-size: 1.2rem" data-target="#modalRegisterForm">Don't have an account? Signup</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Register</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fa fa-user prefix grey-text"></i>
+                        <input type="text" id="orangeForm-name" class="form-control validate">
+                        <label for="orangeForm-name">Your name</label>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="orangeForm-email" class="form-control validate">
+                        <label for="orangeForm-email">Your email</label>
+                    </div>
+                    <div class="md-form mb-4">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="orangeForm-pass" class="form-control validate">
+                        <label for="orangeForm-pass">Your password</label>
+                    </div>
+                    <button class="float-right btn btn-deep-orange">Sign up</button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <a href="#modalLoginForm" data-toggle="modal" data-dismiss="modal" style="color: black!important; font-size: 1.2rem" data-target="#modalLoginForm">Already have an account? Signin</a>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container entry-container">
+        <div class="content"  id="entry">
+            <div class="row">
+                <div class="col-md-7 carousel-container">
+                    <h1 style="font-size: 3rem;font-weight: lighter; color: lightgray">Smart Medical Diagnosis</h1>
+                    <br>
+                    <br>
+                    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <p style="min-height: 10rem; font-style: italic; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">SmartDiag believes it is possible to put an accessible and affordable health service in the hands of every person on earth.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p style="min-height: 10rem; font-style: italic; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">How? By combining the ever-growing computing power of machines with the best medical expertise of humans to create a comprehensive, immediate
+                                    and personalised health service and making it universally available.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p style="min-height: 10rem; font-style: italic; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">Prototypes embodying such reasoning can explain their conclusions in medical terms that can be reviewed by the user.</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p style="min-height: 10rem; font-style: italic; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">We care about your health and it's our first priority!</p>
+                            </div>
+                            <div class="carousel-item">
+                                <p style="min-height: 10rem; font-style: italic; font-size: 1.2rem; line-height: 2rem; font-weight: lighter">We are on a brink of a revolutionary era in medical diagnosis and it is just a few steps away from you.</p>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="{% static 'smart/images/imgEntry.jpg' %}" width="500px"/>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="container-fluid site-info">
+        <hr color="lightgray">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'smart/images/site-info.png' %}" width="250px"/>
+            </div>
+            <div class="col-md-8">
+                <h1 style="font-weight: normal; font-style: oblique; color: lightgray">Find out the outcome of the malady by filling out the required details<span style="color: #BA0F00!important;"> .</span></h1>
+                <br>
+                <h5 style="font-weight: normal; font-size: 1.5rem; color: lightgray;">Can be used by both doctors and patients if they have the report<span style="color: #BA0F00!important;"> .</span></h5>
+                <br>
             </div>
         </div>
     </div>
@@ -53,9 +172,9 @@
         <div class="parallax">
             <img src="{% static 'smart/images/blur2.jpg' %}"/>
         </div>
-        <div class="content container">
+        <div class="content container" id="input-container">
             <div class="initial">
-                <h3>Select your category to enter details</h3>
+                <h3 style="font-weight: normal">Select your category to enter details</h3>
                 <div class="container-fluid fluid-custom">
                     <div class="row">
                         <div class="col-md-1"></div>
@@ -66,7 +185,14 @@
                                          data-tilt-perspective="100">
                                         <div class="card-header"><a class="inp1-button" href="#input" style="font-size: 1.5rem;">Liver</a></div>
                                         <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p style="font-size: 1rem">Liver disease can be inherited (genetic) or caused by a variety of factors that damage the liver, such as viruses and alcohol use. Obesity is also associated with liver damage.</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img src="{% static 'smart/images/imgLiver.jpg' %}" width="100%"/>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +201,14 @@
                                          data-tilt-perspective="100">
                                         <div class="card-header"><a class="inp2-button" href="#input" style="font-size: 1.5rem;">Breast Cancer</a></div>
                                         <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p style="font-size: 1rem">Breast cancer develops from breast tissue. In those with distant spread of the disease, there may be bone pain, swollen lymph nodes, shortness of breath, or yellow skin.</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img src="{% static 'smart/images/imgBC.png' %}" width="100%"/>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -84,20 +217,13 @@
                                 <div class="col-md-6">
                                     <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
                                          data-tilt-perspective="100">
-                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">Cat. 3</a></div>
+                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">More Categories coming soon.</a></div>
                                         <div class="card-body">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="card" data-tilt data-tilt-max="5" data-tilt-speed="100"
-                                         data-tilt-perspective="100">
-                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">Cat. 4</a></div>
-                                        <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +306,7 @@
                                 <div class="row">
                                     <div class="col-md-4"></div>
                                     <div class="col-md-4">
-                                        <button type="submit" class="btn btn-outline-danger btn-cust">Submit</button>
+                                        <button type="submit" class="btn btn-outline-mdb-color btn-cust">Submit</button>
                                     </div>
                                     <div class="col-md-4"></div>
                                 </div>
@@ -190,43 +316,343 @@
                     <div class="card" id="inp2" data-tilt data-tilt-max="2" data-tilt-speed="100"
                          data-tilt-perspective="500">
                         <div class="card-header">
-                            <h4>Breast Cancer Test Report Details</h4>
+                            <h4>Breast Cancer Test Report</h4>
                         </div>
                         <div class="card-body">
                             <form action="/smart/asd" method="post" class="custom-form" id="regForm">
+                                {% csrf_token %}
                                 <div class="tab">
-                                    <div class="row form-group">
-                                        <div class="col-md-6">
-                                            <label for="me" class="col-form-label">Nasdme:</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" id="ame" name="me" class="form-control"
-                                                   placeholder="Full Name" oninput="this.className = 'form-control'" required/>
+                                    <h4>Enter Patient Details &ensp<i class="fa fa-user prefix grey-text"></i></h4>
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                            <div class="modal-body">
+                                                <div class="md-form form-group mb-5">
+                                                    <label for="bcname" class="col-form-label">Name:</label>
+                                                    <input type="text" id="bcname" name="bcname" class="form-control"
+                                                           oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                                <div class="md-form form-group mb-5">
+                                                    <label for="bcage" class="col-form-label">Age:</label>
+                                                    <input type="text" id="bcage" name="bcage" class="form-control"
+                                                           oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                                <div class="md-form form-group mb-5">
+                                                    <label for="bcgender" class="col-form-label">Gender(M/F):</label>
+                                                    <input type="text" id="bcgender" name="bcgender" class="form-control"
+                                                           oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- One "tab" for each step in the form: -->
-                                <div class="tab">Contact Info:
-                                    <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
-                                    <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+                                <div class="tab">
+                                    <h4>Enter the Mean values</h4>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanRadius" class="col-form-label">Radius:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanRadius" name="bcMeanRadius" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" min=0 step="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanTexture" class="col-form-label">Texture:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanTexture" name="bcMeanTexture" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanPerimeter" class="col-form-label">Perimeter:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanPerimeter" name="bcMeanPerimeter" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanArea" class="col-form-label">Area:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanArea" name="bcMeanArea" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanSmoothness" class="col-form-label">Smoothness:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanSmoothness" name="bcMeanSmoothness" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanCompactness" class="col-form-label">Compactness:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanCompactness" name="bcMeanCompactness" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanConcativity" class="col-form-label">Concativity:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanConcativity" name="bcMeanConcativity" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" min=0 step="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanConPoints" class="col-form-label">Concave Points:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanConPoints" name="bcMeanConPoints" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanSymmetry" class="col-form-label">Symmetry:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanSymmetry" name="bcMeanSymmetry" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcMeanFractal" class="col-form-label">Fractal Dimension:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcMeanFractal" name="bcMeanFractal" class="form-control"
+                                                           placeholder="Mean" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab">Birthday:
-                                    <p><input placeholder="dd" oninput="this.className = ''"></p>
-                                    <p><input placeholder="mm" oninput="this.className = ''"></p>
-                                    <p><input placeholder="yyyy" oninput="this.className = ''"></p>
+                                <div class="tab">
+                                    <h4>Enter the Standard Error values</h4>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSERadius" class="col-form-label">Radius:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSERadius" name="bcSERadius" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSETexture" class="col-form-label">Texture:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSETexture" name="bcSETexture" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSEPerimeter" class="col-form-label">Perimeter:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSEPerimeter" name="bcSEPerimeter" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" min=0 step="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSEArea" class="col-form-label">Area:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSEArea" name="bcSEArea" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSESmoothness" class="col-form-label">Smoothness:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSESmoothness" name="bcSESmoothness" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSECompactness" class="col-form-label">Compactness:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSECompactness" name="bcSECompactness" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSEConcativity" class="col-form-label">Concativity:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSEConcativity" name="bcSEConcativity" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSEConPoints" class="col-form-label">Concave Points:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSEConPoints" name="bcSEConPoints" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSESymmetry" class="col-form-label">Symmetry:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSESymmetry" name="bcSESymmetry" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" min=0 step="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcSEFractal" class="col-form-label">Fractal Dimension:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcSEFractal" name="bcSEFractal" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="tab">Login Info:
-                                    <p><input placeholder="Username..." oninput="this.className = ''"></p>
-                                    <p><input placeholder="Password..." oninput="this.className = ''"></p>
+                                <div class="tab">
+                                    <h4>Enter the Worst or Largest Mean values</h4>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstRadius" class="col-form-label">Radius:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstRadius" name="bcWorstRadius" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstTexture" class="col-form-label">Texture:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstTexture" name="bcWorstTexture" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstPerimeter" class="col-form-label">Perimeter:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstPerimeter" name="bcWorstPerimeter" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" min=0 step="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstArea" class="col-form-label">Area:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstArea" name="bcWorstArea" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstSmoothness" class="col-form-label">Smoothness:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstSmoothness" name="bcWorstSmoothness" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstCompactness" class="col-form-label">Compactness:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstCompactness" name="bcWorstCompactness" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstConcativity" class="col-form-label">Concativity:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstConcativity" name="bcWorstConcativity" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstConPoints" class="col-form-label">Concave Points:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstConPoints" name="bcWorstConPoints" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstSymmetry" class="col-form-label">Symmetry:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstSymmetry" name="bcWorstSymmetry" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" min=0 step="" required/>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6">
+                                                    <label for="bcWorstFractal" class="col-form-label">Fractal Dimension:</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="bcWorstFractal" name="bcWorstFractal" class="form-control"
+                                                           placeholder="Standard Error" oninput="this.className = 'form-control'" required/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div  id="stepBtn" style="overflow:auto;">
+                                <div  id="stepBtn">
                                     <div style="float:right;">
-                                        <button type="button" class="btn btn-outline-danger" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                        <button type="button" class="btn btn-outline-danger" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                        <button type="button" class="btn btn-outline-mdb-color btn-cust" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                        <button type="button" class="btn btn-outline-mdb-color btn-cust" id="nextBtn" onclick="nextPrev(1)">Next</button>
                                     </div>
                                 </div>
-                                <!-- Circles which indicates the steps of the form: -->
-                                <div style="text-align:center;margin-top:40px;">
+                                <div style="text-align:center;margin-top:6rem;">
                                     <span class="step"></span>
                                     <span class="step"></span>
                                     <span class="step"></span>
@@ -288,11 +714,14 @@
         </div>-->
     <div class="container-fluid about-container">
         <div class="content container-fluid" id="about">
-            <h1>ABOUT</h1>
+            <h1 style="font-weight: lighter; color: lightgray;">ABOUT</h1>
             <div class="row top-margin">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</span>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <p style="font-style: italic; font-weight: lighter; font-size: 1.2rem; line-height: 2.5rem">SmartDiag is the diagnosis you can rely on. It is a trusted website that takes in input from the users regarding the chemical levels
+                        in our body and predicts whether he/she is suffering from liver disease and breast cancer accordingly.It is an attempt to overcome limitations
+                        inherent in conventional computer-aided diagnosis. Strategies have been developed to limit the number of hypothesis that a program must consider.
+                    </p>
                 </div>
             </div>
         </div>
@@ -344,14 +773,14 @@
     <footer id="contact" class="container-fluid">
         <div class="row">
             <div class="left-footer col-md-8">
-                <span>Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>
+                <span class="footer-text">Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>
             </div>
-            <div class="right-footer col-md-4">
-                <span class="linkto" onclick="location='https://github.com/soham595/smartDiag'"><i class="fab fa-github-square prefix mr-1"></i>GitHub </span>
-                <span> </span>
-                <span class="linkto" data-toggle="modal" data-target="#modalContactForm"><i class="fa fa-envelope prefix mr-1"></i>Contact Us </span>
-                <span> </span>
-                <span class="linkto"><i class="fa fa-user prefix mr-1"></i>Login</span>
+            <div class="right-footer col-md-4">           
+                <span class="linkto" onclick="location='https://github.com/soham595/smartDiag'"><i class="fab fa-github-square prefix mr-1"></i>GitHub</span>&ensp
+                <span>-</span>&ensp
+                <span class="linkto" data-toggle="modal" data-target="#modalContactForm"><i class="fa fa-envelope prefix mr-1"></i>Contact Us</span>&ensp
+                <span>-</span>&ensp
+                <span class="linkto"><i class="fas fa-sign-in-alt prefix mr-1"></i>Login</span>
             </div>
         </div>
     </footer>

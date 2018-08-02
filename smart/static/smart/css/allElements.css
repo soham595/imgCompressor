@@ -129,7 +129,6 @@ a  {
     font: 1.3rem Raleway;
     padding: 12px 35px;
     position: relative;
-
 }
 
 .navcust
@@ -175,11 +174,23 @@ div.borderYtoX a:before
 
 div.borderYtoX a:after
 {
+    right: 0px;
+    bottom: 8px;
+}
+
+div.borderYtoX .dropdown-menu a:after
+{
     right: 15px;
-    bottom:6px;
 }
 
 div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
+{
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+
+div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:hover:after
 {
     opacity: 1;
     height: 2px;
@@ -225,7 +236,6 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
 .btn-cust {
     padding-left: 3rem;
     padding-right: 3rem;
-    margin-right: 10%;
     border-color: #BA0F00!important;
     color: #BA0F00!important;
 }
@@ -235,10 +245,6 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     border-color: #BA0F00!important;
     color: navajowhite!important;
     background-color: #BA0F00!important;
-}
-
-.btn-outline-danger:hover {
-    background-color: #BA0F00;
 }
 
 .form-group:hover {
@@ -328,7 +334,7 @@ footer {
     border-top: 1px solid;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.68);
-    color: #884530;
+    color: lightgray;
 }
 
 .about-container {
@@ -340,7 +346,8 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-    color: #884530;
+    //color: #884530;
+    color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
 }
@@ -359,10 +366,6 @@ footer {
 
 .fluid-custom {
     margin-top: 4rem;
-}
-
-h1 {
-    color: #6e706e;
 }
 
 .content {
@@ -398,7 +401,7 @@ h1 {
 }
 
 .entry-container {
-    min-height: 35rem;
+    min-height: 25rem;
 }
 
 .linkto:hover {
@@ -408,4 +411,70 @@ h1 {
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.9);
     opacity: 0.9!important;
+}
+
+#main {
+    min-height: 41rem;
+    padding-bottom: 0;
+}
+
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    background: transparent;
+    border: 0!important;
+    box-shadow: 0px 0px 0px 0px!important;
+}
+
+.btnBottom {
+    margin-top: 10rem;
+}
+
+p {
+    color: navajowhite!important;
+    font-weight: lighter;
+}
+
+.footer-text {
+    color: lightgray;
+}
+
+span {
+    color: navajowhite;
+}
+
+h1 {
+    color: #6e706e;
+}
+
+.site-info {
+    background-color: #000000;
+}
+
+.nav-login a
+{
+    padding: 15px 15px!important;
+}
+
+div.borderYtoX .nav-login a:before
+{
+    left: 0px;
+    top: 12px;
+}
+
+div.borderYtoX .nav-login a:after
+{
+    right: 0px;
+    bottom: 9px;
+}
+
+#output-nav {
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 0;
+    position: fixed;
+}
+
+#output-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
 }

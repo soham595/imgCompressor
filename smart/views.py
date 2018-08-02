@@ -79,6 +79,7 @@ def checkForLiver(request):
     print(inp.hasDisease == 1)
 
     return render(request, 'smart/output.html', {"result": inp})
+    #return render(request, 'smart/output.html')
 
 
 def checkForBreastCancer(request):

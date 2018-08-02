@@ -36,13 +36,26 @@ $(function () {
 });
 
 $(function() {
-    $("#trainp").hide();
-    let particles = new Particles('#train');
-    let particles2 = new Particles('#trainh');
-    $("#train").click(function () {
-        // $("#trainh").hide(1000);
-        particles2.disintegrate();
-        particles.disintegrate();
-        $("#trainp").slideDown(1000);
+    $("#trainpLiver").hide();
+    $("#trainpBC").hide();
+    let particlest = new Particles('#trainLiver');
+    let particlesbc = new Particles('#trainBC');
+    let particlest2 = new Particles('#trainhLiver');
+    let particlesbc2 = new Particles('#trainhBC');
+    $("#trainLiver").click(function () {
+         $("#trainhLiver").hide(1000);
+        particlest2.disintegrate();
+        particlesbc2.disintegrate();
+        particlest.disintegrate();
+        particlesbc.disintegrate();
+        $("#trainpLiver").slideDown(1000);
+    });
+    $("#trainBC").click(function () {
+         $("#trainhBC").hide(1000);
+        particlest2.disintegrate();
+        particlesbc2.disintegrate();
+        particlest.disintegrate();
+        particlesbc.disintegrate();
+        $("#trainpLiver").slideDown(1000);
     });
 });
