@@ -56,21 +56,13 @@
                             <li><a href="/#about" id="about-button">ABOUT</a></li>
                             <li><a data-toggle="modal" data-target="#modalContactForm" id="cont-button">CONTACT US</a>
                             </li>
-                            <!-- <li class="{% block login_active %}{% endblock %}"><a href="{% url 'smart:login_user' %}">Log In</a></li> -->
                         </ul>
                     </div>
                 </div>
                 {% block login %}
-                    <div class="borderYtoX">
-                        <ul class="nav-login float-right nav navbar-nav py-0">
-                            <li><a data-toggle="modal" data-target="#modalLoginForm" href="{% url 'smart:logout_user' %}" style="font-size: 1.5rem; padding: 8px 18px 12px;" id="login-button">
-                                <i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
-                        </ul>
-                    </div>
                 {% endblock %}
 
                 {% block logout %}
-                    <li><a href="{% url 'smart:logout_user' %}"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout</a></li>
                 {% endblock %}
             </nav>
         </div>
