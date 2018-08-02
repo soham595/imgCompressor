@@ -7,14 +7,14 @@ import numpy as np
 import MLDjango.disease_liver as liver
 import MLDjango.disease_bc as cancer
 from .forms import UserForm
-
+from django.contrib.auth.forms import UserCreationForm
 
 
 def home(request):
-    user = request.user
-    username = user.username
-    print(username)
-    return render(request, 'smart/index.html')
+    # user = request.user
+    # username = user.username
+    # print(username)
+    return render(request, 'smart/index.html', {"login": False})
 
 
 def imageUpload(request):
@@ -195,9 +195,32 @@ class UserFormView(View):
 
                 if user.is_active:
                     login(request, user)
-                    return redirect('smart:index')
+                    return render(request, 'smart/index.html', {"login": True})
 
         return render(request, self.template_name, {'form': form})
+
+
+def register_user(request):
+    #if request.method == "POST":
+     #   username = request.POST['username']
+      #  password = request.POST['password']
+       # email = request.POST['email']
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password')
+            user.set_password(raw_password)
+            user.save()
+            user = authenticate(username=username, password=raw_password)
+
+            login(request, user)
+            return render(request, 'smart/index.html', {"login": True})
+        else:
+            print("Unseccessful")
+
 
 
 def logout_user(request):
@@ -205,8 +228,9 @@ def logout_user(request):
     form = UserForm(request.POST or None)
     context = {
         "form": form,
+        "login": False
     }
-    return render(request, 'smart/login.html', context)
+    return render(request, 'smart/index.html', context)
 
 
 def login_user(request):
@@ -217,9 +241,9 @@ def login_user(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request, 'smart/index.html')
+                return render(request, 'smart/index.html', {"login": True})
             else:
-                return render(request, 'smart/index.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'smart/index.html', {'error_message': 'Your account has been disabled', "login": False})
         else:
             return render(request, 'smart/index.html', {'error_message': 'Invalid login', 'login': False})
     return render(request, 'smart/index.html')
@@ -228,7 +252,7 @@ def login_user(request):
 def historyView(request):
 
     if not request.user.is_authenticated():
-        return render(request, 'smart/login.html')
+        return render(request, 'smart/index.html', {"login": False})
 
     username = request.user.username
     lvr = LiverPatientInfo.objects.filter(username=username)
