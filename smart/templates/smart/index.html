@@ -235,7 +235,7 @@
                                     <div class="col-md-6">
                                         <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
                                              data-tilt-perspective="100">
-                                            <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">More Categories coming soon.</a></div>
+                                            <div class="card-header"><a href="/#input" style="font-size: 1.5rem;">More Categories coming soon.</a></div>
                                             <div class="card-body">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
                                             </div>
@@ -260,7 +260,7 @@
                             <div class="card-body">
                                 <form action="/smart/check-for-liver" method="post" class="custom-form">
                                     {% csrf_token %}
-                                    <div class="row">
+                                    <div class="row rowLiver">
                                         <div class="col-md-6">
                                             <div class="form-group row">
                                                 <label for="name" class="col-form-label col-md-6">Name:</label>
@@ -273,9 +273,9 @@
                                                        placeholder="Enter your age" required/>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
+                                                <label for="gender" class="col-form-label col-md-6">Gender:</label>
                                                 <input type="text" id="gender" name="gender" class="form-control col-md-6"
-                                                       placeholder="Gender(M/F)" required/>
+                                                       placeholder="Gender" required/>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
@@ -356,7 +356,7 @@
                                                                oninput="this.className = 'form-control'" required/>
                                                     </div>
                                                     <div class="md-form form-group mb-5">
-                                                        <label for="bcgender" class="col-form-label">Gender(M/F):</label>
+                                                        <label for="bcgender" class="col-form-label">Gender:</label>
                                                         <input type="text" id="bcgender" name="gender" class="form-control"
                                                                oninput="this.className = 'form-control'" required/>
                                                     </div>
