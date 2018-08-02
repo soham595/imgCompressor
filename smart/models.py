@@ -10,6 +10,7 @@ class Image(models.Model):
 
 
 class LiverPatientInfo(models.Model):
+    username = models.CharField(max_length=15, default="abc")
     name = models.CharField(max_length=15)
     age = models.IntegerField()
     gender = models.CharField(max_length=1)
@@ -33,6 +34,7 @@ class LiverPatientInfo(models.Model):
 
 
 class BreastCancerPatientInfo(models.Model):
+    username = models.CharField(max_length=15, default="abc")
     radius_mean = models.FloatField()
     texture_mean = models.FloatField()
     perimeter_mean = models.FloatField()
@@ -66,4 +68,4 @@ class BreastCancerPatientInfo(models.Model):
     hasDisease = models.IntegerField()
 
     def __str__(self):
-        return self.id
+        return str(self.id)+" "+self.username

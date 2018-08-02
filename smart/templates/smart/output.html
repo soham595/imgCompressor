@@ -22,6 +22,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 
     <title>Smart Medical Diagnosis</title>
+    {% block myScript %}
+    {% endblock %}
 </head>
 <body class="bg">
 <div id="nav-bar">
@@ -52,12 +54,13 @@
             </div>
         </div>
         <div class="borderYtoX">
-            <ul class="nav-login float-right nav navbar-nav py-0">
-                <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" data-toggle="modal" data-target="#modalLoginForm" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
+            <ul class="nav-log float-right nav navbar-nav py-0">
+                <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>LogOut</a></li>
             </ul>
         </div>
     </nav>
 </div>
+{% block report %}
 <div class="content container container-custom">
     <h2>Smart Diagonosis Report</h2>
     <hr>
@@ -148,6 +151,7 @@
     {% else %}
         <h4>Patient has no liver disease</h4>
     {% endif %}
+{% endblock %}
 </div>
 <footer id="contact" class="container-fluid" style="margin-top: 2rem">
     <div class="row">
