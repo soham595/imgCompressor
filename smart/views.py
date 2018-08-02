@@ -219,10 +219,10 @@ def login_user(request):
                 login(request, user)
                 return render(request, 'smart/index.html')
             else:
-                return render(request, 'smart/login.html', {'error_message': 'Your account has been disabled'})
+                return render(request, 'smart/index.html', {'error_message': 'Your account has been disabled'})
         else:
-            return render(request, 'smart/login.html', {'error_message': 'Invalid login'})
-    return render(request, 'smart/login.html')
+            return render(request, 'smart/index.html', {'error_message': 'Invalid login', 'login': False})
+    return render(request, 'smart/index.html')
 
 
 def historyView(request):
@@ -231,7 +231,7 @@ def historyView(request):
         return render(request, 'smart/login.html')
 
     username = request.user.username
-    lvr = LiverPatientInfo.objects.get(username=username)
-    bc = BreastCancerPatientInfo.objects.get(username=username)
+    lvr = LiverPatientInfo.objects.filter(username=username)
+    bc = BreastCancerPatientInfo.objects.filter(username=username)
     context = {"liverDiseases": lvr, "bcDiseases": bc}
     return render(request, 'smart/history.html', context)

@@ -22,8 +22,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 
     <title>Smart Medical Diagnosis</title>
-    {% block myScript %}
-    {% endblock %}
 </head>
 <body class="bg">
 <div id="nav-bar">
@@ -153,6 +151,8 @@
     {% endif %}
 {% endblock %}
 </div>
+{% block history %}
+{% endblock %}
 <footer id="contact" class="container-fluid" style="margin-top: 2rem">
     <div class="row">
         <div class="left-footer col-md-8">

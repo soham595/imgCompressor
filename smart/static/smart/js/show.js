@@ -43,7 +43,7 @@ $(function() {
     let particlest2 = new Particles('#trainhLiver');
     let particlesbc2 = new Particles('#trainhBC');
     $("#trainLiver").click(function () {
-         $("#trainhLiver").hide(1000);
+        $("#trainhLiver").hide(1000);
         particlest2.disintegrate();
         particlesbc2.disintegrate();
         particlest.disintegrate();
@@ -51,7 +51,7 @@ $(function() {
         $("#trainpLiver").slideDown(1000);
     });
     $("#trainBC").click(function () {
-         $("#trainhBC").hide(1000);
+        $("#trainhBC").hide(1000);
         particlest2.disintegrate();
         particlesbc2.disintegrate();
         particlest.disintegrate();

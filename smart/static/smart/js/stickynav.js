@@ -1,7 +1,6 @@
 window.onscroll = function() {myFunction()};
 
 let navbar = document.getElementById("nav-bar");
-console.log(navbar);
 
 let sticky = navbar.offsetTop;
 console.log(sticky);
@@ -13,7 +12,6 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
-
 
 $(document).ready(function() {
     $('.nav li a').click(function() {

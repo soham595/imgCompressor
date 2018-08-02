@@ -1,31 +1,70 @@
 {% extends 'smart/output.html' %}
 {% load staticfiles %}
-{% block myScript %}
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#accordion").accordion();
-        });
-    </script>
-
-{% endblock %}
-{% for liver in liverDiseases %}
-    <div id="accordion">
-        <h3>Section 1</h3>
-        <div>
-            <p>
-                Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-            </p>
+{% block history %}
+    {% for liver in liverDiseases %}
+        <div class="content container" id="input-container">
+            <div class="initial">
+                <h3 style="margin-top: 3rem; font-weight: normal ">Select a category to view previously saved details.</h3>
+                <div class="container-fluid fluid-custom">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
+                                         data-tilt-perspective="100">
+                                        <div class="card-header"><a class="inp1-button" href="#input" style="font-size: 1.5rem;">Liver</a></div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p style="font-size: 1rem">Liver disease can be inherited (genetic) or caused by a variety of factors that damage the liver, such as viruses and alcohol use. Obesity is also associated with liver damage.</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img src="{% static 'smart/images/imgLiver.jpg' %}" width="100%"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card" data-tilt data-tilt-max="5" data-tilt-speed="100"
+                                         data-tilt-perspective="100">
+                                        <div class="card-header"><a class="inp2-button" href="#input" style="font-size: 1.5rem;">Breast Cancer</a></div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <p style="font-size: 1rem">Breast cancer develops from breast tissue. In those with distant spread of the disease, there may be bone pain, swollen lymph nodes, shortness of breath, or yellow skin.</p>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img src="{% static 'smart/images/imgBC.png' %}" width="100%"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
+                                         data-tilt-perspective="100">
+                                        <div class="card-header"><a href="/#input" style="font-size: 1.1rem;">More Categories coming soon.</a></div>
+                                        <div class="card-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu condimentum risus rutrum.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-{% endfor %}
-{% for bc in bcDiseases %}
-
-
-{% endfor %}
+    {% endfor %}
+    {% for bc in bcDiseases %}
+    {% endfor %}
+{% endblock %}
 {% block report %}
 {% endblock %}
