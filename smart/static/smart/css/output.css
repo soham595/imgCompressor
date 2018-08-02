@@ -1,0 +1,14 @@
+body {
+    background-image: url("../images/bghome-blur.jpg");
+    background-position: left;
+    background-attachment: fixed;
+}
+
+th {
+    font-weight: bold!important;
+    font-size: 1.1rem!important;
+}
+
+td {
+    font-size: 1.1rem!important;
+}

@@ -456,3 +456,25 @@ h1 {
 {
     padding: 15px 15px!important;
 }
+
+div.borderYtoX .nav-login a:before
+{
+    left: 0px;
+    top: 12px;
+}
+
+div.borderYtoX .nav-login a:after
+{
+    right: 0px;
+    bottom: 9px;
+}
+
+#output-nav {
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 0;
+    position: fixed;
+}
+
+#output-nav .dropdown-menu {
+    background: rgba(0, 0, 0, 0.8);
+}

@@ -55,13 +55,15 @@
                         </ul>
                     </div>
                 </div>
-                    <div class="borderYtoX">
-                        <ul class="nav-login float-right nav navbar-nav py-0">
-                            <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" data-toggle="modal" data-target="#modalLoginForm" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
-                        </ul>
-                    </div>
+                <div class="borderYtoX">
+                    <ul class="nav-login float-right nav navbar-nav py-0">
+                        <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" data-toggle="modal" data-target="#modalLoginForm" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
+        {% block out %}
+        {% endblock %}
         <div class="container top-margin">
             <div class="row">
                 <div class="col-md-6 contentMain">
@@ -79,8 +81,6 @@
         </div>
     </div>
 </div>
-{% block out %}
-{% endblock %}
 {% block body %}
 {% endblock %}
 </body>
