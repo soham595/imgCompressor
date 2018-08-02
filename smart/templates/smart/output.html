@@ -22,6 +22,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
 
     <title>Smart Medical Diagnosis</title>
+    {% block script %}
+    {% endblock %}
 </head>
 <body class="bg">
 <div id="nav-bar">
@@ -58,7 +60,8 @@
         </div>
     </nav>
 </div>
-{% block report %}
+{% block predict %}
+{% if LiverResult %}
 <div class="content container container-custom">
     <h2>Smart Diagonosis Report</h2>
     <hr>
@@ -68,15 +71,15 @@
             <table class="table table-borderless table-hover">
                 <tr>
                     <th>Patient Name:</th>
-                    <td>{{ result.name }}</td>
+                    <td>{{ LiverResult.name }}</td>
                     <th>Patient Age:</th>
-                    <td>{{ result.age }}</td>
+                    <td>{{ LiverResult.age }}</td>
                 </tr>
                 <tr>
                     <th>Patient ID:</th>
-                    <td>{{ result.id }}</td>
+                    <td>{{ LiverResult.id }}</td>
                     <th>Patient Gender:</th>
-                    <td>{{ result.gender }}</td>
+                    <td>{{ LiverResult.gender }}</td>
                 </tr>
             </table>
             <hr>
@@ -90,22 +93,22 @@
                         </tr>
                         <tr>
                             <th>Total Bilirubin:</th>
-                            <td>{{ result.total_bilirubin }}</td>
+                            <td>{{ LiverResult.total_bilirubin }}</td>
                             <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Direct Bilirubin:</th>
-                            <td>{{ result.direct_bilirubin }}</td>
+                            <td>{{ LiverResult.direct_bilirubin }}</td>
                             <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Alkaline Phosphotase:</th>
-                            <td>{{ result.alkaline_phosphotase }}</td>
+                            <td>{{ LiverResult.alkaline_phosphotase }}</td>
                             <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Alamine Aminotransferase:</th>
-                            <td>{{ result.alamine_aminotransferase }}</td>
+                            <td>{{ LiverResult.alamine_aminotransferase }}</td>
                             <td>(&emsp)</td>
                         </tr>
                     </table>
@@ -119,22 +122,22 @@
                         </tr>
                         <tr>
                             <th>Aspartate Aminotransferase:</th>
-                            <td>{{ result.aspartate_aminotransferase }}</td>
+                            <td>{{ LiverResult.aspartate_aminotransferase }}</td>
                             <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Total Proteins:</th>
-                            <td>{{ result.total_proteins }}</td>
+                            <td>{{ LiverResult.total_proteins }}</td>
                             <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Albumin:</th>
-                            <td>{{ result.albumin }}</td>
+                            <td>{{ LiverResult.albumin }}</td>
                             <td>(&emsp)</td>
                         </tr>
                         <tr>
                             <th>Albumin Globulin Ratio:</th>
-                            <td>{{ result.albuminGlobulin_ratio }}</td>
+                            <td>{{ LiverResult.albuminGlobulin_ratio }}</td>
                             <td>(&emsp)</td>
                         </tr>
                     </table>
@@ -149,10 +152,215 @@
     {% else %}
         <h4>Patient has no liver disease</h4>
     {% endif %}
-{% endblock %}
+
+    {% else %}
+    <div class="content container container-custom">
+    <h2>Smart Diagonosis Report</h2>
+    <hr>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-10">
+            <table class="table table-borderless table-hover">
+                <tr>
+                    <th>Patient Name:</th>
+                    <td>{{ name }}</td>
+                    <th>Patient Age:</th>
+                    <td>{{ age }}</td>
+                </tr>
+                <tr>
+                    <th>Patient ID:</th>
+                    <td>{{ result.id }}</td>
+                    <th>Patient Gender:</th>
+                    <td>{{ gender }}</td>
+                </tr>
+            </table>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-borderless table-hover">
+                        <tr>
+                            <td></td>
+                            <th>Actual</th>
+                            <th>Expected</th>
+                        </tr>
+                        <tr>
+                            <th>Radius Mean:</th>
+                            <td>{{ result.radius_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Texture Mean:</th>
+                            <td>{{ result.texture_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Perimeter Mean :</th>
+                            <td>{{ result.perimeter_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Area Mean:</th>
+                            <td>{{ result.area_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Smoothness Mean:</th>
+                            <td>{{ result.smoothness_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Compactness Mean:</th>
+                            <td>{{ result.compactness_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Concavity Mean:</th>
+                            <td>{{ result.concavity_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Concave Points Mean:</th>
+                            <td>{{ result.concave_points_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Symmetry Mean:</th>
+                            <td>{{ result.symmetry_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Fractal Dimension Mean:</th>
+                            <td>{{ result.fractal_dimension_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Radius SE:</th>
+                            <td>{{ result.radius_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Texture SE:</th>
+                            <td>{{ result.texture_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Perimeter SE:</th>
+                            <td>{{ result.perimeter_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Area SE:</th>
+                            <td>{{ result.area_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Smoothness SE:</th>
+                            <td>{{ result.smoothness_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-borderless table-hover">
+                        <tr>
+                            <td></td>
+                            <th>Actual</th>
+                            <th>Expected</th>
+                        </tr>
+                        <tr>
+                            <th>Compactness SE :</th>
+                            <td>{{ result.compactness_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Concavity SE:</th>
+                            <td>{{ result.concavity_mean }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Concave Points SE:</th>
+                            <td>{{ result.concave_points_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Symmetry SE:</th>
+                            <td>{{ result.symmetry_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Fractal Dimension SE:</th>
+                            <td>{{ result.fractal_dimension_se }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Radius Worst:</th>
+                            <td>{{ result.radius_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Texture Worst:</th>
+                            <td>{{ result.texture_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Perimeter Worst :</th>
+                            <td>{{ result.perimeter_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Area Worst:</th>
+                            <td>{{ result.area_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Smoothness Worst:</th>
+                            <td>{{ result.smoothness_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Compactness Worst:</th>
+                            <td>{{ result.compactness_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Concavity Worst:</th>
+                            <td>{{ result.concavity_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Concave Points Worst:</th>
+                            <td>{{ result.concave_points_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Symmetry Worst:</th>
+                            <td>{{ result.symmetry_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                        <tr>
+                            <th>Fractal Dimension Worst:</th>
+                            <td>{{ result.fractal_dimension_worst }}</td>
+                            <td>(&emsp)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <hr>
+    {% if result.hasDisease == 1 %}
+        <h4>Patient has Breast Cancer</h4>
+    {% else %}
+        <h4>Patient has no Breast Cancer</h4>
+    {% endif %}
+{% endif %}
 </div>
+{% endblock %}
+
 {% block history %}
 {% endblock %}
+
 <footer id="contact" class="container-fluid" style="margin-top: 2rem">
     <div class="row">
         <div class="left-footer col-md-8">
