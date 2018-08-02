@@ -451,3 +451,8 @@ h1 {
 .site-info {
     background-color: #000000;
 }
+
+.nav-login a
+{
+    padding: 15px 15px!important;
+}
