@@ -117,3 +117,12 @@ fabric.properties
 # Editor-based Rest Client
 
 .idea/httpRequests
+
+
+# Django stuff:
+
+*.log
+
+local_settings.py
+
+db.sqlite3
