@@ -18,9 +18,14 @@ SQLite3
 
 SETUP The Project ->
 
-Install package:
+virtualenv djangoenv
+cd djangoenv
+cd Scripts
+activate
+pip install -r requirements.txt
 
-> pip install django-livereload-server
+
+
 
 Add 'livereload' to the INSTALLED_APPS, before 'django.contrib.staticfiles' if this is used:
 
