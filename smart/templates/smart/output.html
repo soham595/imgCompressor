@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="{% static 'smart/css/mdb.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'smart/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/allElements.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/parallax.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/output.css' %}">
@@ -59,101 +58,102 @@
     </nav>
 </div>
 {% block report %}
-<div class="content container container-custom">
-    <h2>Smart Diagonosis Report</h2>
-    <hr>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-md-10">
-            <table class="table table-borderless table-hover">
-                <tr>
-                    <th>Patient Name:</th>
-                    <td>{{ result.name }}</td>
-                    <th>Patient Age:</th>
-                    <td>{{ result.age }}</td>
-                </tr>
-                <tr>
-                    <th>Patient ID:</th>
-                    <td>{{ result.id }}</td>
-                    <th>Patient Gender:</th>
-                    <td>{{ result.gender }}</td>
-                </tr>
-            </table>
-            <hr>
-            <div class="row">
-                <div class="col-md-6">
-                    <table class="table table-borderless table-hover">
-                        <tr>
-                            <td></td>
-                            <th>Actual</th>
-                            <th>Expected</th>
-                        </tr>
-                        <tr>
-                            <th>Total Bilirubin:</th>
-                            <td>{{ result.total_bilirubin }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                        <tr>
-                            <th>Direct Bilirubin:</th>
-                            <td>{{ result.direct_bilirubin }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                        <tr>
-                            <th>Alkaline Phosphotase:</th>
-                            <td>{{ result.alkaline_phosphotase }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                        <tr>
-                            <th>Alamine Aminotransferase:</th>
-                            <td>{{ result.alamine_aminotransferase }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-6">
-                    <table class="table table-borderless table-hover">
-                        <tr>
-                            <td></td>
-                            <th>Actual</th>
-                            <th>Expected</th>
-                        </tr>
-                        <tr>
-                            <th>Aspartate Aminotransferase:</th>
-                            <td>{{ result.aspartate_aminotransferase }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                        <tr>
-                            <th>Total Proteins:</th>
-                            <td>{{ result.total_proteins }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                        <tr>
-                            <th>Albumin:</th>
-                            <td>{{ result.albumin }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                        <tr>
-                            <th>Albumin Globulin Ratio:</th>
-                            <td>{{ result.albuminGlobulin_ratio }}</td>
-                            <td>(&emsp)</td>
-                        </tr>
-                    </table>
+    <div class="content container container-custom">
+        <h2>Liver Diagonosis Report</h2>
+        <hr>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-10">
+                <table class="table table-borderless table-hover">
+                    <tr>
+                        <th>Patient Name:</th>
+                        <td>{{ result.name }}</td>
+                        <th>Patient Age:</th>
+                        <td>{{ result.age }}</td>
+                    </tr>
+                    <tr>
+                        <th>Patient ID:</th>
+                        <td>{{ result.id }}</td>
+                        <th>Patient Gender:</th>
+                        <td>{{ result.gender }}</td>
+                    </tr>
+                </table>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-borderless table-hover">
+                            <tr>
+                                <td></td>
+                                <th>Actual</th>
+                                <th>Expected</th>
+                            </tr>
+                            <tr>
+                                <th>Total Bilirubin:</th>
+                                <td>{{ result.total_bilirubin }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                            <tr>
+                                <th>Direct Bilirubin:</th>
+                                <td>{{ result.direct_bilirubin }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                            <tr>
+                                <th>Alkaline Phosphotase:</th>
+                                <td>{{ result.alkaline_phosphotase }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                            <tr>
+                                <th>Alamine Aminotransferase:</th>
+                                <td>{{ result.alamine_aminotransferase }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-borderless table-hover">
+                            <tr>
+                                <td></td>
+                                <th>Actual</th>
+                                <th>Expected</th>
+                            </tr>
+                            <tr>
+                                <th>Aspartate Aminotransferase:</th>
+                                <td>{{ result.aspartate_aminotransferase }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                            <tr>
+                                <th>Total Proteins:</th>
+                                <td>{{ result.total_proteins }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                            <tr>
+                                <th>Albumin:</th>
+                                <td>{{ result.albumin }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                            <tr>
+                                <th>Albumin Globulin Ratio:</th>
+                                <td>{{ result.albuminGlobulin_ratio }}</td>
+                                <td>(&emsp)</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <div class="col"></div>
         </div>
-        <div class="col"></div>
+        <hr>
+        {% if result.hasDisease == 1 %}
+            <h4>Patient has liver disease</h4>
+        {% else %}
+            <h4>Patient has no liver disease</h4>
+        {% endif %}
     </div>
-    <hr>
-    {% if result.hasDisease == 1 %}
-        <h4>Patient has liver disease</h4>
-    {% else %}
-        <h4>Patient has no liver disease</h4>
-    {% endif %}
 {% endblock %}
-</div>
+
 {% block history %}
 {% endblock %}
-<footer id="contact" class="container-fluid" style="margin-top: 2rem">
+<footer id="contact" class="container-fluid output-footer" style="margin-top: 20rem">
     <div class="row">
         <div class="left-footer col-md-8">
             <span class="footer-text">Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>

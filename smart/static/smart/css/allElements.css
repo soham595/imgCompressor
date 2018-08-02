@@ -341,6 +341,11 @@ footer {
     color: lightgray;
 }
 
+#input-container {
+    background-color: rgba(52, 52, 52, 0.36);
+    padding-top: 2%;
+}
+
 .about-container {
     background-image: url("../images/bghome6.jpg");
     background-position: left;
@@ -350,7 +355,7 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-    //color: #884530;
+//color: #884530;
     color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
@@ -378,7 +383,6 @@ footer {
 
 .main-content {
     background-color: rgba(0, 0, 0, 0);
-    min-height: 32rem;
     padding-top: 2%;
 }
 
@@ -418,7 +422,7 @@ footer {
 }
 
 #main {
-    min-height: 41rem;
+    min-height: 45rem;
     padding-bottom: 0;
 }
 
