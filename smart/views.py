@@ -11,6 +11,9 @@ from .forms import UserForm
 
 
 def home(request):
+    user = request.user
+    username = user.username
+    print(username)
     return render(request, 'smart/index.html')
 
 
@@ -45,6 +48,10 @@ def saveWeightBc(request):
 
 
 def checkForLiver(request):
+
+    if not request.user.is_authenticated():
+        return render(request, 'smart/login.html')
+
     inp = LiverPatientInfo()
     inp.name = request.POST["name"]
     inp.age = request.POST["age"]
@@ -57,6 +64,7 @@ def checkForLiver(request):
     inp.total_proteins = request.POST["tp"]
     inp.albumin = request.POST["alb"]
     inp.albuminGlobulin_ratio = request.POST["abratio"]
+    inp.username = request.user.username
 
     sex = 0
     if inp.gender == 'F':
@@ -87,6 +95,13 @@ def checkForBreastCancer(request):
     # "concave points_mean","symmetry_mean","fractal_dimension_mean","radius_se","texture_se","perimeter_se","area_se","smoothness_se",
     # "compactness_se","concavity_se","concave points_se","symmetry_se","fractal_dimension_se","radius_worst","texture_worst","perimeter_worst",
     # "area_worst","smoothness_worst","compactness_worst","concavity_worst","concave points_worst","symmetry_worst","fractal_dimension_worst"
+
+    # username = request.user.username
+    # password = request.user.password
+    # user = authenticate(username=username, password=password)
+
+    if not request.user.is_authenticated():
+        return render(request, 'smart/login.html')
 
     bc = BreastCancerPatientInfo()
     bc.radius_mean = request.POST["rm"]
@@ -119,6 +134,10 @@ def checkForBreastCancer(request):
     bc.concave_points_worst = request.POST["cpw"]
     bc.symmetry_worst = request.POST["syw"]
     bc.fractal_dimension_worst = request.POST["fdw"]
+    name = request.POST["name"]
+    age = request.POST["age"]
+    gender = request.POST["gender"]
+    bc.username = request.user.username
 
     x1 = np.array([[bc.radius_mean], [bc.texture_mean], [bc.perimeter_mean], [bc.area_mean], [bc.smoothness_mean],
                    [bc.compactness_mean], [bc.concavity_mean], [bc.concave_points_mean], [bc.symmetry_mean],
@@ -140,22 +159,22 @@ def checkForBreastCancer(request):
     bc.hasDisease = dic["res"]
     bc.save()
 
-    return render(request, 'smart/output2.html', {"result": bc})
+    return render(request, 'smart/output2.html', {"result": bc, "name": name, "age": age, "gender": gender})
 
 
 class UserFormView(View):
-    #Specify the blueprint that we want to use
+    # Specify the blueprint that we want to use
     form_class = UserForm
 
-    #Specify html file where the form is to be included
+    # Specify html file where the form is to be included
     template_name = 'smart/register.html'
 
-    #display blank form for new user
+    # display blank form for new user
     def get(self, request):
         form = self.form_class(None)
         return render(request, self.template_name, {'form': form})
 
-    #When user enters details and submits the form, process form data, register user and add them to database
+    # When user enters details and submits the form, process form data, register user and add them to database
     def post(self, request):
         form = self.form_class(request.POST)
 
@@ -163,13 +182,13 @@ class UserFormView(View):
 
             user = form.save(commit=False)
 
-            #clean or normalize data
+            # clean or normalize data
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             user.set_password(password)
             user.save()
 
-            #return user object if credentials are right
+            # return user object if credentials are right
             user = authenticate(username=username, password=password)
 
             if user is not None:
@@ -181,52 +200,38 @@ class UserFormView(View):
         return render(request, self.template_name, {'form': form})
 
 
-
-
-
-
 def logout_user(request):
-
     logout(request)
-
     form = UserForm(request.POST or None)
-
     context = {
-
         "form": form,
-
     }
-
     return render(request, 'smart/login.html', context)
 
 
-
-
-
 def login_user(request):
-
     if request.method == "POST":
-
         username = request.POST['username']
-
         password = request.POST['password']
-
         user = authenticate(username=username, password=password)
-
         if user is not None:
-
             if user.is_active:
-
                 login(request, user)
-
                 return render(request, 'smart/index.html')
-
             else:
-
                 return render(request, 'smart/login.html', {'error_message': 'Your account has been disabled'})
-
         else:
-
             return render(request, 'smart/login.html', {'error_message': 'Invalid login'})
-
     return render(request, 'smart/login.html')
+
+
+def historyView(request):
+
+    if not request.user.is_authenticated():
+        return render(request, 'smart/login.html')
+
+    username = request.user.username
+    lvr = LiverPatientInfo.objects.get(username=username)
+    bc = BreastCancerPatientInfo.objects.get(username=username)
+    context = {"liverDiseases": lvr, "bcDiseases": bc}
+    return render(request, 'smart/history.html', context)

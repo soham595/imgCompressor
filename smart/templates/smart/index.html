@@ -319,7 +319,7 @@
                             <h4>Breast Cancer Test Report</h4>
                         </div>
                         <div class="card-body">
-                            <form action="/smart/asd" method="post" class="custom-form" id="regForm">
+                            <form action="/smart/check-for-breast-cancer" method="post" class="custom-form" id="regForm">
                                 {% csrf_token %}
                                 <div class="tab">
                                     <h4>Enter Patient Details &ensp<i class="fa fa-user prefix grey-text"></i></h4>
@@ -329,17 +329,17 @@
                                             <div class="modal-body">
                                                 <div class="md-form form-group mb-5">
                                                     <label for="bcname" class="col-form-label">Name:</label>
-                                                    <input type="text" id="bcname" name="bcname" class="form-control"
+                                                    <input type="text" id="bcname" name="name" class="form-control"
                                                            oninput="this.className = 'form-control'" required/>
                                                 </div>
                                                 <div class="md-form form-group mb-5">
                                                     <label for="bcage" class="col-form-label">Age:</label>
-                                                    <input type="text" id="bcage" name="bcage" class="form-control"
+                                                    <input type="text" id="bcage" name="age" class="form-control"
                                                            oninput="this.className = 'form-control'" required/>
                                                 </div>
                                                 <div class="md-form form-group mb-5">
                                                     <label for="bcgender" class="col-form-label">Gender(M/F):</label>
-                                                    <input type="text" id="bcgender" name="bcgender" class="form-control"
+                                                    <input type="text" id="bcgender" name="gender" class="form-control"
                                                            oninput="this.className = 'form-control'" required/>
                                                 </div>
                                             </div>

@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^save-weights-liver', views.saveWeightLiver, name="saveWeight"),
     url(r'^save-weights-bc', views.saveWeightBc, name="saveWeight"),
     url(r'^check-for-liver', views.checkForLiver, name="checkForLiver"),
-    url(r'^check-for-breast-cancer', views.checkForBreastCancer, name="checkForBreastCancer")
+    url(r'^check-for-breast-cancer', views.checkForBreastCancer, name="checkForBreastCancer"),
+    url(r'^history', views.historyView, name="history"),
 ]
