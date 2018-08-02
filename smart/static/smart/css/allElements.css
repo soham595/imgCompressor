@@ -494,9 +494,13 @@ div.borderYtoX .nav-login a:after
 }
 
 .accordion td {
-    color: lightgray;
+    color: white;
 }
 
 .accordion th {
     font-weight: normal!important;
+}
+
+.output-card {
+    margin-bottom: 0px!important;
 }
