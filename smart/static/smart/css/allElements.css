@@ -344,6 +344,7 @@ footer {
 #input-container {
     background-color: rgba(38, 38, 38, 0.48);
     padding-top: 2%;
+    min-height: 30rem;
 }
 
 .about-container {
