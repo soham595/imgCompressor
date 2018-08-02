@@ -29,15 +29,9 @@ def load_dataset():
     imputer = Imputer()
     imputer = imputer.fit(X[:,:])
     X[:,:] = imputer.transform(X[:,:])
-    
-    
-    
-    
+
     #X=preprocessing.normalize(X,norm='l1')
-    
-    
-    
-    
+
     #we do not need onehotencoding bcz we only have 2 values and they will be categogrized with 0 and 1,so no need,
     #and if we have 3 values like (male,female,trans) then we need onehotencoding and dont foget to take care of 
     #dummy variable trap
@@ -50,9 +44,7 @@ def load_dataset():
     
     #X_train=preprocessing.normalize(X_train,norm='l1')
     #aX_test=preprocessing.normalize(X_test,norm='l1')
-    
-    
-    
+
     #use this in future
     X_train, X_test, y_train, y_test = X_train.astype(np.float64),X_test.astype(np.float64), y_train.astype(np.float64), y_test.astype(np.float64)
     return X_train.T,y_train,X_test.T,y_test
