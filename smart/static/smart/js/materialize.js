@@ -1173,7 +1173,7 @@ M.AutoInit = function (context) {
     Datepicker: root.querySelectorAll('.datepicker:not(.no-autoinit)'),
     Dropdown: root.querySelectorAll('.dropdown-trigger:not(.no-autoinit)'),
     Materialbox: root.querySelectorAll('.materialboxed:not(.no-autoinit)'),
-    Modal: root.querySelectorAll('.modal:not(.no-autoinit)'),
+    aadal: root.querySelectorAll('.aadal:not(.no-autoinit)'),
     Parallax: root.querySelectorAll('.parallax:not(.no-autoinit)'),
     Pushpin: root.querySelectorAll('.pushpin:not(.no-autoinit)'),
     ScrollSpy: root.querySelectorAll('.scrollspy:not(.no-autoinit)'),
@@ -2877,56 +2877,56 @@ $jscomp.polyfill = function (e, r, p, m) {
    *
    */
 
-  var Modal = function (_Component3) {
-    _inherits(Modal, _Component3);
+  let aadal = function (_Component3) {
+    _inherits(aadal, _Component3);
 
     /**
-     * Construct Modal instance and set up overlay
+     * Construct aadal instance and set up overlay
      * @constructor
      * @param {Element} el
      * @param {Object} options
      */
-    function Modal(el, options) {
-      _classCallCheck(this, Modal);
+    function aadal(el, options) {
+      _classCallCheck(this, aadal);
 
-      var _this13 = _possibleConstructorReturn(this, (Modal.__proto__ || Object.getPrototypeOf(Modal)).call(this, Modal, el, options));
+      var _this13 = _possibleConstructorReturn(this, (aadal.__proto__ || Object.getPrototypeOf(aadal)).call(this, aadal, el, options));
 
-      _this13.el.M_Modal = _this13;
+      _this13.el.M_aadal = _this13;
 
       /**
-       * Options for the modal
-       * @member Modal#options
-       * @prop {Number} [opacity=0.5] - Opacity of the modal overlay
+       * Options for the aadal
+       * @member aadal#options
+       * @prop {Number} [opacity=0.5] - Opacity of the aadal overlay
        * @prop {Number} [inDuration=250] - Length in ms of enter transition
        * @prop {Number} [outDuration=250] - Length in ms of exit transition
-       * @prop {Function} onOpenStart - Callback function called before modal is opened
-       * @prop {Function} onOpenEnd - Callback function called after modal is opened
-       * @prop {Function} onCloseStart - Callback function called before modal is closed
-       * @prop {Function} onCloseEnd - Callback function called after modal is closed
-       * @prop {Boolean} [dismissible=true] - Allow modal to be dismissed by keyboard or overlay click
+       * @prop {Function} onOpenStart - Callback function called before aadal is opened
+       * @prop {Function} onOpenEnd - Callback function called after aadal is opened
+       * @prop {Function} onCloseStart - Callback function called before aadal is closed
+       * @prop {Function} onCloseEnd - Callback function called after aadal is closed
+       * @prop {Boolean} [dismissible=true] - Allow aadal to be dismissed by keyboard or overlay click
        * @prop {String} [startingTop='4%'] - startingTop
        * @prop {String} [endingTop='10%'] - endingTop
        */
-      _this13.options = $.extend({}, Modal.defaults, options);
+      _this13.options = $.extend({}, aadal.defaults, options);
 
       /**
-       * Describes open/close state of modal
+       * Describes open/close state of aadal
        * @type {Boolean}
        */
       _this13.isOpen = false;
 
       _this13.id = _this13.$el.attr('id');
       _this13._openingTrigger = undefined;
-      _this13.$overlay = $('<div class="modal-overlay"></div>');
+      _this13.$overlay = $('<div class="aadal-overlay"></div>');
       _this13.el.tabIndex = 0;
-      _this13._nthModalOpened = 0;
+      _this13._nthaadalOpened = 0;
 
-      Modal._count++;
+      aadal._count++;
       _this13._setupEventHandlers();
       return _this13;
     }
 
-    _createClass(Modal, [{
+    _createClass(aadal, [{
       key: "destroy",
 
 
@@ -2934,11 +2934,11 @@ $jscomp.polyfill = function (e, r, p, m) {
        * Teardown component
        */
       value: function destroy() {
-        Modal._count--;
+        aadal._count--;
         this._removeEventHandlers();
         this.el.removeAttribute('style');
         this.$overlay.remove();
-        this.el.M_Modal = undefined;
+        this.el.M_aadal = undefined;
       }
 
       /**
@@ -2949,13 +2949,13 @@ $jscomp.polyfill = function (e, r, p, m) {
       key: "_setupEventHandlers",
       value: function _setupEventHandlers() {
         this._handleOverlayClickBound = this._handleOverlayClick.bind(this);
-        this._handleModalCloseClickBound = this._handleModalCloseClick.bind(this);
+        this._handleaadalCloseClickBound = this._handleaadalCloseClick.bind(this);
 
-        if (Modal._count === 1) {
+        if (aadal._count === 1) {
           document.body.addEventListener('click', this._handleTriggerClick);
         }
         this.$overlay[0].addEventListener('click', this._handleOverlayClickBound);
-        this.el.addEventListener('click', this._handleModalCloseClickBound);
+        this.el.addEventListener('click', this._handleaadalCloseClickBound);
       }
 
       /**
@@ -2965,11 +2965,11 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_removeEventHandlers",
       value: function _removeEventHandlers() {
-        if (Modal._count === 0) {
+        if (aadal._count === 0) {
           document.body.removeEventListener('click', this._handleTriggerClick);
         }
         this.$overlay[0].removeEventListener('click', this._handleOverlayClickBound);
-        this.el.removeEventListener('click', this._handleModalCloseClickBound);
+        this.el.removeEventListener('click', this._handleaadalCloseClickBound);
       }
 
       /**
@@ -2980,12 +2980,12 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_handleTriggerClick",
       value: function _handleTriggerClick(e) {
-        var $trigger = $(e.target).closest('.modal-trigger');
+        var $trigger = $(e.target).closest('.aadal-trigger');
         if ($trigger.length) {
-          var modalId = M.getIdFromTrigger($trigger[0]);
-          var modalInstance = document.getElementById(modalId).M_Modal;
-          if (modalInstance) {
-            modalInstance.open($trigger);
+          var aadalId = M.getIdFromTrigger($trigger[0]);
+          var aadalInstance = document.getElementById(aadalId).M_aadal;
+          if (aadalInstance) {
+            aadalInstance.open($trigger);
           }
           e.preventDefault();
         }
@@ -3004,14 +3004,14 @@ $jscomp.polyfill = function (e, r, p, m) {
       }
 
       /**
-       * Handle Modal Close Click
+       * Handle aadal Close Click
        * @param {Event} e
        */
 
     }, {
-      key: "_handleModalCloseClick",
-      value: function _handleModalCloseClick(e) {
-        var $closeTrigger = $(e.target).closest('.modal-close');
+      key: "_handleaadalCloseClick",
+      value: function _handleaadalCloseClick(e) {
+        var $closeTrigger = $(e.target).closest('.aadal-close');
         if ($closeTrigger.length) {
           this.close();
         }
@@ -3039,14 +3039,14 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_handleFocus",
       value: function _handleFocus(e) {
-        // Only trap focus if this modal is the last model opened (prevents loops in nested modals).
-        if (!this.el.contains(e.target) && this._nthModalOpened === Modal._modalsOpen) {
+        // Only trap focus if this aadal is the last model opened (prevents loops in nested aadals).
+        if (!this.el.contains(e.target) && this._nthaadalOpened === aadal._aadalsOpen) {
           this.el.focus();
         }
       }
 
       /**
-       * Animate in modal
+       * Animate in aadal
        */
 
     }, {
@@ -3072,12 +3072,12 @@ $jscomp.polyfill = function (e, r, p, m) {
           easing: 'easeOutQuad'
         });
 
-        // Define modal animation options
+        // Define aadal animation options
         var enterAnimOptions = {
           targets: this.el,
           duration: this.options.inDuration,
           easing: 'easeOutCubic',
-          // Handle modal onOpenEnd callback
+          // Handle aadal onOpenEnd callback
           complete: function () {
             if (typeof _this14.options.onOpenEnd === 'function') {
               _this14.options.onOpenEnd.call(_this14, _this14.el, _this14._openingTrigger);
@@ -3093,7 +3093,7 @@ $jscomp.polyfill = function (e, r, p, m) {
           });
           anim(enterAnimOptions);
 
-          // Normal modal animation
+          // Normal aadal animation
         } else {
           $.extend(enterAnimOptions, {
             top: [this.options.startingTop, this.options.endingTop],
@@ -3106,7 +3106,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       }
 
       /**
-       * Animate out modal
+       * Animate out aadal
        */
 
     }, {
@@ -3122,12 +3122,12 @@ $jscomp.polyfill = function (e, r, p, m) {
           easing: 'easeOutQuart'
         });
 
-        // Define modal animation options
+        // Define aadal animation options
         var exitAnimOptions = {
           targets: this.el,
           duration: this.options.outDuration,
           easing: 'easeOutCubic',
-          // Handle modal ready callback
+          // Handle aadal ready callback
           complete: function () {
             _this15.el.style.display = 'none';
             _this15.$overlay.remove();
@@ -3147,7 +3147,7 @@ $jscomp.polyfill = function (e, r, p, m) {
           });
           anim(exitAnimOptions);
 
-          // Normal modal animation
+          // Normal aadal animation
         } else {
           $.extend(exitAnimOptions, {
             top: [this.options.endingTop, this.options.startingTop],
@@ -3160,7 +3160,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       }
 
       /**
-       * Open Modal
+       * Open aadal
        * @param {cash} [$trigger]
        */
 
@@ -3172,14 +3172,14 @@ $jscomp.polyfill = function (e, r, p, m) {
         }
 
         this.isOpen = true;
-        Modal._modalsOpen++;
-        this._nthModalOpened = Modal._modalsOpen;
+        aadal._aadalsOpen++;
+        this._nthaadalOpened = aadal._aadalsOpen;
 
-        // Set Z-Index based on number of currently open modals
-        this.$overlay[0].style.zIndex = 1000 + Modal._modalsOpen * 2;
-        this.el.style.zIndex = 1000 + Modal._modalsOpen * 2 + 1;
+        // Set Z-Index based on number of currently open aadals
+        this.$overlay[0].style.zIndex = 1000 + aadal._aadalsOpen * 2;
+        this.el.style.zIndex = 1000 + aadal._aadalsOpen * 2 + 1;
 
-        // Set opening trigger, undefined indicates modal was opened by javascript
+        // Set opening trigger, undefined indicates aadal was opened by javascript
         this._openingTrigger = !!$trigger ? $trigger[0] : undefined;
 
         // onOpenStart callback
@@ -3205,14 +3205,14 @@ $jscomp.polyfill = function (e, r, p, m) {
         anim.remove(this.$overlay[0]);
         this._animateIn();
 
-        // Focus modal
+        // Focus aadal
         this.el.focus();
 
         return this;
       }
 
       /**
-       * Close Modal
+       * Close aadal
        */
 
     }, {
@@ -3223,8 +3223,8 @@ $jscomp.polyfill = function (e, r, p, m) {
         }
 
         this.isOpen = false;
-        Modal._modalsOpen--;
-        this._nthModalOpened = 0;
+        aadal._aadalsOpen--;
+        this._nthaadalOpened = 0;
 
         // Call onCloseStart callback
         if (typeof this.options.onCloseStart === 'function') {
@@ -3233,8 +3233,8 @@ $jscomp.polyfill = function (e, r, p, m) {
 
         this.el.classList.remove('open');
 
-        // Enable body scrolling only if there are no more modals open.
-        if (Modal._modalsOpen === 0) {
+        // Enable body scrolling only if there are no more aadals open.
+        if (aadal._aadalsOpen === 0) {
           document.body.style.overflow = '';
         }
 
@@ -3251,7 +3251,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     }], [{
       key: "init",
       value: function init(els, options) {
-        return _get(Modal.__proto__ || Object.getPrototypeOf(Modal), "init", this).call(this, this, els, options);
+        return _get(aadal.__proto__ || Object.getPrototypeOf(aadal), "init", this).call(this, this, els, options);
       }
 
       /**
@@ -3262,7 +3262,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       key: "getInstance",
       value: function getInstance(el) {
         var domElem = !!el.jquery ? el[0] : el;
-        return domElem.M_Modal;
+        return domElem.M_aadal;
       }
     }, {
       key: "defaults",
@@ -3271,27 +3271,27 @@ $jscomp.polyfill = function (e, r, p, m) {
       }
     }]);
 
-    return Modal;
+    return aadal;
   }(Component);
 
   /**
    * @static
-   * @memberof Modal
+   * @memberof aadal
    */
 
 
-  Modal._modalsOpen = 0;
+  aadal._aadalsOpen = 0;
 
   /**
    * @static
-   * @memberof Modal
+   * @memberof aadal
    */
-  Modal._count = 0;
+  aadal._count = 0;
 
-  M.Modal = Modal;
+  M.aaodal = aadal;
 
   if (M.jQueryLoaded) {
-    M.initializeJqueryWrapper(Modal, 'modal', 'M_Modal');
+    M.initializeJqueryWrapper(aadal, 'aadal', 'M_aadal');
   }
 })(cash, M.anime);
 ;(function ($, anim) {
@@ -3328,7 +3328,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       _this16.el.M_Materialbox = _this16;
 
       /**
-       * Options for the modal
+       * Options for the aadal
        * @member Materialbox#options
        * @prop {Number} [inDuration=275] - Length in ms of enter transition
        * @prop {Number} [outDuration=200] - Length in ms of exit transition
@@ -3401,7 +3401,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_handleMaterialboxClick",
       value: function _handleMaterialboxClick(e) {
-        // If already modal, return to original
+        // If already aadal, return to original
         if (this.doneAnimating === false || this.overlayActive && this.doneAnimating) {
           this.close();
         } else {
@@ -6130,8 +6130,8 @@ $jscomp.polyfill = function (e, r, p, m) {
       _this35.el.M_ScrollSpy = _this35;
 
       /**
-       * Options for the modal
-       * @member Modal#options
+       * Options for the aadal
+       * @member aadal#options
        * @prop {Number} [throttle=100] - Throttle of scroll handler
        * @prop {Number} [scrollOffset=200] - Offset for centering element when scrolled to
        * @prop {String} [activeClass='active'] - Class applied to active elements
@@ -7184,7 +7184,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       _this40.el.M_Slider = _this40;
 
       /**
-       * Options for the modal
+       * Options for the aadal
        * @member Slider#options
        * @prop {Boolean} [indicators=true] - Show indicators
        * @prop {Number} [height=400] - height of slider
@@ -7642,7 +7642,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       _this45.el.M_Chips = _this45;
 
       /**
-       * Options for the modal
+       * Options for the aadal
        * @member Chips#options
        * @prop {Array} data
        * @prop {String} placeholder
@@ -8186,7 +8186,7 @@ $jscomp.polyfill = function (e, r, p, m) {
       _this47.el.M_Pushpin = _this47;
 
       /**
-       * Options for the modal
+       * Options for the aadal
        * @member Pushpin#options
        */
       _this47.options = $.extend({}, Pushpin.defaults, options);
@@ -8836,7 +8836,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 
       _this53._setupVariables();
       _this53._insertHTMLIntoDOM();
-      _this53._setupModal();
+      _this53._setupaadal();
 
       _this53._setupEventHandlers();
 
@@ -8873,8 +8873,8 @@ $jscomp.polyfill = function (e, r, p, m) {
        */
       value: function destroy() {
         this._removeEventHandlers();
-        this.modal.destroy();
-        $(this.modalEl).remove();
+        this.aadal.destroy();
+        $(this.aadalEl).remove();
         this.destroySelects();
         this.el.M_Datepicker = undefined;
       }
@@ -8902,18 +8902,18 @@ $jscomp.polyfill = function (e, r, p, m) {
         this.cancelBtn.innerHTML = this.options.i18n.cancel;
 
         if (this.options.container) {
-          this.$modalEl.appendTo(this.options.container);
+          this.$aadalEl.appendTo(this.options.container);
         } else {
-          this.$modalEl.insertBefore(this.el);
+          this.$aadalEl.insertBefore(this.el);
         }
       }
     }, {
-      key: "_setupModal",
-      value: function _setupModal() {
+      key: "_setupaadal",
+      value: function _setupaadal() {
         var _this54 = this;
 
-        this.modalEl.id = 'modal-' + this.id;
-        this.modal = M.Modal.init(this.modalEl, {
+        this.aadalEl.id = 'aadal-' + this.id;
+        this.aadal = M.aadal.init(this.aadalEl, {
           onCloseEnd: function () {
             _this54.isOpen = false;
           }
@@ -9355,18 +9355,18 @@ $jscomp.polyfill = function (e, r, p, m) {
       value: function _setupVariables() {
         var _this56 = this;
 
-        this.$modalEl = $(Datepicker._template);
-        this.modalEl = this.$modalEl[0];
+        this.$aadalEl = $(Datepicker._template);
+        this.aadalEl = this.$aadalEl[0];
 
-        this.calendarEl = this.modalEl.querySelector('.datepicker-calendar');
+        this.calendarEl = this.aadalEl.querySelector('.datepicker-calendar');
 
-        this.yearTextEl = this.modalEl.querySelector('.year-text');
-        this.dateTextEl = this.modalEl.querySelector('.date-text');
+        this.yearTextEl = this.aadalEl.querySelector('.year-text');
+        this.dateTextEl = this.aadalEl.querySelector('.date-text');
         if (this.options.showClearBtn) {
-          this.clearBtn = this.modalEl.querySelector('.datepicker-clear');
+          this.clearBtn = this.aadalEl.querySelector('.datepicker-clear');
         }
-        this.doneBtn = this.modalEl.querySelector('.datepicker-done');
-        this.cancelBtn = this.modalEl.querySelector('.datepicker-cancel');
+        this.doneBtn = this.aadalEl.querySelector('.datepicker-done');
+        this.cancelBtn = this.aadalEl.querySelector('.datepicker-cancel');
 
         this.formats = {
           d: function () {
@@ -9549,7 +9549,7 @@ $jscomp.polyfill = function (e, r, p, m) {
           this.options.onOpen.call(this);
         }
         this.draw();
-        this.modal.open();
+        this.aadal.open();
         return this;
       }
 
@@ -9568,7 +9568,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         if (typeof this.options.onClose === 'function') {
           this.options.onClose.call(this);
         }
-        this.modal.close();
+        this.aadal.close();
         return this;
       }
     }], [{
@@ -9636,7 +9636,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     return Datepicker;
   }(Component);
 
-  Datepicker._template = ['<div class= "modal datepicker-modal">', '<div class="modal-content datepicker-container">', '<div class="datepicker-date-display">', '<span class="year-text"></span>', '<span class="date-text"></span>', '</div>', '<div class="datepicker-calendar-container">', '<div class="datepicker-calendar"></div>', '<div class="datepicker-footer">', '<button class="btn-flat datepicker-clear waves-effect" style="visibility: hidden;" type="button"></button>', '<div class="confirmation-btns">', '<button class="btn-flat datepicker-cancel waves-effect" type="button"></button>', '<button class="btn-flat datepicker-done waves-effect" type="button"></button>', '</div>', '</div>', '</div>', '</div>', '</div>'].join('');
+  Datepicker._template = ['<div class= "aadal datepicker-aadal">', '<div class="aadal-content datepicker-container">', '<div class="datepicker-date-display">', '<span class="year-text"></span>', '<span class="date-text"></span>', '</div>', '<div class="datepicker-calendar-container">', '<div class="datepicker-calendar"></div>', '<div class="datepicker-footer">', '<button class="btn-flat datepicker-clear waves-effect" style="visibility: hidden;" type="button"></button>', '<div class="confirmation-btns">', '<button class="btn-flat datepicker-cancel waves-effect" type="button"></button>', '<button class="btn-flat datepicker-done waves-effect" type="button"></button>', '</div>', '</div>', '</div>', '</div>', '</div>'].join('');
 
   M.Datepicker = Datepicker;
 
@@ -9696,7 +9696,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 
       _this57.id = M.guid();
       _this57._insertHTMLIntoDOM();
-      _this57._setupModal();
+      _this57._setupaadal();
       _this57._setupVariables();
       _this57._setupEventHandlers();
 
@@ -9714,8 +9714,8 @@ $jscomp.polyfill = function (e, r, p, m) {
        */
       value: function destroy() {
         this._removeEventHandlers();
-        this.modal.destroy();
-        $(this.modalEl).remove();
+        this.aadal.destroy();
+        $(this.aadalEl).remove();
         this.el.M_Timepicker = undefined;
       }
 
@@ -9829,24 +9829,24 @@ $jscomp.polyfill = function (e, r, p, m) {
     }, {
       key: "_insertHTMLIntoDOM",
       value: function _insertHTMLIntoDOM() {
-        this.$modalEl = $(Timepicker._template);
-        this.modalEl = this.$modalEl[0];
-        this.modalEl.id = 'modal-' + this.id;
+        this.$aadalEl = $(Timepicker._template);
+        this.aadalEl = this.$aadalEl[0];
+        this.aadalEl.id = 'aadal-' + this.id;
 
         // Append popover to input by default
         var containerEl = document.querySelector(this.options.container);
         if (this.options.container && !!containerEl) {
-          this.$modalEl.appendTo(containerEl);
+          this.$aadalEl.appendTo(containerEl);
         } else {
-          this.$modalEl.insertBefore(this.el);
+          this.$aadalEl.insertBefore(this.el);
         }
       }
     }, {
-      key: "_setupModal",
-      value: function _setupModal() {
+      key: "_setupaadal",
+      value: function _setupaadal() {
         var _this59 = this;
 
-        this.modal = M.Modal.init(this.modalEl, {
+        this.aadal = M.aadal.init(this.aadalEl, {
           onOpenStart: this.options.onOpenStart,
           onOpenEnd: this.options.onOpenEnd,
           onCloseStart: this.options.onCloseStart,
@@ -9864,15 +9864,15 @@ $jscomp.polyfill = function (e, r, p, m) {
         this.currentView = 'hours';
         this.vibrate = navigator.vibrate ? 'vibrate' : navigator.webkitVibrate ? 'webkitVibrate' : null;
 
-        this._canvas = this.modalEl.querySelector('.timepicker-canvas');
-        this.plate = this.modalEl.querySelector('.timepicker-plate');
+        this._canvas = this.aadalEl.querySelector('.timepicker-canvas');
+        this.plate = this.aadalEl.querySelector('.timepicker-plate');
 
-        this.hoursView = this.modalEl.querySelector('.timepicker-hours');
-        this.minutesView = this.modalEl.querySelector('.timepicker-minutes');
-        this.spanHours = this.modalEl.querySelector('.timepicker-span-hours');
-        this.spanMinutes = this.modalEl.querySelector('.timepicker-span-minutes');
-        this.spanAmPm = this.modalEl.querySelector('.timepicker-span-am-pm');
-        this.footer = this.modalEl.querySelector('.timepicker-footer');
+        this.hoursView = this.aadalEl.querySelector('.timepicker-hours');
+        this.minutesView = this.aadalEl.querySelector('.timepicker-minutes');
+        this.spanHours = this.aadalEl.querySelector('.timepicker-span-hours');
+        this.spanMinutes = this.aadalEl.querySelector('.timepicker-span-minutes');
+        this.spanAmPm = this.aadalEl.querySelector('.timepicker-span-am-pm');
+        this.footer = this.aadalEl.querySelector('.timepicker-footer');
         this.amOrPm = 'PM';
       }
     }, {
@@ -10172,7 +10172,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         this._updateTimeFromInput();
         this.showView('hours');
 
-        this.modal.open();
+        this.aadal.open();
       }
     }, {
       key: "close",
@@ -10182,7 +10182,7 @@ $jscomp.polyfill = function (e, r, p, m) {
         }
 
         this.isOpen = false;
-        this.modal.close();
+        this.aadal.close();
       }
 
       /**
@@ -10273,7 +10273,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     return Timepicker;
   }(Component);
 
-  Timepicker._template = ['<div class= "modal timepicker-modal">', '<div class="modal-content timepicker-container">', '<div class="timepicker-digital-display">', '<div class="timepicker-text-container">', '<div class="timepicker-display-column">', '<span class="timepicker-span-hours text-primary"></span>', ':', '<span class="timepicker-span-minutes"></span>', '</div>', '<div class="timepicker-display-column timepicker-display-am-pm">', '<div class="timepicker-span-am-pm"></div>', '</div>', '</div>', '</div>', '<div class="timepicker-analog-display">', '<div class="timepicker-plate">', '<div class="timepicker-canvas"></div>', '<div class="timepicker-dial timepicker-hours"></div>', '<div class="timepicker-dial timepicker-minutes timepicker-dial-out"></div>', '</div>', '<div class="timepicker-footer"></div>', '</div>', '</div>', '</div>'].join('');
+  Timepicker._template = ['<div class= "aadal timepicker-aadal">', '<div class="aadal-content timepicker-container">', '<div class="timepicker-digital-display">', '<div class="timepicker-text-container">', '<div class="timepicker-display-column">', '<span class="timepicker-span-hours text-primary"></span>', ':', '<span class="timepicker-span-minutes"></span>', '</div>', '<div class="timepicker-display-column timepicker-display-am-pm">', '<div class="timepicker-span-am-pm"></div>', '</div>', '</div>', '</div>', '<div class="timepicker-analog-display">', '<div class="timepicker-plate">', '<div class="timepicker-canvas"></div>', '<div class="timepicker-dial timepicker-hours"></div>', '<div class="timepicker-dial timepicker-minutes timepicker-dial-out"></div>', '</div>', '<div class="timepicker-footer"></div>', '</div>', '</div>', '</div>'].join('');
 
   M.Timepicker = Timepicker;
 

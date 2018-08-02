@@ -52,12 +52,18 @@
                     <div class="modal-body mx-3">
                         <div class="md-form mb-5">
                             {% if error_message %}
+                                <script>
+                                    function modalFunc() {
+                                        $('#modalLoginForm').modal("show");
+                                    }
+                                    modalFunc();
+                                </script>
                                 <p id="login-error"><strong>{{ error_message }}</strong></p>
                             {% endif %}
                         </div>
                         <div class="md-form mb-5">
                             <i class="fa fa-envelope prefix grey-text"></i>
-                            <input type="email" id="defaultForm-email" name="username" class="form-control" required/>
+                            <input type="text" id="defaultForm-email" name="username" class="form-control" required/>
                             <label for="defaultForm-email">Username</label>
                         </div>
                         <div class="md-form mb-4">

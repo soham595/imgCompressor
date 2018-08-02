@@ -59,7 +59,3 @@ $(function() {
         $("#trainpLiver").slideDown(1000);
     });
 });
-
-$(document).ready(function(){
-    $("#modalLoginForm").modal("show");
-});
