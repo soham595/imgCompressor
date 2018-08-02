@@ -58,23 +58,18 @@
                             <li><a data-toggle="modal" data-target="#modalContactForm" id="cont-button">CONTACT US</a>
                             </li>
                             <li><a href="{% url 'smart:history' %}" id="about-button">HISTORY</a></li>
-                            {% block logout %}
-                            <div class="borderYtoX">
-                                <ul class="nav-log float-right nav navbar-nav py-0">
-                                    <li><a href="{% url 'smart:logout_user' %}" style="font-size: 1.5rem; padding: 8px 18px 12px;" id="login-button">
-                                             <i class="fas fa-sign-in-alt prefix mr-2"></i>LogOut</a></li>
-                                </ul>
-                            </div>
-                            {% endblock %}
                             <!-- <li class="{% block login_active %}{% endblock %}"><a href="{% url 'smart:login_user' %}">Log In</a></li> -->
                         </ul>
                     </div>
                 </div>
-                <!--<div class="borderYtoX">
-                    <ul class="nav-login float-right nav navbar-nav py-0">
-                        <li><a style="font-size: 1.5rem; padding: 8px 18px 12px;" data-toggle="modal" data-target="#modalLoginForm" id="login-button"><i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
-                    </ul>
-                </div> -->
+                {% block logout %}
+                    <div class="borderYtoX">
+                        <ul class="nav-login float-right nav navbar-nav py-0">
+                            <li><a data-toggle="modal" data-target="#modalLoginForm" href="{% url 'smart:logout_user' %}" style="font-size: 1.5rem; padding: 8px 18px 12px;" id="login-button">
+                                <i class="fas fa-sign-in-alt prefix mr-2"></i>Log Out</a></li>
+                        </ul>
+                    </div>
+                {% endblock %}
             </nav>
         </div>
         {% block out %}
@@ -100,9 +95,11 @@
 </div>
 {% block body %}
 {% endblock %}
+{% block history %}
+{% endblock %}
 </body>
-<script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/multi-form.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/stickynav.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/vanilla-tilt.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
 </html>
