@@ -54,10 +54,11 @@
                     <li><a href="/#about" id="about-button">ABOUT</a></li>
                     <li><a data-toggle="modal" data-target="#modalContactForm" id="cont-button">CONTACT US</a>
                     </li>
-                    <!-- <li class="{% block login_active %}{% endblock %}"><a href="{% url 'smart:login_user' %}">Log In</a></li> -->
+
                 </ul>
             </div>
         </div>
+
 
         <div class="borderYtoX">
             <ul class="nav-login float-right nav navbar-nav py-0">
@@ -66,6 +67,7 @@
                     <i class="fas fa-sign-in-alt prefix mr-2"></i>Logout</a></li>
             </ul>
         </div>
+
 
     </nav>
 </div>
@@ -160,7 +162,7 @@
 {% block predict %}
     {% if LiverResult %}
         <div class="content container container-custom">
-        <h2>Breast Cancer Diagonosis</h2>
+        <h2>Liver Cancer Diagonosis</h2>
         <hr>
         <div class="row">
             <div class="col"></div>
@@ -191,22 +193,22 @@
                             <tr>
                                 <th>Total Bilirubin:</th>
                                 <td>{{ LiverResult.total_bilirubin }}</td>
-                                <td>(&emsp)</td>
+                                <td>0.1-1.2</td>
                             </tr>
                             <tr>
                                 <th>Direct Bilirubin:</th>
                                 <td>{{ LiverResult.direct_bilirubin }}</td>
-                                <td>(&emsp)</td>
+                                <td>0.3-5.1</td>
                             </tr>
                             <tr>
                                 <th>Alkaline Phosphotase:</th>
                                 <td>{{ LiverResult.alkaline_phosphotase }}</td>
-                                <td>(&emsp)</td>
+                                <td>10-40</td>
                             </tr>
                             <tr>
                                 <th>Alamine Aminotransferase:</th>
                                 <td>{{ LiverResult.alamine_aminotransferase }}</td>
-                                <td>(&emsp)</td>
+                                <td>10-40</td>
                             </tr>
                         </table>
                     </div>
@@ -220,22 +222,22 @@
                             <tr>
                                 <th>Aspartate Aminotransferase:</th>
                                 <td>{{ LiverResult.aspartate_aminotransferase }}</td>
-                                <td>(&emsp)</td>
+                                <td>10-40</td>
                             </tr>
                             <tr>
                                 <th>Total Proteins:</th>
                                 <td>{{ LiverResult.total_proteins }}</td>
-                                <td>(&emsp)</td>
+                                <td>6-8.3</td>
                             </tr>
                             <tr>
                                 <th>Albumin:</th>
                                 <td>{{ LiverResult.albumin }}</td>
-                                <td>(&emsp)</td>
+                                <td>3.5-5.5</td>
                             </tr>
                             <tr>
                                 <th>Albumin Globulin Ratio:</th>
                                 <td>{{ LiverResult.albuminGlobulin_ratio }}</td>
-                                <td>(&emsp)</td>
+                                <td>0.8-2.0</td>
                             </tr>
                         </table>
                     </div>
@@ -278,82 +280,82 @@
                             <tr>
                                 <td></td>
                                 <th>Actual</th>
-                                <th>Expected</th>
+                                <th></th>
                             </tr>
                             <tr>
                                 <th>Radius Mean:</th>
                                 <td>{{ result.radius_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Texture Mean:</th>
                                 <td>{{ result.texture_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Perimeter Mean :</th>
                                 <td>{{ result.perimeter_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Area Mean:</th>
                                 <td>{{ result.area_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Smoothness Mean:</th>
                                 <td>{{ result.smoothness_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Compactness Mean:</th>
                                 <td>{{ result.compactness_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Concavity Mean:</th>
                                 <td>{{ result.concavity_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Concave Points Mean:</th>
                                 <td>{{ result.concave_points_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Symmetry Mean:</th>
                                 <td>{{ result.symmetry_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Fractal Dimension Mean:</th>
                                 <td>{{ result.fractal_dimension_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Radius SE:</th>
                                 <td>{{ result.radius_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Texture SE:</th>
                                 <td>{{ result.texture_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Perimeter SE:</th>
                                 <td>{{ result.perimeter_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Area SE:</th>
                                 <td>{{ result.area_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Smoothness SE:</th>
                                 <td>{{ result.smoothness_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                         </table>
                     </div>
@@ -362,82 +364,82 @@
                             <tr>
                                 <td></td>
                                 <th>Actual</th>
-                                <th>Expected</th>
+                                <th></th>
                             </tr>
                             <tr>
                                 <th>Compactness SE :</th>
                                 <td>{{ result.compactness_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Concavity SE:</th>
                                 <td>{{ result.concavity_mean }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Concave Points SE:</th>
                                 <td>{{ result.concave_points_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Symmetry SE:</th>
                                 <td>{{ result.symmetry_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Fractal Dimension SE:</th>
                                 <td>{{ result.fractal_dimension_se }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Radius Worst:</th>
                                 <td>{{ result.radius_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Texture Worst:</th>
                                 <td>{{ result.texture_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Perimeter Worst :</th>
                                 <td>{{ result.perimeter_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Area Worst:</th>
                                 <td>{{ result.area_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Smoothness Worst:</th>
                                 <td>{{ result.smoothness_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Compactness Worst:</th>
                                 <td>{{ result.compactness_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Concavity Worst:</th>
                                 <td>{{ result.concavity_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Concave Points Worst:</th>
                                 <td>{{ result.concave_points_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Symmetry Worst:</th>
                                 <td>{{ result.symmetry_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <th>Fractal Dimension Worst:</th>
                                 <td>{{ result.fractal_dimension_worst }}</td>
-                                <td>(&emsp)</td>
+                                <td></td>
                             </tr>
                         </table>
                     </div>
