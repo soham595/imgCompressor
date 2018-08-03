@@ -237,6 +237,13 @@ def train_model():
     print(cm_test)
 
     np.save('MLDjango/myfile2.npy', parameters)
+    fig = plt.figure()
+    costs = np.squeeze(costs)
+    plt.plot(costs)
+    plt.ylabel('cost')
+    plt.xlabel('iterations (per hundreds)')
+    plt.title("Learning rate =0.001")
+    fig.savefig('smart/static/smart/images/graph_cancer.png')
 
 
 
