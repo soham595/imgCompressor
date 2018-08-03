@@ -32,20 +32,18 @@ def load_dataset():
     # we do not need onehotencoding bcz we only have 2 values and they will be categogrized with 0 and 1,so no need,
     # and if we have 3 values like (male,female,trans) then we need onehotencoding and dont foget to take care of
     # dummy variable trap
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-    size_y = np.size(y_train)
-    y_train = y_train.reshape((1, size_y))
+    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+    size_y = np.size(y)
+    y_train = y.reshape((1, size_y))
 
-    size_y = np.size(y_test)
-    y_test = y_test.reshape((1, size_y))
 
     # X_train=preprocessing.normalize(X_train,norm='l1')
     # aX_test=preprocessing.normalize(X_test,norm='l1')
 
     # use this in future
     # X_train, X_test, y_train, y_test = X_train.astype(np.float64),
-    X_test.astype(np.float64), y_train.astype(np.float64), y_test.astype(np.float64)
-    return X_train.T, y_train, X_test.T, y_test
+    X.astype(np.float64), y_train.astype(np.float64)
+    return X.T, y_train
 
 
 def layer_sizes(X, Y):
@@ -178,7 +176,7 @@ def nn_model(X, Y, n_h, num_iterations=10000, print_cost=False):
 
         grads = backward_propagation(parameters, cache, X, Y)
 
-        parameters = update_parameters(parameters, grads, learning_rate=0.001)
+        parameters = update_parameters(parameters, grads, learning_rate=0.0008)
 
         if i % 100 == 0:
             costs.append(cost)
@@ -198,23 +196,26 @@ def predict(parameters, X):
 
 
 def train_model():
-    train_set_x_orig, train_set_y, test_set_x_orig, test_set_y = load_dataset()
+    train_set_x_orig, train_set_y = load_dataset()
     print(np.shape(train_set_x_orig),np.shape(train_set_y))
 
 
-    parameters, costs = nn_model(train_set_x_orig, train_set_y, 25, num_iterations=25000, print_cost=True)
+    parameters, costs = nn_model(train_set_x_orig, train_set_y,12, num_iterations=25000, print_cost=True)
 
     predictions = predict(parameters, train_set_x_orig)
     print('Accuracy Train: %d' % float(
         (np.dot(train_set_y, predictions.T) + np.dot(1 - train_set_y, 1 - predictions.T)) / float(
             train_set_y.size) * 100) + '%')
 
-    predictions = predict(parameters, test_set_x_orig)
-    print('Accuracy Test: %d' % float(
-        (np.dot(test_set_y, predictions.T) + np.dot(1 - test_set_y, 1 - predictions.T)) / float(
-            test_set_y.size) * 100) + '%')
-
     np.save('MLDjango/myfile.npy', parameters)
+    fig=plt.figure()
+    costs = np.squeeze(costs)
+    plt.plot(costs)
+    plt.ylabel('cost')
+    plt.xlabel('iterations (per hundreds)')
+    plt.title("Learning rate =0.001")
+    fig.savefig('smart/static/smart/images/liver_graph.png')
+
 
 
 def check(X1):
