@@ -44,12 +44,12 @@ def trainView(request):
 
 def saveWeightLiver(request):
     liver.train_model()
-    return render(request, 'smart/train.html')
+    return render(request, 'smart/train.html', {"graph": True})
 
 
 def saveWeightBc(request):
     cancer.train_model()
-    return render(request, 'smart/train.html')
+    return render(request, 'smart/train.html', {"graph": True})
 
 
 def checkForLiver(request):

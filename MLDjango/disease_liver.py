@@ -214,7 +214,7 @@ def train_model():
     plt.ylabel('cost')
     plt.xlabel('iterations (per hundreds)')
     plt.title("Learning rate =0.001")
-    fig.savefig('smart/static/smart/images/liver_graph.png')
+    fig.savefig('smart/static/smart/images/graph.png')
 
 
 
