@@ -356,7 +356,7 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-    //color: #884530;
+//color: #884530;
     color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
@@ -431,6 +431,15 @@ footer {
     -moz-animation: bounce 2s infinite;
     -webkit-animation: bounce 2s infinite;
     animation: bounce 2s infinite;
+    background: transparent;
+    border: 0!important;
+    box-shadow: 0px 0px 0px 0px!important;
+}
+
+.bounce1 {
+    -moz-animation: bounce 5s infinite;
+    -webkit-animation: bounce 5s infinite;
+    animation: bounce 5s infinite;
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;

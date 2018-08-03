@@ -31,11 +31,8 @@
 {% endblock %}
 
 {% block body %}
-    <div style="position: fixed;bottom: 0;right: 0;">
-        <form action="https://web.telegram.org/#/im?p=@SmartDiagnosisbot">
-            <input style="margin-right: 10px;margin-bottom: 10px;padding: 10px 24px;border-radius: 50%;" type="submit" value="ChatBot"/>
-        </form>
-
+    <div class="bounce1" style="position: fixed;bottom: 0.2rem;right: 2rem;">
+        <span class="linkto" onclick="location='https://web.telegram.org/#/im?p=@SmartDiagnosisbot'"><img src="{% static 'smart/images/bot4.png' %}" width="75px" height="70px" class="submit"/></span>
     </div>
     <div class="modal fade" id="modalContactForm" tabindex="-1">
         <form action="https://formspree.io/soham5959595@gmail.com" method="post">
