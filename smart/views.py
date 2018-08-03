@@ -14,6 +14,7 @@ def home(request):
     # user = request.user
     # username = user.username
     # print(username)
+
     return render(request, 'smart/index.html', {"login": False})
 
 
@@ -70,8 +71,8 @@ def checkForLiver(request):
     if inp.gender == 'F':
         sex = 1
 
-    x = np.array([[sex], [int(inp.total_bilirubin)], [int(inp.direct_bilirubin)], [int(inp.alkaline_phosphotase)],
-                  [int(inp.alamine_aminotransferase)], [int(inp.albumin)]])
+    x = np.array([[sex], [float(inp.total_bilirubin)], [float(inp.direct_bilirubin)], [float(inp.alkaline_phosphotase)],
+                  [float(inp.alamine_aminotransferase)], [float(inp.albumin)]])
     xyz = liver.check(x)
 
     if xyz == True:
@@ -100,8 +101,8 @@ def checkForBreastCancer(request):
     # password = request.user.password
     # user = authenticate(username=username, password=password)
 
-    if not request.user.is_authenticated():
-        return render(request, 'smart/login.html')
+    #if not request.user.is_authenticated():
+     #   return render(request, 'smart/login.html')
 
     bc = BreastCancerPatientInfo()
     bc.radius_mean = request.POST["rm"]
@@ -139,15 +140,15 @@ def checkForBreastCancer(request):
     gender = request.POST["gender"]
     bc.username = request.user.username
 
-    x1 = np.array([[int(bc.radius_mean)], [int(bc.texture_mean)], [int(bc.perimeter_mean)], [int(bc.area_mean)], [int(bc.smoothness_mean)],
-                   [int(bc.compactness_mean)], [int(bc.concavity_mean)], [int(bc.concave_points_mean)], [int(bc.symmetry_mean)],
-                   [int(bc.fractal_dimension_mean)],
-                   [int(bc.radius_se)], [int(bc.texture_se)], [int(bc.perimeter_se)], [int(bc.area_se)], [int(bc.smoothness_se)],
-                   [int(bc.compactness_se)], [int(bc.concavity_se)], [int(bc.concave_points_se)], [int(bc.symmetry_se)],
-                   [int(bc.fractal_dimension_se)],
-                   [int(bc.radius_worst)], [int(bc.texture_worst)], [int(bc.perimeter_worst)], [int(bc.area_worst)], [int(bc.smoothness_worst)],
-                   [int(bc.compactness_worst)], [int(bc.concavity_worst)], [int(bc.concave_points_worst)], [int(bc.symmetry_worst)],
-                   [int(bc.fractal_dimension_worst)]])
+    x1 = np.array([[float(bc.radius_mean)], [float(bc.texture_mean)], [float(bc.perimeter_mean)], [float(bc.area_mean)], [float(bc.smoothness_mean)],
+                   [float(bc.compactness_mean)], [float(bc.concavity_mean)], [float(bc.concave_points_mean)], [float(bc.symmetry_mean)],
+                   [float(bc.fractal_dimension_mean)],
+                   [float(bc.radius_se)], [float(bc.texture_se)], [float(bc.perimeter_se)], [float(bc.area_se)], [float(bc.smoothness_se)],
+                   [float(bc.compactness_se)], [float(bc.concavity_se)], [float(bc.concave_points_se)], [float(bc.symmetry_se)],
+                   [float(bc.fractal_dimension_se)],
+                   [float(bc.radius_worst)], [float(bc.texture_worst)], [float(bc.perimeter_worst)], [float(bc.area_worst)], [float(bc.smoothness_worst)],
+                   [float(bc.compactness_worst)], [float(bc.concavity_worst)], [float(bc.concave_points_worst)], [float(bc.symmetry_worst)],
+                   [float(bc.fractal_dimension_worst)]])
 
     xyz1 = cancer.check(x1)
 
