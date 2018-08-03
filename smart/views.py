@@ -11,10 +11,13 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 def home(request):
-    # user = request.user
+    user = request.user
     # username = user.username
     # print(username)
-    return render(request, 'smart/index.html', {"login": False})
+    if user.is_authenticated():
+        return render(request, 'smart/index.html', {"login": True})
+    else:
+        return render(request, 'smart/index.html', {"login": False})
 
 
 def imageUpload(request):
@@ -49,8 +52,8 @@ def saveWeightBc(request):
 
 def checkForLiver(request):
 
-    if not request.user.is_authenticated():
-        return render(request, 'smart/login.html')
+    #if not request.user.is_authenticated():
+    #    return render(request, 'smart/login.html')
 
     inp = LiverPatientInfo()
     inp.name = request.POST["name"]
@@ -86,8 +89,7 @@ def checkForLiver(request):
     print(inp.hasDisease)
     print(inp.hasDisease == 1)
 
-    return render(request, 'smart/output.html', {"LiverResult": inp})
-    #return render(request, 'smart/output.html')
+    return render(request, 'smart/output.html', {"LiverResult": inp, "login": True})
 
 
 def checkForBreastCancer(request):
@@ -100,8 +102,8 @@ def checkForBreastCancer(request):
     # password = request.user.password
     # user = authenticate(username=username, password=password)
 
-    if not request.user.is_authenticated():
-        return render(request, 'smart/login.html')
+    # if not request.user.is_authenticated():
+    #    return render(request, 'smart/login.html')
 
     bc = BreastCancerPatientInfo()
     bc.radius_mean = request.POST["rm"]
@@ -159,7 +161,7 @@ def checkForBreastCancer(request):
     bc.hasDisease = dic["res"]
     bc.save()
 
-    return render(request, 'smart/output.html', {"result": bc, "name": name, "age": age, "gender": gender})
+    return render(request, 'smart/output.html', {"result": bc, "name": name, "age": age, "gender": gender, "login": True})
 
 
 class UserFormView(View):

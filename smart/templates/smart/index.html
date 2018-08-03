@@ -1,5 +1,12 @@
 {% extends 'smart/base.html' %}
 {% load staticfiles %}
+
+{% block historyNav %}
+    {% if login == True %}
+        <li><a href="{% url 'smart:history' %}" id="about-button">HISTORY</a></li>
+    {% endif %}
+{% endblock %}
+
 {% block login %}
     {% if login == True %}
         <div class="borderYtoX">
@@ -24,6 +31,12 @@
 {% endblock %}
 
 {% block body %}
+    <div style="position: fixed;bottom: 0;right: 0;">
+        <form action="https://web.telegram.org/#/im?p=@SmartDiagnosisbot">
+            <input style="margin-right: 10px;margin-bottom: 10px;padding: 10px 24px;border-radius: 50%;" type="submit" value="ChatBot"/>
+        </form>
+
+    </div>
     <div class="modal fade" id="modalContactForm" tabindex="-1">
         <form action="https://formspree.io/soham5959595@gmail.com" method="post">
             {% csrf_token %}
@@ -108,7 +121,7 @@
                             an account? Signup</a> -->
 
                         <a href="{% url 'smart:register' %}"
-                           style="color: black!important; font-size: 1.2rem" >Don't have
+                           style="color: black!important; font-size: 1.2rem">Don't have
                             an account? Signup</a>
                         <br>
                         <br>
@@ -256,13 +269,17 @@
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-8">
-                                                        <p style="font-size: 1rem">Liver disease can be inherited (genetic)
-                                                            or caused by a variety of factors that damage the liver, such as
-                                                            viruses and alcohol use. Obesity is also associated with liver
+                                                        <p style="font-size: 1rem">Liver disease can be inherited
+                                                            (genetic)
+                                                            or caused by a variety of factors that damage the liver,
+                                                            such as
+                                                            viruses and alcohol use. Obesity is also associated with
+                                                            liver
                                                             damage.</p>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <img src="{% static 'smart/images/imgLiver.jpg' %}" width="100%"/>
+                                                        <img src="{% static 'smart/images/imgLiver.jpg' %}"
+                                                             width="100%"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -272,12 +289,14 @@
                                         <div class="card" data-tilt data-tilt-max="5" data-tilt-speed="100"
                                              data-tilt-perspective="100">
                                             <div class="card-header"><a class="inp2-button" href="#input"
-                                                                        style="font-size: 1.5rem;">Breast Cancer</a></div>
+                                                                        style="font-size: 1.5rem;">Breast Cancer</a>
+                                            </div>
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-8">
                                                         <p style="font-size: 1rem">Breast cancer develops from breast
-                                                            tissue. In those with distant spread of the disease, there may
+                                                            tissue. In those with distant spread of the disease, there
+                                                            may
                                                             be bone pain, swollen lymph nodes, shortness of breath, or
                                                             yellow skin.</p>
                                                     </div>
@@ -296,9 +315,9 @@
                                             <div class="card-header"><a href="/#input" style="font-size: 1.5rem;">More
                                                 Categories coming soon.</a></div>
                                             <div class="card-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus
+                                                <p><!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus
                                                     nunc eget elementum mollis. Fusce tincidunt ex sed ipsum lobortis, eu
-                                                    condimentum risus rutrum.</p>
+                                                    condimentum risus rutrum.--></p>
                                             </div>
                                         </div>
                                     </div>
@@ -326,7 +345,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group row">
                                                     <label for="name" class="col-form-label col-md-6">Name:</label>
-                                                    <input type="text" id="name" name="name" class="form-control col-md-6"
+                                                    <input type="text" id="name" name="name"
+                                                           class="form-control col-md-6"
                                                            placeholder="Full Name" required/>
                                                 </div>
                                                 <div class="form-group row">
@@ -335,17 +355,21 @@
                                                            placeholder="Enter your age" required/>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="gender" class="col-form-label col-md-6">Gender(M/F):</label>
-                                                    <input type="text" id="gender" name="gender" class="form-control col-md-6"
+                                                    <label for="gender"
+                                                           class="col-form-label col-md-6">Gender(M/F):</label>
+                                                    <input type="text" id="gender" name="gender"
+                                                           class="form-control col-md-6"
                                                            placeholder="Gender(M/F)" required/>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="tb" class="col-form-label col-md-6">Total Bilirubin:</label>
+                                                    <label for="tb" class="col-form-label col-md-6">Total
+                                                        Bilirubin:</label>
                                                     <input type="number" id="tb" name="tb" class="form-control col-md-6"
                                                            placeholder="Total Bilirubin" required/>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="db" class="col-form-label col-md-6">Direct Bilirubin:</label>
+                                                    <label for="db" class="col-form-label col-md-6">Direct
+                                                        Bilirubin:</label>
                                                     <input type="number" id="db" name="db" class="form-control col-md-6"
                                                            placeholder="Direct Bilirubin" required/>
                                                 </div>
@@ -366,21 +390,25 @@
                                                 <div class="form-group row">
                                                     <label for="apa" class="col-form-label col-md-6">Aspartate
                                                         Aminotransferase:</label>
-                                                    <input type="number" id="apa" name="apa" class="form-control col-md-6"
+                                                    <input type="number" id="apa" name="apa"
+                                                           class="form-control col-md-6"
                                                            placeholder="Aspartate Aminotransferase level" required/>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="tp" class="col-form-label col-md-6">Total Proteins:</label>
+                                                    <label for="tp" class="col-form-label col-md-6">Total
+                                                        Proteins:</label>
                                                     <input type="number" id="tp" name="tp" class="form-control col-md-6"
                                                            placeholder="Total Proteins" required/>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="alb" class="col-form-label col-md-6">Albumin:</label>
-                                                    <input type="number" id="alb" name="alb" class="form-control col-md-6"
+                                                    <input type="number" id="alb" name="alb"
+                                                           class="form-control col-md-6"
                                                            placeholder="Albumin level" required/>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="abratio" class="col-form-label col-md-6">Albumin Globulin
+                                                    <label for="abratio" class="col-form-label col-md-6">Albumin
+                                                        Globulin
                                                         Ratio:</label>
                                                     <input type="number" id="abratio" name="abratio"
                                                            class="form-control col-md-6"
@@ -391,13 +419,16 @@
                                         <div class="row">
                                             <div class="col-md-4"></div>
                                             <div class="col-md-4">
-                                                <button type="submit" class="btn btn-outline-mdb-color btn-cust">Submit</button>
+                                                <button type="submit" class="btn btn-outline-mdb-color btn-cust">
+                                                    Submit
+                                                </button>
                                             </div>
                                             <div class="col-md-4"></div>
                                         </div>
                                     </form>
                                 {% else %}
-                                    <div class="container"><p style="font-size: 1.5rem">Kindly Login to continue...</p></div>
+                                    <div class="container"><p style="font-size: 1.5rem">Kindly Login to continue...</p>
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>
@@ -412,24 +443,29 @@
                                           id="regForm">
                                         {% csrf_token %}
                                         <div class="tab">
-                                            <h4>Enter Patient Details &ensp<i class="fa fa-user prefix grey-text"></i></h4>
+                                            <h4>Enter Patient Details &ensp<i class="fa fa-user prefix grey-text"></i>
+                                            </h4>
                                             <div class="row">
                                                 <div class="col-md-2"></div>
                                                 <div class="col-md-8">
                                                     <div class="modal-body">
                                                         <div class="md-form form-group mb-5">
                                                             <label for="bcname" class="col-form-label">Name:</label>
-                                                            <input type="text" id="bcname" name="name" class="form-control"
+                                                            <input type="text" id="bcname" name="name"
+                                                                   class="form-control"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
                                                         <div class="md-form form-group mb-5">
                                                             <label for="bcage" class="col-form-label">Age:</label>
-                                                            <input type="text" id="bcage" name="age" class="form-control"
+                                                            <input type="text" id="bcage" name="age"
+                                                                   class="form-control"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
                                                         <div class="md-form form-group mb-5">
-                                                            <label for="bcgender" class="col-form-label">Gender(M/F):</label>
-                                                            <input type="text" id="bcgender" name="gender" class="form-control"
+                                                            <label for="bcgender"
+                                                                   class="col-form-label">Gender(M/F):</label>
+                                                            <input type="text" id="bcgender" name="gender"
+                                                                   class="form-control"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
                                                     </div>
@@ -443,21 +479,27 @@
                                                 <div class="col-md-6">
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcMeanRadius" class="col-form-label">Radius:</label>
+                                                            <label for="bcMeanRadius"
+                                                                   class="col-form-label">Radius:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcMeanRadius" name="rm" class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                            <input type="text" id="bcMeanRadius" name="rm"
+                                                                   class="form-control"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    min=0 step="" required/>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcMeanTexture" class="col-form-label">Texture:</label>
+                                                            <label for="bcMeanTexture"
+                                                                   class="col-form-label">Texture:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcMeanTexture" name="tm" class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                            <input type="text" id="bcMeanTexture" name="tm"
+                                                                   class="form-control"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -469,7 +511,8 @@
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcMeanPerimeter" name="pm"
                                                                    class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -478,8 +521,10 @@
                                                             <label for="bcMeanArea" class="col-form-label">Area:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcMeanArea" name="am" class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                            <input type="text" id="bcMeanArea" name="am"
+                                                                   class="form-control"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -491,7 +536,8 @@
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcMeanSmoothness" name="sm"
                                                                    class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -505,7 +551,8 @@
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcMeanCompactness" name="cm"
                                                                    class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -516,7 +563,8 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <input type="text" id="ccm" name="ccm" class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    min=0 step="" required/>
                                                         </div>
                                                     </div>
@@ -528,18 +576,21 @@
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcMeanConPoints" name="cpm"
                                                                    class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcMeanSymmetry" class="col-form-label">Symmetry:</label>
+                                                            <label for="bcMeanSymmetry"
+                                                                   class="col-form-label">Symmetry:</label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcMeanSymmetry" name="sym"
                                                                    class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -551,7 +602,8 @@
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcMeanFractal" name="fdm"
                                                                    class="form-control"
-                                                                   placeholder="Mean" oninput="this.className = 'form-control'"
+                                                                   placeholder="Mean"
+                                                                   oninput="this.className = 'form-control'"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -565,32 +617,39 @@
                                                 <div class="col-md-6">
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcSERadius" class="col-form-label">Radius:</label>
+                                                            <label for="bcSERadius"
+                                                                   class="col-form-label">Radius:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcSERadius" name="rs" class="form-control"
+                                                            <input type="text" id="bcSERadius" name="rs"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcSETexture" class="col-form-label">Texture:</label>
+                                                            <label for="bcSETexture"
+                                                                   class="col-form-label">Texture:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcSETexture" name="ts" class="form-control"
+                                                            <input type="text" id="bcSETexture" name="ts"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcSEPerimeter" class="col-form-label">Perimeter:</label>
+                                                            <label for="bcSEPerimeter"
+                                                                   class="col-form-label">Perimeter:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcSEPerimeter" name="ps" class="form-control"
+                                                            <input type="text" id="bcSEPerimeter" name="ps"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
-                                                                   oninput="this.className = 'form-control'" min=0 step=""
+                                                                   oninput="this.className = 'form-control'" min=0
+                                                                   step=""
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -599,7 +658,8 @@
                                                             <label for="bcSEArea" class="col-form-label">Area:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcSEArea" name="as" class="form-control"
+                                                            <input type="text" id="bcSEArea" name="as"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
@@ -656,12 +716,15 @@
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcSESymmetry" class="col-form-label">Symmetry:</label>
+                                                            <label for="bcSESymmetry"
+                                                                   class="col-form-label">Symmetry:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcSESymmetry" name="sys" class="form-control"
+                                                            <input type="text" id="bcSESymmetry" name="sys"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
-                                                                   oninput="this.className = 'form-control'" min=0 step=""
+                                                                   oninput="this.className = 'form-control'" min=0
+                                                                   step=""
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -671,7 +734,8 @@
                                                                 Dimension:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcSEFractal" name="fds" class="form-control"
+                                                            <input type="text" id="bcSEFractal" name="fds"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
@@ -686,17 +750,20 @@
                                                 <div class="col-md-6">
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcWorstRadius" class="col-form-label">Radius:</label>
+                                                            <label for="bcWorstRadius"
+                                                                   class="col-form-label">Radius:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcWorstRadius" name="rw" class="form-control"
+                                                            <input type="text" id="bcWorstRadius" name="rw"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcWorstTexture" class="col-form-label">Texture:</label>
+                                                            <label for="bcWorstTexture"
+                                                                   class="col-form-label">Texture:</label>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <input type="text" id="bcWorstTexture" name="tw"
@@ -714,16 +781,19 @@
                                                             <input type="text" id="bcWorstPerimeter" name="pw"
                                                                    class="form-control"
                                                                    placeholder="Standard Error"
-                                                                   oninput="this.className = 'form-control'" min=0 step=""
+                                                                   oninput="this.className = 'form-control'" min=0
+                                                                   step=""
                                                                    required/>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="bcWorstArea" class="col-form-label">Area:</label>
+                                                            <label for="bcWorstArea"
+                                                                   class="col-form-label">Area:</label>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <input type="text" id="bcWorstArea" name="aw" class="form-control"
+                                                            <input type="text" id="bcWorstArea" name="aw"
+                                                                   class="form-control"
                                                                    placeholder="Standard Error"
                                                                    oninput="this.className = 'form-control'" required/>
                                                         </div>
@@ -787,7 +857,8 @@
                                                             <input type="text" id="bcWorstSymmetry" name="syw"
                                                                    class="form-control"
                                                                    placeholder="Standard Error"
-                                                                   oninput="this.className = 'form-control'" min=0 step=""
+                                                                   oninput="this.className = 'form-control'" min=0
+                                                                   step=""
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -808,10 +879,12 @@
                                         </div>
                                         <div id="stepBtn">
                                             <div style="float:right;">
-                                                <button type="button" class="btn btn-outline-mdb-color btn-cust" id="prevBtn"
+                                                <button type="button" class="btn btn-outline-mdb-color btn-cust"
+                                                        id="prevBtn"
                                                         onclick="nextPrev(-1)">Previous
                                                 </button>
-                                                <button type="button" class="btn btn-outline-mdb-color btn-cust" id="nextBtn"
+                                                <button type="button" class="btn btn-outline-mdb-color btn-cust"
+                                                        id="nextBtn"
                                                         onclick="nextPrev(1)">Next
                                                 </button>
                                             </div>
@@ -824,7 +897,8 @@
                                         </div>
                                     </form>
                                 {% else %}
-                                    <div class="container"><p style="font-size: 1.5rem">Kindly Login to continue...</p></div>
+                                    <div class="container"><p style="font-size: 1.5rem">Kindly Login to continue...</p>
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>
