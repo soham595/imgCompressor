@@ -39,6 +39,7 @@ class BreastCancerPatientInfo(models.Model):
     texture_mean = models.FloatField()
     perimeter_mean = models.FloatField()
     area_mean = models.FloatField()
+
     smoothness_mean = models.FloatField()
     compactness_mean = models.FloatField()
     concavity_mean = models.FloatField()

@@ -437,9 +437,9 @@ footer {
 }
 
 .bounce1 {
-    -moz-animation: bounce 5s infinite;
-    -webkit-animation: bounce 5s infinite;
-    animation: bounce 5s infinite;
+    -moz-animation: bounce 4s infinite!important;
+    -webkit-animation: bounce 4s infinite!important;
+    animation: bounce 4s infinite!important;
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;
