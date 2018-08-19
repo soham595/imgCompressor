@@ -1,7 +1,10 @@
 # smartDiag
 
 Deployed on AWS Cloud:
+
 http://smartdiagapp.a6ygmbqea4.ap-south-1.elasticbeanstalk.com/
+
+
 
 Better prediction to help doctors by using Deep Learning in various fields of Medical Science.
 
