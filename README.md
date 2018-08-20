@@ -1,10 +1,15 @@
 # smartDiag
-Better prediction to help doctors by using Machine Learning in various fields of Medical Science.
+
+Deployed on AWS Cloud:
+
+http://smartdiagapp.a6ygmbqea4.ap-south-1.elasticbeanstalk.com/
+
+Better prediction to help doctors by using Deep Learning in various fields of Medical Science.
 
 Front-end:
 Bootstrap 4,
 Materialize,
-Vanilla JS,
+VanillaTilt JS,
 jQuery
 
 Back-end:
@@ -18,15 +23,15 @@ SQLite3
 
 SETUP The Project ->
 
-virtualenv djangoenv
+> virtualenv djangoenv
 
-cd djangoenv
+> cd djangoenv
 
-cd Scripts
+> cd Scripts
 
-activate
+> activate
 
-pip install -r requirements.txt
+> pip install -r requirements.txt
 
 
 
@@ -49,5 +54,3 @@ MIDDLEWARE_CLASSES = (
 > python manage.py livereload  -> hot reloading
 
 > python manage.py runserver  -> to start the server
-
-Upload file feature added.
