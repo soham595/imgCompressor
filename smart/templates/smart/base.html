@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
 
     <link rel="shortcut icon" href="../../static/smart/images/favicon2.ico">
-
+    <link rel="stylesheet" href="{% static 'smart/css/particles.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/mdb.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/allElements.css' %}">
     <link rel="stylesheet" href="{% static 'smart/css/parallax.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script type="text/javascript" src="{% static 'smart/js/jquery-3.2.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/bootstrap.min.js' %}"></script>
@@ -17,6 +18,7 @@
     <script type="text/javascript" src="{% static 'smart/js/tether.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/materialize.js' %}"></script>
     <script type="text/javascript" src="{% static 'smart/js/parallax.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"
             integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
             crossorigin="anonymous"></script>
@@ -111,10 +113,15 @@
 </div>
 {% block body %}
 {% endblock %}
-
+<script>
+    AOS.init();
+</script>
 </body>
 <script type="text/javascript" src="{% static 'smart/js/multi-form.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/stickynav.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/vanilla-tilt.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/anime.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/particles.js' %}"></script>
+<script type="text/javascript" src="{% static 'smart/js/demo.js' %}"></script>
 <script type="text/javascript" src="{% static 'smart/js/show.js' %}"></script>
 </html>

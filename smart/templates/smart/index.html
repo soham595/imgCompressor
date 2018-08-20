@@ -32,7 +32,7 @@
 
 {% block body %}
     <div class="bounce1" style="position: fixed;bottom: 0.2rem;right: 2rem;">
-        <span class="linkto" onclick="location='https://web.telegram.org/#/im?p=@SmartDiagnosisbot'"><img src="{% static 'smart/images/bot4.png' %}" width="75px" height="70px" class="submit"/></span>
+        <span class="linkto" onclick=" window.open('https://web.telegram.org/#/im?p=@SmartDiagnosisbot', '_blank'); return false;"><img src="{% static 'smart/images/bot4.png' %}" width="75px" height="70px" class="submit"/></span>
     </div>
     <div class="modal fade" id="modalContactForm" tabindex="-1">
         <form action="https://formspree.io/soham5959595@gmail.com" method="post">
@@ -94,7 +94,6 @@
                                     function modalFunc() {
                                         $('#modalLoginForm').modal("show");
                                     }
-
                                     modalFunc();
                                 </script>
                                 <p id="login-error"><strong>{{ error_message }}</strong></p>
@@ -222,7 +221,7 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <img src="{% static 'smart/images/imgEntry.jpg' %}" width="500px"/>
+                    <img data-aos="fade-left" data-aos-duration="3000" src="{% static 'smart/images/imgEntry.jpg' %}" width="500px"/>
                 </div>
             </div>
             <br>
@@ -233,9 +232,9 @@
         <hr color="lightgray">
         <div class="row">
             <div class="col-md-3">
-                <img src="{% static 'smart/images/site-info.png' %}" width="250px"/>
+                <img data-aos="fade-right" data-aos-duration="2000" src="{% static 'smart/images/site-info.png' %}" width="250px"/>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8" data-aos="fade-left" data-aos-duration="2000">
                 <h1 style="font-weight: normal; font-style: oblique; color: lightgray">Find out the outcome of the
                     malady by filling out the required details<span style="color: #BA0F00!important;"> .</span></h1>
                 <br>
@@ -259,7 +258,7 @@
                             <div class="col-md-10">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
+                                        <div class="card" data-tilt data-tilt-max="5" data-tilt-speed="100"
                                              data-tilt-perspective="100">
                                             <div class="card-header"><a class="inp1-button" href="#input"
                                                                         style="font-size: 1.5rem;">Liver</a></div>
@@ -307,7 +306,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="card " data-tilt data-tilt-max="5" data-tilt-speed="100"
+                                        <div class="card" data-tilt data-tilt-max="5" data-tilt-speed="100"
                                              data-tilt-perspective="100">
                                             <div class="card-header"><a href="/#input" style="font-size: 1.5rem;">More
                                                 Categories coming soon.</a></div>
@@ -961,7 +960,7 @@
             <div class="row top-margin">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <p style="font-style: italic; font-weight: lighter; font-size: 1.2rem; line-height: 2.5rem">
+                    <p data-aos="fade-up" data-aos-duration="3000" data-aos-offset="-350" style="font-style: italic; font-weight: lighter; font-size: 1.2rem; line-height: 2.5rem">
                         SmartDiag is the diagnosis you can rely on. It is a trusted website that takes in input from the
                         users regarding the chemical levels
                         in our body and predicts whether he/she is suffering from liver disease and breast cancer
@@ -1019,7 +1018,7 @@
                 <span class="footer-text">Have any queries? Contact us at smartdiag.support@gmail.com or call us on +91 8073276763.</span>
             </div>
             <div class="right-footer col-md-4">
-                <span class="linkto" onclick="location='https://github.com/soham595/smartDiag'"><i
+                <span class="linkto" onclick=" window.open('https://github.com/soham595/smartDiag', '_blank'); return false;"><i
                         class="fab fa-github-square prefix mr-1"></i>GitHub</span>&ensp
                 <span>-</span>&ensp
                 <span class="linkto" data-toggle="modal" data-target="#modalContactForm"><i

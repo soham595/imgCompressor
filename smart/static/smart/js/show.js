@@ -7,6 +7,7 @@
 
 $(function () {
     $("#inp1").hide();
+    $("#trainpLiver").slideDown(1000);
     $(".inp1-button").click(function () {
         if (($("#inp1").css('display') == 'none' && $("#inp2").css('display') == 'none' || $("#inp1").css('display') == 'none')) {
             $(".initial").hide(1000);

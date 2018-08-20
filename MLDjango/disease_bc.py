@@ -6,7 +6,7 @@ Created on Fri Jul 20 01:58:49 2018
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
@@ -235,8 +235,9 @@ def train_model():
     predictions = predictions.astype(np.int64)
     cm_test = confusion_matrix(test_set_y.astype(np.int64).T, predictions.T)
     print(cm_test)
-
     np.save('MLDjango/myfile2.npy', parameters)
+
+    '''
     fig = plt.figure()
     costs = np.squeeze(costs)
     plt.plot(costs)
@@ -244,6 +245,7 @@ def train_model():
     plt.xlabel('iterations (per hundreds)')
     plt.title("Learning rate =0.001")
     fig.savefig('smart/static/smart/images/graph.png')
+    '''
 
 
 

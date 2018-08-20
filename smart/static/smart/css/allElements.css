@@ -1,65 +1,3 @@
-/*.bg-custom {
-    background-color: #2a2a2a;
-    height: 3em;
-}
-
-/* Dropdown Content (Hidden by Default)
-
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-.dropdown:visited .dropdown-menu {
-    display: block;
-}
-
-
-
-.dropdown {
-    border-color: #080808;
-}
-
-/* Change color of dropdown links on hover
-.dropdown-menu a:hover
-{
-    background-color: white;
-    color: #3a3a3a;
-}
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-menu {
-    margin-top: -1px;
-    display: none;
-    position: absolute;
-    background-color: #3a3a3a;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-
-.nav-item {
-    color: #a9ada9;
-    text-decoration: none;
-}
-
-.dropdown-menu a {
-    line-height: 1.5em;
-    color: #a9a9a9;
-    padding-left: .7em;
-    padding-bottom: .2em;
-    padding-right: .7em;
-    text-decoration: none;
-    display: block;
-    background-color: #3a3a3a;
-}
-
-*/
-
 body {
     height: 100%;
 }
@@ -231,7 +169,7 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
 }
 
 .content {
-    margin-top: 1.5rem;
+    padding-top: 3rem;
     position: relative;
     z-index: 1;
     color: whitesmoke;
@@ -356,7 +294,7 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-//color: #884530;
+    //color: #884530;
     color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
@@ -437,12 +375,14 @@ footer {
 }
 
 .bounce1 {
-    -moz-animation: bounce 5s infinite;
-    -webkit-animation: bounce 5s infinite;
-    animation: bounce 5s infinite;
+    -moz-animation: bounce 6s infinite!important;
+    -webkit-animation: bounce 6s infinite!important;
+    animation: bounce 6s infinite!important;
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;
+    position: fixed;
+    z-index: 200;
 }
 
 .btnBottom {
