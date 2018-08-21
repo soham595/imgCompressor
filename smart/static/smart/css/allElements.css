@@ -2,24 +2,20 @@ body {
     height: 100%;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-menu {
     display: none;
-    margin-top: 0.6rem!important;
+    margin-top: 0 !important;
     position: absolute!important;
     background-color: rgba(0, 0, 0, 0.1);
-    min-width: 180px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.9);
+    min-width: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.9);
     z-index: 1;
 }
-
-/* Links inside the dropdown */
 
 #inp1-button, #inp2-button {
     color: #ffffff!important;
@@ -33,15 +29,12 @@ body {
     color: #ba0f00!important;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-menu a:hover {background-color: rgba(221, 221, 221, 0);}
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: rgba(62, 142, 65, 0);
 }
@@ -59,7 +52,7 @@ a  {
     color: #ffffff;
     text-decoration: none;
     font: 2rem Raleway;
-    margin: 0px 10px;
+    margin: 0 10px;
     position: relative;
     z-index: 0;
     cursor: pointer;
@@ -75,7 +68,6 @@ a  {
 
 .navcust
 {
-    /*background: #009688;*/
     color: rgb(207, 207, 207);
     background: rgba(43, 43, 43, 0);
 }
@@ -86,12 +78,11 @@ a  {
 }
 
 .navmar {
-    margin-top: 8rem;
+    margin-top: 8%;
 }
 
 #ntopnav a:hover
 {
-    /*background: #009688;*/
     margin-left: -2rem;
     font-size: 1.7rem;
     color: #ba0f00;
@@ -110,13 +101,13 @@ div.borderYtoX a:before, div.borderYtoX a:after
 
 div.borderYtoX a:before
 {
-    left: 0px;
+    left: 0;
     top: 10px;
 }
 
 div.borderYtoX a:after
 {
-    right: 0px;
+    right: 0;
     bottom: 8px;
 }
 
@@ -147,7 +138,7 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
     position: fixed;
     top: 0;
     width: 100%;
-    margin-top: -8rem;
+    margin-top: -8%;
     z-index: 30;
     background: rgba(0, 0, 0, 0.8);
 }
@@ -222,17 +213,14 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
     text-align: center;
 }
 
-/* Mark input boxes that gets an error on validation: */
 input.invalid {
     background-color: #ffdddd;
 }
 
-/* Hide all steps by default: */
 .tab {
     display: none;
 }
 
-/* Make circles that indicate the steps of the form: */
 .step {
     height: 15px;
     width: 15px;
@@ -244,7 +232,6 @@ input.invalid {
     opacity: 0.5;
 }
 
-/* Mark the active step: */
 .step.active {
     opacity: 1;
 }
@@ -294,7 +281,6 @@ footer {
 #about {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
-//color: #884530;
     color: navajowhite;
     min-height: 25rem;
     padding-top: 2%;
@@ -310,7 +296,6 @@ footer {
     padding-right: 0;
     padding-left: 0;
 }
-
 
 .fluid-custom {
     margin-top: 4rem;
@@ -372,6 +357,7 @@ footer {
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;
+    z-index: 300;
 }
 
 .bounce1 {
@@ -381,6 +367,7 @@ footer {
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;
+    z-index: 300;
 }
 
 .btnBottom {
