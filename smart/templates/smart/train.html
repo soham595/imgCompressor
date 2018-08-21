@@ -22,8 +22,8 @@
     </div>
     {% else %}
     <div class="row train-container">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
             <form action="/smart/save-weights-liver" method="post">
                 {% csrf_token %}
                 <p id="trainpLiver">Your model is being trained, please wait...</p>
@@ -34,11 +34,11 @@
     </div>
     <br>
     <div class="row train-container">
-        <div class="col-md-4">
+        <div class="col-lg-4">
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4">
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4">
             <form action="/smart/save-weights-bc" method="post">
                 {% csrf_token %}
                 <p id="trainpBC">Your model is being trained, please wait...</p>
