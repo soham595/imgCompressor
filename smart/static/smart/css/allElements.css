@@ -78,7 +78,7 @@ a  {
 }
 
 .navmar {
-    margin-top: 8%;
+    margin-top: 8vh;
 }
 
 #ntopnav a:hover
@@ -138,7 +138,7 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
     position: fixed;
     top: 0;
     width: 100%;
-    margin-top: -8%;
+    margin-top: -8vh;
     z-index: 30;
     background: rgba(0, 0, 0, 0.8);
 }
@@ -156,11 +156,11 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
 }
 
 .sticky + .container {
-    margin-top: 16rem;
+    margin-top: 16vh;
 }
 
 .content {
-    margin-top: 1.5rem;
+    margin-top: 6.5vh;
     position: relative;
     z-index: 1;
     color: whitesmoke;
@@ -269,7 +269,7 @@ footer {
 #input-container {
     background-color: rgba(38, 38, 38, 0.48);
     padding-top: 2%;
-    min-height: 30rem;
+    min-height: 60vh;
 }
 
 .about-container {
@@ -282,7 +282,7 @@ footer {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
     color: navajowhite;
-    min-height: 25rem;
+    min-height: 30vh;
     padding-top: 2%;
 }
 
@@ -333,7 +333,11 @@ footer {
 }
 
 .entry-container {
-    min-height: 25rem;
+    min-height: 65vh;
+}
+
+.entryRow {
+    margin-top: 15vh;
 }
 
 .linkto:hover {
@@ -346,7 +350,7 @@ footer {
 }
 
 #main {
-    min-height: 45rem;
+    min-height: 80vh;
     padding-bottom: 0;
 }
 
@@ -371,7 +375,11 @@ footer {
 }
 
 .btnBottom {
-    margin-top: 10rem;
+    margin-top: 22vh;
+}
+
+.contentMain {
+    margin-top: 20vh;
 }
 
 p {
@@ -393,6 +401,7 @@ h1 {
 
 .site-info {
     background-color: #000000;
+    min-height: 37vh;
 }
 
 .nav-login a

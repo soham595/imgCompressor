@@ -1,10 +1,3 @@
-/*$(function() {
-    $("#about").hide();
-    $("#about-button").click(function () {
-        $("#about").toggle(1000);
-    });
-});*/
-
 $(function () {
     $("#inp1").hide();
     $("#trainpLiver").slideDown(1000);

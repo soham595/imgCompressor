@@ -22,7 +22,7 @@ $(document).ready(function() {
                 let targetOffset = $target.offset().top;
                 $('html, body').animate({
                     scrollTop: targetOffset
-                }, 1000);
+                }, 2000);
                 return false;
             }
         }
