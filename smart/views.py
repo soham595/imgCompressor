@@ -1,13 +1,14 @@
-from django.shortcuts import render, redirect
+import numpy as np
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
-from django.views.generic import View
-from .models import Image, LiverPatientInfo, BreastCancerPatientInfo
-import numpy as np
-import MLDjango.disease_liver as liver
-import MLDjango.disease_bc as cancer
-from .forms import UserForm
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render
+from django.views.generic import View
+
+import MLDjango.disease_bc as cancer
+import MLDjango.disease_liver as liver
+from .forms import UserForm
+from .models import Image, LiverPatientInfo, BreastCancerPatientInfo
 
 
 def home(request):
@@ -225,7 +226,7 @@ def register_user(request):
             login(request, user)
             return render(request, 'smart/index.html', {"login": True})
         else:
-            print("Unseccessful")
+            print("Unsuccessful")
 
 
 

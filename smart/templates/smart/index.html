@@ -9,24 +9,17 @@
 
 {% block login %}
     {% if login == True %}
-        <div class="borderYtoX">
-            <ul class="nav-login float-right nav navbar-nav py-0">
-                <li><a href="{% url 'smart:logout_user' %}" style="font-size: 1.5rem; padding: 8px 18px 12px;">
-                    <i class="fas fa-sign-in-alt prefix mr-2"></i>Logout</a></li>
-            </ul>
-        </div>
+        <a href="{% url 'smart:logout_user' %}"><span class="glyphicon glyphicon-off"
+                                                      aria-hidden="true"></span>&nbsp; Logout</a>
     {% endif %}
 {% endblock %}
 
 {% block logout %}
     {% if login == False %}
-        <div class="borderYtoX">
-            <ul class="nav-login float-right nav navbar-nav py-0">
-                <li><a data-toggle="modal" data-target="#modalLoginForm"
-                       style="font-size: 1.5rem; padding: 8px 18px 12px;" id="login-button">
-                    <i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a></li>
-            </ul>
-        </div>
+        <a data-toggle="modal" data-target="#modalLoginForm"
+           href="{% url 'smart:logout_user' %}"
+           style="font-size: 1.5rem; padding: 8px 28px 18px 12px;">
+            <i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a>
     {% endif %}
 {% endblock %}
 
@@ -115,7 +108,6 @@
                         <!--<a href="#modalRegisterForm" data-toggle="modal" data-dismiss="modal"
                            style="color: black!important; font-size: 1.2rem" data-target="#modalRegisterForm">Don't have
                             an account? Signup</a> -->
-
                         <a href="{% url 'smart:register' %}"
                            style="color: black!important; font-size: 1.2rem">Don't have
                             an account? Signup</a>
@@ -229,13 +221,16 @@
             <br>
         </div>
     </div>
+    <
     <div class="container-fluid site-info">
         <hr color="lightgray">
         <div class="row">
+            <
             <div class="col-lg-3">
-                <img data-aos="fade-right" data-aos-duration="2000" src="{% static 'smart/images/site-info.png' %}" width="250px"/>
+                <img data-aos="fade-down" data-aos-duration="2000" src="{% static 'smart/images/site-info.png' %}"
+                     width="80%"/>
             </div>
-            <div class="col-lg-8" data-aos="fade-left" data-aos-duration="2000">
+            <div class="col-lg-8" data-aos="fade-up" data-aos-duration="2000">
                 <h1 style="font-weight: normal; font-style: oblique; color: lightgray">Find out the outcome of the
                     malady by filling out the required details<span style="color: #BA0F00!important;"> .</span></h1>
                 <br>

@@ -67,6 +67,19 @@
                             <li><a href="/#about" id="about-button">ABOUT</a></li>
                             <li><a data-toggle="modal" data-target="#modalContactForm" id="cont-button">CONTACT US</a>
                             </li>
+                            <li id="login-button">
+                                {% block login %}
+                                    <a data-toggle="modal" data-target="#modalLoginForm"
+                                       href="{% url 'smart:logout_user' %}"
+                                       style="font-size: 1.5rem; padding: 8px 28px 18px 12px;">
+                                        <i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a>
+                                {% endblock %}
+                                {% block logout %}
+                                    <a href="{% url 'smart:logout_user' %}"><span class="glyphicon glyphicon-off"
+                                                                                  aria-hidden="true"></span>&nbsp;
+                                        Logout</a>
+                                {% endblock %}
+                            </li>
                         </ul>
                     </div>
                 </div>
