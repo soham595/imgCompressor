@@ -70,7 +70,7 @@ a  {
 
 .navbar {
     position: relative;
-    z-index: 30;
+    z-index: 10;
     transform-style: preserve-3d;
 }
 
@@ -131,12 +131,18 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
     margin: 0 auto;
 }
 
+.mid a:not([href]):not([tabindex]):hover {
+    margin-left: -2rem !important;
+    font-size: 1.7rem !important;
+    color: #ba0f00 !important;
+}
+
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
     margin-top: -8vh;
-    z-index: 30;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.8);
 }
 
@@ -150,6 +156,11 @@ div.borderYtoX .dropdown-menu a:hover:before, div.borderYtoX .dropdown-menu a:ho
 
 .sticky .mid a {
     font: 1.2rem Raleway;
+}
+
+.sticky #login-button a:hover {
+    margin-left: -2rem;
+    font-size: 2rem !important;
 }
 
 .sticky + .container {
@@ -358,7 +369,7 @@ footer {
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;
-    z-index: 300;
+    z-index: 2;
 }
 
 .bounce1 {
@@ -368,7 +379,7 @@ footer {
     background: transparent;
     border: 0!important;
     box-shadow: 0px 0px 0px 0px!important;
-    z-index: 300;
+    z-index: 2;
 }
 
 .btnBottom {
@@ -434,12 +445,15 @@ h1 {
 }
 
 #login-button a:not([href]):not([tabindex]):hover {
-    margin-left: 2rem;
+    margin-left: -2rem;
     font-size: 2rem !important;
 }
 
-@media (max-width: 991px) {
+#login-button a {
+    font-size: 1.5rem !important;
+}
 
+@media (max-width: 991px) {
     .navcust {
         flex-direction: column;
         position: fixed;
@@ -461,12 +475,28 @@ h1 {
         font-size: 2rem;
     }
 
+    .mid {
+        margin: 0;
+        width: 50%;
+        text-align: center;
+    }
+
+    .mid .dropdown-menu a {
+        text-align: center !important;
+    }
+
     .navbar-brand a {
         font-size: 4rem;
     }
 
     .dropdown-menu {
         background: rgba(0, 0, 0, 0.9);
+    }
+
+    .sticky .mid {
+        margin: 0;
+        width: 100%;
+        text-align: right !important;
     }
 
     .sticky .mid a {

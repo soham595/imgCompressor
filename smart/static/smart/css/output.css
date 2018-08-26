@@ -12,3 +12,18 @@ th {
 td {
     font-size: 1.1rem!important;
 }
+
+#RegisterForm {
+    margin-top: 2%;
+}
+
+.navmar {
+    margin-top: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 991px) {
+    #RegisterForm {
+        margin-top: 10%;
+    }
+}

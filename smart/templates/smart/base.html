@@ -1,6 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -70,8 +71,7 @@
                             <li id="login-button">
                                 {% block login %}
                                     <a data-toggle="modal" data-target="#modalLoginForm"
-                                       href="{% url 'smart:logout_user' %}"
-                                       style="font-size: 1.5rem; padding: 8px 28px 18px 12px;">
+                                       href="{% url 'smart:logout_user' %}">
                                         <i class="fas fa-sign-in-alt prefix mr-2"></i>Login</a>
                                 {% endblock %}
                                 {% block logout %}
