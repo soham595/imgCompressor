@@ -383,7 +383,7 @@ footer {
 }
 
 .btnBottom {
-    margin-top: 18vh;
+    margin-top: 20vh;
 }
 
 .contentMain {
@@ -506,5 +506,14 @@ h1 {
     .navbar-toggler {
         font-size: 3rem;
         margin-left: 30vw;
+    }
+
+    .btnBottom {
+        margin-top: 32vh;
+    }
+
+    #main {
+        min-height: 100vh;
+        padding-bottom: 0;
     }
 }
