@@ -277,7 +277,7 @@ footer {
 #input-container {
     background-color: rgba(38, 38, 38, 0.48);
     padding-top: 2%;
-    min-height: 60vh;
+    min-height: 30rem !important;
 }
 
 .about-container {
@@ -383,7 +383,7 @@ footer {
 }
 
 .btnBottom {
-    margin-top: 22vh;
+    margin-top: 18vh;
 }
 
 .contentMain {
