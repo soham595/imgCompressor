@@ -41,6 +41,10 @@ Install all the reruired packages using the following command -
 > python manage.py runserver  -> to start the server
 
 
+
+Do the following if you're gonna work further on the front-end.
+
+
 Add 'livereload' to the INSTALLED_APPS, before 'django.contrib.staticfiles' if this is used:
 
 INSTALLED_APPS = (
@@ -48,9 +52,6 @@ INSTALLED_APPS = (
     'livereload',
     ...
 )
-
-
-Do the following if you're gonna work further on the front-end.
 
 Add 'livereload.middleware.LiveReloadScript' to MIDDLEWARE_CLASSES (probably at the end):
 
