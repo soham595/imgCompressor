@@ -32,7 +32,7 @@ Move to your virtual environment -
 
 > cd Scripts
 
-Activate Your virtual environment.
+Activate Your virtual environment -
 > activate
 
 Install all the reruired packages using the following command - 
