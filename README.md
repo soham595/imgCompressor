@@ -23,17 +23,22 @@ SQLite3
 
 SETUP The Project ->
 
+Install Python3, pip in your system.
+
 > virtualenv djangoenv
 
+Move to your virtual environment - 
 > cd djangoenv
 
 > cd Scripts
 
+Activate Your virtual environment.
 > activate
 
+Install all the reruired packages using the following command - 
 > pip install -r requirements.txt
 
-
+> python manage.py runserver  -> to start the server
 
 
 Add 'livereload' to the INSTALLED_APPS, before 'django.contrib.staticfiles' if this is used:
@@ -44,6 +49,9 @@ INSTALLED_APPS = (
     ...
 )
 
+
+Do the following if you're gonna work further on the front-end.
+
 Add 'livereload.middleware.LiveReloadScript' to MIDDLEWARE_CLASSES (probably at the end):
 
 MIDDLEWARE_CLASSES = (
@@ -52,5 +60,3 @@ MIDDLEWARE_CLASSES = (
 )
 
 > python manage.py livereload  -> hot reloading
-
-> python manage.py runserver  -> to start the server
